@@ -6,17 +6,29 @@ book:
   title: "Global Families Project"
   author: "Global Families Project Team"
   date: "today"
+  cover-image: positiveparenting.png
+  downloads: [pdf]
+  twitter-card: true
+  open-graph: true
+  favicon: logo.png
+  site-url: https://agrogan1.github.io/globalfamilies
+  search: true
+  repo-url: https://github.com/agrogan1/globalfamilies
+  repo-actions: [issue]
+  sharing: [twitter, facebook, linkedin]
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
-
+ 
 bibliography: references.bib
+
+csl: apa.csl
+
+google-scholar: true
 
 format:
   html:
     theme: cosmo
+    dark: vapor
   pdf:
     documentclass: scrreprt
 
