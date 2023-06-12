@@ -27,8 +27,9 @@ google-scholar: true
 
 format:
   html:
-    theme: cosmo
-    dark: vapor
+    theme: 
+      light: cosmo
+      dark: quartz
   pdf:
     documentclass: scrreprt
 
