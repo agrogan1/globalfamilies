@@ -3,9 +3,9 @@ project:
   output-dir: docs
 
 book:
-  title: "booktemp"
-  author: "Jane Doe"
-  date: "6/12/2023"
+  title: "Global Families Project"
+  author: "Global Families Project Team"
+  date: "today"
   chapters:
     - index.qmd
     - intro.qmd
