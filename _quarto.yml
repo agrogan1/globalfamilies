@@ -18,6 +18,7 @@ book:
   sharing: [twitter, facebook, linkedin]
   chapters:
     - index.qmd
+    - team.qmd
  
 bibliography: references.bib
 
