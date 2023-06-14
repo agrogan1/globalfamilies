@@ -6,7 +6,7 @@ book:
   title: "Global Families Project"
   author: "Global Families Project Team"
   date: "today"
-  cover-image: positiveparenting.png
+  cover-image: positiveparenting-cover.png
   downloads: [pdf]
   twitter-card: true
   open-graph: true
