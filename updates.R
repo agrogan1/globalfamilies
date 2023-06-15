@@ -1,3 +1,7 @@
+# publish to quarto
+
+system("quarto publish quarto-pub")
+
 # sort bibliography
 
 library(RefManageR)
