@@ -10,7 +10,7 @@ book:
   downloads: [pdf]
   twitter-card: true
   open-graph: true
-  favicon: logo.png
+  favicon: logo-globe.png
   site-url: https://agrogan1.github.io/globalfamilies
   search: true
   repo-url: https://github.com/agrogan1/globalfamilies
