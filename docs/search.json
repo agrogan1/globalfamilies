@@ -12,5 +12,54 @@
     "title": "2  Research Team",
     "section": "",
     "text": "Julie Ma, Principal Investigator\nAssociate Professor of Social Work, UM-Flint\nProfessor Ma’s research interests center around the effects of neighborhood disadvantage and negative parenting on the well-being of children. Her research builds on her experience in parent education programs that serve families in marginalized communities in Michigan. Much of her current research focuses on the risks of negative contextual and family influences such as neighborhood poverty and disorganization, and parental corporal punishment on behavior problems and maltreatment in early childhood.\nAndy Grogan-Kaylor, Co-Investigator\nSandra K. Danziger Collegiate Professor, Professor of Social Work\nProfessor Grogan-Kaylor’s research focuses on knowledge development and intervention research on children and families with the aim of reducing violence against children and improving family and child wellbeing. Grogan-Kaylor’s current research projects examine parenting behaviors such as physical punishment and parental expressions of emotional warmth and support, and their effects on children’s aggression, antisocial behavior, anxiety, and depression.\nShawna Lee, Co-Investigator\nProfessor of Social Work\nProfessor Lee is a professor at the University of Michigan School of Social Work. She is the director of the Parenting in Context Research Lab and the director of the Program Evaluation Group at the School. Lee has published on topics related to child maltreatment, fathers’ parenting, father-child relationships, parenting stress and family functioning, and parental discipline. Her recent research focuses on parenting and stress during the COVID-19 pandemic."
+  },
+  {
+    "objectID": "simulate-data.html",
+    "href": "simulate-data.html",
+    "title": "Appendix A — Simulating MICS Data",
+    "section": "",
+    "text": "B Write data to various formats"
+  },
+  {
+    "objectID": "simulate-data.html#call-relevant-libraries",
+    "href": "simulate-data.html#call-relevant-libraries",
+    "title": "Appendix A — Simulating MICS Data",
+    "section": "A.1 Call Relevant Libraries",
+    "text": "A.1 Call Relevant Libraries\nWe need to call a number of relevant R libraries to simulate the data.\n\n\nShow the code\nlibrary(tibble) # new dataframes\n\nlibrary(ggplot2) # nifty graphs\n\nlibrary(labelled) # labels\n\nlibrary(haven) # write Stata\n\nlibrary(tidyr) # tidy data\n\nlibrary(dplyr) # wrangle data\n\nlibrary(lme4) # multilevel models\n\nlibrary(sjPlot) # nice tables"
+  },
+  {
+    "objectID": "simulate-data.html#setup-some-basic-parameters-of-the-data",
+    "href": "simulate-data.html#setup-some-basic-parameters-of-the-data",
+    "title": "Appendix A — Simulating MICS Data",
+    "section": "A.2 Setup Some Basic Parameters of the Data",
+    "text": "A.2 Setup Some Basic Parameters of the Data\nBecause simulation is a random process, we set a random seed so that the simulation produces the same data set each time it is run.\nWe are going to simulate data with 30 countries, and 100 individuals per country.\n\n\nShow the code\nset.seed(1234) # random seed\n\nN_countries <- 30 # number of countries\n\nN <- 100 # sample size / country"
+  },
+  {
+    "objectID": "simulate-data.html#simulate-data-based-on-mics",
+    "href": "simulate-data.html#simulate-data-based-on-mics",
+    "title": "Appendix A — Simulating MICS Data",
+    "section": "A.3 Simulate Data Based on MICS",
+    "text": "A.3 Simulate Data Based on MICS\n\nA.3.1 Level 2\nThis is multilevel data where individuals are nested, or clustered, inside countries. Excellent technical and pedagogical discussions of multilevel models can be found in Raudenbush & Bryk (2002); Singer & Willett (2003); Rabe-Hesketh & Skrondal (2022); Luke (2004); Kreft & de Leeuw (1998).\nSimulating the second level of the data is relatively easy. We simply need to provide the number of countries, and then generate random effects for each country. Random effects are discussed in the above references, but essentially represent country level differences in the data.\n\n\nShow the code\ncountry <- seq(1:N_countries) # sequence 1 to 30\n\nu0 <- rnorm(N_countries, 0, .25) # random intercept\n\nu1 <- rnorm(N_countries, 0, .05) # random slope\n\nrandomeffects <- data.frame(country, u0, u1) # dataframe of random effects\n\n\n\n\nA.3.2 Level 1\n\nMICSsimulated <- randomeffects %>% \n  uncount(N) %>% # N individuals / country\n  mutate(id = row_number()) %>% # unique id\n  mutate(cd1 = rbinom(N * N_countries, 1, .38), # spank\n         cd2 = rbinom(N * N_countries, 1, .05), # beat\n         cd3 = rbinom(N * N_countries, 1, .64), # shout\n         cd4 = rbinom(N * N_countries, 1, .78)) %>% # explain\n  mutate(z = .7 + # linear combination based on MICS\n           .23 * cd1 +\n           .52 * cd2 +\n           .42 * cd3 +\n           -.21 * cd4 + \n           u0) %>%\n  mutate(p = exp(z) / (1 + exp(z))) %>% # probability\n  mutate(aggression = rbinom(N * N_countries, 1, p)) %>% # binomial y\n  select(id, country, \n         cd1, cd2, cd3, cd4, \n         aggression)\n\n\n\nA.3.3 Variable Labels\n\nvar_label(MICSsimulated$id) <- \"id\"\n\nvar_label(MICSsimulated$country) <- \"country\"\n\nvar_label(MICSsimulated$cd1) <- \"spank\"\n\nvar_label(MICSsimulated$cd2) <- \"beat\"\n\nvar_label(MICSsimulated$cd3) <- \"shout\"\n\nvar_label(MICSsimulated$cd4) <- \"explain\"\n\nvar_label(MICSsimulated$aggression) <- \"aggression\""
+  },
+  {
+    "objectID": "simulate-data.html#explore-the-simulated-data-with-a-graph",
+    "href": "simulate-data.html#explore-the-simulated-data-with-a-graph",
+    "title": "Appendix A — Simulating MICS Data",
+    "section": "A.4 Explore The Simulated Data With A Graph",
+    "text": "A.4 Explore The Simulated Data With A Graph\n\nggplot(MICSsimulated,\n       aes(x = cd1, # x is spanking\n           y = aggression, # y is aggression\n           color = factor(country))) + # color is country\n  geom_smooth(method = \"glm\", # glm smoother\n              method.args = list(family = \"binomial\"),\n              alpha = .1) + # transparency for CI's\n  labs(title = \"Aggression as a Function of Spanking\",\n       x = \"spank\",\n       y = \"aggression\") +\n  scale_color_viridis_d(name = \"Country\") + # nice colors\n  theme_minimal()\n\n`geom_smooth()` using formula = 'y ~ x'"
+  },
+  {
+    "objectID": "simulate-data.html#explore-the-simulated-data-with-a-logistic-regression",
+    "href": "simulate-data.html#explore-the-simulated-data-with-a-logistic-regression",
+    "title": "Appendix A — Simulating MICS Data",
+    "section": "A.5 Explore The Simulated Data With A Logistic Regression",
+    "text": "A.5 Explore The Simulated Data With A Logistic Regression\n\nfit1 <- glmer(aggression ~ cd1 + cd2 + cd3 + cd4 +\n                (1 | country), \n              family = \"binomial\",\n              data = MICSsimulated)\n\ntab_model(fit1) # nice table\n\n\n\n\n \naggression\n\n\nPredictors\nOdds Ratios\nCI\np\n\n\n(Intercept)\n2.13\n1.71 – 2.66\n<0.001\n\n\nspank\n1.21\n1.03 – 1.43\n0.019\n\n\nbeat\n1.47\n1.01 – 2.15\n0.046\n\n\nshout\n1.52\n1.29 – 1.78\n<0.001\n\n\nexplain\n0.66\n0.54 – 0.80\n<0.001\n\n\nRandom Effects\n\n\n\nσ2\n3.29\n\n\n\nτ00 country\n0.04\n\n\nICC\n0.01\n\n\nN country\n30\n\nObservations\n3000\n\n\nMarginal R2 / Conditional R2\n0.025 / 0.037"
+  },
+  {
+    "objectID": "simulate-data.html#write-data-to-various-formats",
+    "href": "simulate-data.html#write-data-to-various-formats",
+    "title": "Appendix A — Simulating MICS Data",
+    "section": "A.6 Write data to various formats",
+    "text": "A.6 Write data to various formats\n\nsave(MICSsimulated, \n     file = \"./simulate-data/MICSsimulated.RData\") # R\n\nwrite_dta(MICSsimulated, \n          \"./simulate-data/MICSsimulated.dta\") # Stata\n\nwrite_sav(MICSsimulated, \n          \"./simulate-data/MICSsimulated.sav\") # SPSS\n\n\n\n\n\nKreft, I., & de Leeuw, J. (1998). Introducing multilevel modeling. SAGE Publications. https://doi.org/10.4135/9781849209366\n\n\nLuke, D. (2004). Multilevel modeling. SAGE Publications, Inc. https://doi.org/10.4135/9781412985147\n\n\nRabe-Hesketh, S., & Skrondal, A. (2022). Multilevel and longitudinal modeling using Stata. In Stata Press (4th ed.). Stata Press.\n\n\nRaudenbush, S. W., & Bryk, A. S. (2002). Hierarchical linear models: Applications and data analysis methods (pp. xxiv, 485 p.). Sage Publications.\n\n\nSinger, J. D., & Willett, J. B. (2003). Applied longitudinal data analysis : Modeling change and event occurrence. In Applied longitudinal data analysis : modeling change and event occurrence. Oxford University Press."
   }
 ]
