@@ -1,3 +1,7 @@
+# render website
+
+system("quarto render")
+
 # publish to quarto
 
 system("quarto publish quarto-pub")
