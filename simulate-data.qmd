@@ -4,7 +4,7 @@ This appendix details the process of creating the simulated MICS data that is em
 
 MICS data are freely available, but usage of MICS requires completing a user agreement, and registering for a user account, on the MICS website, and thus MICS data should not be shared openly on a public website. 
 
-This Appendix is highly technical. It is not necesary to understand this Appendix to benefit from the rest of this website. However, the details of creating this simulated data may be of interest to some users. 
+This Appendix is highly technical. It is not necessary to understand this Appendix to benefit from the rest of this website. However, the details of creating this simulated data may be of interest to some users. 
 
 ## Call Relevant Libraries
 
@@ -37,7 +37,7 @@ library(sjPlot) # nice tables
 
 Because simulation is a random process, we set a *random seed* so that the simulation produces the same data set each time it is run.
 
-We are going to simulate data with 30 countries, and 100 individuals  per country.
+We are going to simulate data with 30 countries, and 100 individuals per country.
 
 ```{r}
 #| code-fold: true
@@ -74,6 +74,14 @@ randomeffects <- data.frame(country, u0, u1) # dataframe of random effects
 ```
 
 ### Level 1
+
+Simulating the Level 1 data is more complex. 
+
+We `uncount` the data by `r N` to create `r N` observations for each country. We then create an id number. 
+
+We create randomly simulated parental discipline variables with proportions similar to those in MICS. 
+
+Lastly, we need to create the dependent variable. Because this is a dichotomous outcome, the process is somewhat complex. We need to craete a linear combination `z`, using regression weights derived from MICS. We then calculate predicted probabilities, and lastly generate a dichotomous `aggression` outcome from those probabilities. 
 
 ```{r}
 #| code-fold: true
@@ -126,9 +134,12 @@ var_label(MICSsimulated$aggression) <- "aggression"
 
 ## Explore The Simulated Data With A Graph
 
+Exploring the simulated data with a graph helps us to ensure that we have simulated plausible data. 
+
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
+#| message: false
 
 ggplot(MICSsimulated,
        aes(x = cd1, # x is spanking
@@ -147,6 +158,8 @@ ggplot(MICSsimulated,
 
 ## Explore The Simulated Data With A Logistic Regression 
 
+Similarly, exploring the data with a logistic regression confirms that we have created plausible data. 
+
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
@@ -156,11 +169,14 @@ fit1 <- glmer(aggression ~ cd1 + cd2 + cd3 + cd4 +
               family = "binomial",
               data = MICSsimulated)
 
-tab_model(fit1) # nice table
+tab_model(fit1, # nice table
+          transform = NULL) # untransformed estimates
 
 ```
 
 ## Write data to various formats
+
+Lastly, we write the data out to various formats: R, Stata, and SPSS.
 
 ```{r}
 #| code-fold: true

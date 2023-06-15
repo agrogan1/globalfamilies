@@ -294,7 +294,7 @@ div.csl-indent {
 
 <p>This appendix details the process of creating the simulated MICS data that is employed in the examples on this website.</p>
 <p>MICS data are freely available, but usage of MICS requires completing a user agreement, and registering for a user account, on the MICS website, and thus MICS data should not be shared openly on a public website.</p>
-<p>This Appendix is highly technical. It is not necesary to understand this Appendix to benefit from the rest of this website. However, the details of creating this simulated data may be of interest to some users.</p>
+<p>This Appendix is highly technical. It is not necessary to understand this Appendix to benefit from the rest of this website. However, the details of creating this simulated data may be of interest to some users.</p>
 <section id="call-relevant-libraries" class="level2" data-number="A.1">
 <h2 data-number="A.1" class="anchored" data-anchor-id="call-relevant-libraries"><span class="header-section-number">A.1</span> Call Relevant Libraries</h2>
 <p>We need to call a number of relevant R libraries to simulate the data.</p>
@@ -336,9 +336,9 @@ div.csl-indent {
 </section>
 <section id="simulate-data-based-on-mics" class="level2" data-number="A.3">
 <h2 data-number="A.3" class="anchored" data-anchor-id="simulate-data-based-on-mics"><span class="header-section-number">A.3</span> Simulate Data Based on MICS</h2>
+<p>This is multilevel data where individuals are nested, or clustered, inside countries. Excellent technical and pedagogical discussions of multilevel models can be found in <span class="citation" data-cites="Raudenbush2002">Raudenbush &amp; Bryk (<a href="#ref-Raudenbush2002" role="doc-biblioref">2002</a>)</span>, <span class="citation" data-cites="Singer2003">Singer &amp; Willett (<a href="#ref-Singer2003" role="doc-biblioref">2003</a>)</span>, <span class="citation" data-cites="RabeHesketh2022">Rabe-Hesketh &amp; Skrondal (<a href="#ref-RabeHesketh2022" role="doc-biblioref">2022</a>)</span>, <span class="citation" data-cites="Luke2004">Luke (<a href="#ref-Luke2004" role="doc-biblioref">2004</a>)</span>, and <span class="citation" data-cites="Kreft1998">Kreft &amp; de Leeuw (<a href="#ref-Kreft1998" role="doc-biblioref">1998</a>)</span>.</p>
 <section id="level-2" class="level3" data-number="A.3.1">
 <h3 data-number="A.3.1" class="anchored" data-anchor-id="level-2"><span class="header-section-number">A.3.1</span> Level 2</h3>
-<p>This is multilevel data where individuals are nested, or clustered, inside countries. Excellent technical and pedagogical discussions of multilevel models can be found in <span class="citation" data-cites="Raudenbush2002">Raudenbush &amp; Bryk (<a href="#ref-Raudenbush2002" role="doc-biblioref">2002</a>)</span>; <span class="citation" data-cites="Singer2003">Singer &amp; Willett (<a href="#ref-Singer2003" role="doc-biblioref">2003</a>)</span>; <span class="citation" data-cites="RabeHesketh2022">Rabe-Hesketh &amp; Skrondal (<a href="#ref-RabeHesketh2022" role="doc-biblioref">2022</a>)</span>; <span class="citation" data-cites="Luke2004">Luke (<a href="#ref-Luke2004" role="doc-biblioref">2004</a>)</span>; <span class="citation" data-cites="Kreft1998">Kreft &amp; de Leeuw (<a href="#ref-Kreft1998" role="doc-biblioref">1998</a>)</span>.</p>
 <p>Simulating the second level of the data is relatively easy. We simply need to provide the number of countries, and then generate random effects for each country. Random effects are discussed in the above references, but essentially represent country level differences in the data.</p>
 <div class="cell">
 <details>
@@ -355,7 +355,13 @@ div.csl-indent {
 </section>
 <section id="level-1" class="level3" data-number="A.3.2">
 <h3 data-number="A.3.2" class="anchored" data-anchor-id="level-1"><span class="header-section-number">A.3.2</span> Level 1</h3>
+<p>Simulating the Level 1 data is more complex.</p>
+<p>We <code>uncount</code> the data by 100 to create 100 observations for each country. We then create an id number.</p>
+<p>We create randomly simulated parental discipline variables with proportions similar to those in MICS.</p>
+<p>Lastly, we need to create the dependent variable. Because this is a dichotomous outcome, the process is somewhat complex. We need to craete a linear combination <code>z</code>, using regression weights derived from MICS. We then calculate predicted probabilities, and lastly generate a dichotomous <code>aggression</code> outcome from those probabilities.</p>
 <div class="cell">
+<details>
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>MICSsimulated <span class="ot">&lt;-</span> randomeffects <span class="sc">%&gt;%</span> </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">uncount</span>(N) <span class="sc">%&gt;%</span> <span class="co"># N individuals / country</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">row_number</span>()) <span class="sc">%&gt;%</span> <span class="co"># unique id</span></span>
@@ -374,11 +380,15 @@ div.csl-indent {
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(id, country, </span>
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>         cd1, cd2, cd3, cd4, </span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>         aggression)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="variable-labels" class="level3" data-number="A.3.3">
 <h3 data-number="A.3.3" class="anchored" data-anchor-id="variable-labels"><span class="header-section-number">A.3.3</span> Variable Labels</h3>
+<p>We add variable labels to the data which will help us to understand the data as we analyze it.</p>
 <div class="cell">
+<details>
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>id) <span class="ot">&lt;-</span> <span class="st">"id"</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>country) <span class="ot">&lt;-</span> <span class="st">"country"</span></span>
@@ -392,12 +402,16 @@ div.csl-indent {
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>cd4) <span class="ot">&lt;-</span> <span class="st">"explain"</span></span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>aggression) <span class="ot">&lt;-</span> <span class="st">"aggression"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 </section>
 <section id="explore-the-simulated-data-with-a-graph" class="level2" data-number="A.4">
 <h2 data-number="A.4" class="anchored" data-anchor-id="explore-the-simulated-data-with-a-graph"><span class="header-section-number">A.4</span> Explore The Simulated Data With A Graph</h2>
+<p>Exploring the simulated data with a graph helps us to ensure that we have simulated plausible data.</p>
 <div class="cell">
+<details>
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(MICSsimulated,</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> cd1, <span class="co"># x is spanking</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> aggression, <span class="co"># y is aggression</span></span>
@@ -410,9 +424,7 @@ div.csl-indent {
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"aggression"</span>) <span class="sc">+</span></span>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>(<span class="at">name =</span> <span class="st">"Country"</span>) <span class="sc">+</span> <span class="co"># nice colors</span></span>
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
+</details>
 <div class="cell-output-display">
 <p><img src="simulate-data_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -420,13 +432,17 @@ div.csl-indent {
 </section>
 <section id="explore-the-simulated-data-with-a-logistic-regression" class="level2" data-number="A.5">
 <h2 data-number="A.5" class="anchored" data-anchor-id="explore-the-simulated-data-with-a-logistic-regression"><span class="header-section-number">A.5</span> Explore The Simulated Data With A Logistic Regression</h2>
+<p>Similarly, exploring the data with a logistic regression confirms that we have created plausible data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">glmer</span>(aggression <span class="sc">~</span> cd1 <span class="sc">+</span> cd2 <span class="sc">+</span> cd3 <span class="sc">+</span> cd4 <span class="sc">+</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                (<span class="dv">1</span> <span class="sc">|</span> country), </span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">family =</span> <span class="st">"binomial"</span>,</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> MICSsimulated)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tab_model</span>(fit1) <span class="co"># nice table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">glmer</span>(aggression <span class="sc">~</span> cd1 <span class="sc">+</span> cd2 <span class="sc">+</span> cd3 <span class="sc">+</span> cd4 <span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                (<span class="dv">1</span> <span class="sc">|</span> country), </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">family =</span> <span class="st">"binomial"</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> MICSsimulated)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tab_model</span>(fit1) <span class="co"># nice table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 
 <table style="border-collapse:collapse; border:none;">
@@ -506,15 +522,19 @@ div.csl-indent {
 </section>
 <section id="write-data-to-various-formats" class="level2" data-number="A.6">
 <h2 data-number="A.6" class="anchored" data-anchor-id="write-data-to-various-formats"><span class="header-section-number">A.6</span> Write data to various formats</h2>
+<p>Lastly, we write the data out to various formats: R, Stata, and SPSS.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(MICSsimulated, </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">file =</span> <span class="st">"./simulate-data/MICSsimulated.RData"</span>) <span class="co"># R</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write_dta</span>(MICSsimulated, </span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>          <span class="st">"./simulate-data/MICSsimulated.dta"</span>) <span class="co"># Stata</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">write_sav</span>(MICSsimulated, </span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>          <span class="st">"./simulate-data/MICSsimulated.sav"</span>) <span class="co"># SPSS</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(MICSsimulated, </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">file =</span> <span class="st">"./simulate-data/MICSsimulated.RData"</span>) <span class="co"># R</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write_dta</span>(MICSsimulated, </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>          <span class="st">"./simulate-data/MICSsimulated.dta"</span>) <span class="co"># Stata</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">write_sav</span>(MICSsimulated, </span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>          <span class="st">"./simulate-data/MICSsimulated.sav"</span>) <span class="co"># SPSS</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 
 
