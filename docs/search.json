@@ -14,13 +14,6 @@
     "text": "Julie Ma, Principal Investigator\nAssociate Professor of Social Work, UM-Flint\nProfessor Ma’s research interests center around the effects of neighborhood disadvantage and negative parenting on the well-being of children. Her research builds on her experience in parent education programs that serve families in marginalized communities in Michigan. Much of her current research focuses on the risks of negative contextual and family influences such as neighborhood poverty and disorganization, and parental corporal punishment on behavior problems and maltreatment in early childhood.\nAndy Grogan-Kaylor, Co-Investigator\nSandra K. Danziger Collegiate Professor, Professor of Social Work\nProfessor Grogan-Kaylor’s research focuses on knowledge development and intervention research on children and families with the aim of reducing violence against children and improving family and child wellbeing. Grogan-Kaylor’s current research projects examine parenting behaviors such as physical punishment and parental expressions of emotional warmth and support, and their effects on children’s aggression, antisocial behavior, anxiety, and depression.\nShawna Lee, Co-Investigator\nProfessor of Social Work\nProfessor Lee is a professor at the University of Michigan School of Social Work. She is the director of the Parenting in Context Research Lab and the director of the Program Evaluation Group at the School. Lee has published on topics related to child maltreatment, fathers’ parenting, father-child relationships, parenting stress and family functioning, and parental discipline. Her recent research focuses on parenting and stress during the COVID-19 pandemic."
   },
   {
-    "objectID": "simulate-data.html",
-    "href": "simulate-data.html",
-    "title": "Appendix A — Simulating MICS Data",
-    "section": "",
-    "text": "B Write data to various formats"
-  },
-  {
     "objectID": "simulate-data.html#call-relevant-libraries",
     "href": "simulate-data.html#call-relevant-libraries",
     "title": "Appendix A — Simulating MICS Data",
@@ -53,7 +46,7 @@
     "href": "simulate-data.html#explore-the-simulated-data-with-a-logistic-regression",
     "title": "Appendix A — Simulating MICS Data",
     "section": "A.5 Explore The Simulated Data With A Logistic Regression",
-    "text": "A.5 Explore The Simulated Data With A Logistic Regression\nSimilarly, exploring the data with a logistic regression confirms that we have created plausible data.\n\n\nShow the code\nfit1 <- glmer(aggression ~ cd1 + cd2 + cd3 + cd4 +\n                (1 | country), \n              family = \"binomial\",\n              data = MICSsimulated)\n\ntab_model(fit1) # nice table\n\n\n\n\n\n \naggression\n\n\nPredictors\nOdds Ratios\nCI\np\n\n\n(Intercept)\n2.13\n1.71 – 2.66\n<0.001\n\n\nspank\n1.21\n1.03 – 1.43\n0.019\n\n\nbeat\n1.47\n1.01 – 2.15\n0.046\n\n\nshout\n1.52\n1.29 – 1.78\n<0.001\n\n\nexplain\n0.66\n0.54 – 0.80\n<0.001\n\n\nRandom Effects\n\n\n\nσ2\n3.29\n\n\n\nτ00 country\n0.04\n\n\nICC\n0.01\n\n\nN country\n30\n\nObservations\n3000\n\n\nMarginal R2 / Conditional R2\n0.025 / 0.037"
+    "text": "A.5 Explore The Simulated Data With A Logistic Regression\nSimilarly, exploring the data with a logistic regression confirms that we have created plausible data.\n\n\nShow the code\nfit1 <- glmer(aggression ~ cd1 + cd2 + cd3 + cd4 +\n                (1 | country), \n              family = \"binomial\",\n              data = MICSsimulated)\n\ntab_model(fit1, # nice table\n          transform = NULL) # untransformed estimates\n\n\n\n\n\n \naggression\n\n\nPredictors\nLog-Odds\nCI\np\n\n\n(Intercept)\n0.76\n0.54 – 0.98\n<0.001\n\n\nspank\n0.19\n0.03 – 0.36\n0.019\n\n\nbeat\n0.38\n0.01 – 0.76\n0.046\n\n\nshout\n0.42\n0.26 – 0.58\n<0.001\n\n\nexplain\n-0.42\n-0.62 – -0.23\n<0.001\n\n\nRandom Effects\n\n\n\nσ2\n3.29\n\n\n\nτ00 country\n0.04\n\n\nICC\n0.01\n\n\nN country\n30\n\nObservations\n3000\n\n\nMarginal R2 / Conditional R2\n0.025 / 0.037"
   },
   {
     "objectID": "simulate-data.html#write-data-to-various-formats",
