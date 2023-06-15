@@ -33,7 +33,7 @@ format:
   html:
     theme: 
       light: cosmo
-      dark: quartz
+      dark: vapor
   pdf:
     documentclass: scrreprt
 
