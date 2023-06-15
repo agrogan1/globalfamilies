@@ -19,6 +19,7 @@ book:
   chapters:
     - index.qmd
     - team.qmd
+    - references.qmd
   appendices:
     - simulate-data.qmd
  
