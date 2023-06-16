@@ -1,6 +1,12 @@
 # render website
 
-system("quarto render")
+# system("quarto render")
+
+quarto::quarto_render()
+
+# preview website
+
+quarto::quarto_preview()
 
 # publish to quarto
 
