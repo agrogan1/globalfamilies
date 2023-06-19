@@ -19,6 +19,7 @@ book:
   chapters:
     - index.qmd
     - team.qmd
+    - quick-intro-R.qmd
     - references.qmd
   appendices:
     - simulate-data.qmd

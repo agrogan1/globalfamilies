@@ -1,0 +1,199 @@
+
+# A Quick Introduction to R
+
+## Why?
+
+R has a reputation for being difficult to learn, and a lot of that reputation is deserved. However, it is possible to teach R in an accessible way, and **a little bit of R can take you a long way**.  
+
+[R](https://www.r-project.org/) is open source, and therefore free, statistical software that is particularly good at obtaining, analyzing and visualizing data.
+
+R Commands are stored in a *script* or *code* file that usually ends in .R, e.g. `myscript.R`. The command file is distinct from your actual data, stored in an .RData file, e.g. `mydata.RData`.
+
+A great deal of data analysis and visualization involves the same core set of steps.
+
+Given the fact that we often want to apply the same core set of tasks to new questions and new data, there are ways to overcome the steep learning curve and learn a replicable set of commands that can be applied to problem after problem. **The same 5 to 10 lines of R code can often be tweaked over and over again for multiple projects.**
+
+$$\text{have a question} \rightarrow \text{get data} \rightarrow \text{process and clean data} \rightarrow$$ 
+$$\text{visualize data} \rightarrow \text{analyze data} \rightarrow \text{make conclusions}$$
+
+## Get R
+
+[R](https://www.r-project.org/) is available at [https://www.r-project.org/](https://www.r-project.org/). R is a lot easier to run if you run it from RStudio, [http://www.rstudio.com](http://www.rstudio.com).
+
+## Get Data 
+
+Data often comes from other types of data files like SPSS, Stata, or Excel. Especially in beginning R programming, getting the data into R can be the most complicated part of your program.
+
+```{r, eval=FALSE, echo=TRUE}
+
+load("the/path/to/mydata.Rdata") # data in R format
+
+library(haven) # library for importing data 
+mydata <- read_sav("the/path/to/mySPSSfile.sav") # SPSS
+mydata <- read_dta("the/path/to/myStatafile.dta") # Stata
+
+library(readxl) # library for importing Excel files
+mydata <- read_excel("the/path/to/mySpreadsheet.xls")
+
+save(mydata, file = "mydata.RData") # save in R format
+
+```
+
+```{r, eval = TRUE, echo = FALSE}
+
+N <- 100
+
+x <- rnorm(N, 100, 10)
+
+e <- rnorm(N, 0, 1 )
+
+y <- x + e
+
+z <- rbinom(N, 1, .25) # binary variable
+
+mydata <- data.frame(x,y,z)
+
+```
+
+
+## Process and Clean Data  
+
+The `$` sign is a kind of "connector".  `mydata$x` means:  "The variable `x` in the dataset called `mydata`". 
+
+```{r}
+
+mydata$x[mydata$x == -9] <- NA # missing to NA
+
+```
+
+R makes a strong distinction between *continuous* *numeric* variables that measure  scales like mental health or neighborhood safety, and *categorical* *factor variables* that measure non-ordered categories like religious identity or gender identity. 
+
+Many statistical and graphical procedures are designed to recognize and work with different variable types. You often *don't* need to use all of the options.  e.g. `mydata$w <- factor(mydata$z)` will often work just fine. **Changing variables from factor to numeric, and vice versa can sometimes be the simple solution that solves a lot of problems when you are trying to graph your variables.**
+
+```{r, tidy=FALSE}
+
+mydata$w <- factor(mydata$z, # original numeric variable
+                   levels = c(0, 1, 2), 
+                   labels = c("Group A", "Group B", "Group C"), 
+                   ordered = TRUE) # whether order matters
+
+mydata$z <- as.numeric(mydata$w) # factor to numeric
+
+```
+
+## Visualize Data
+
+### Histogram
+
+```{r, tidy=FALSE}
+#| fig-height: 3
+
+hist(mydata$x, # what I'm graphing
+     main = "your title goes here", # title
+     xlab = "income", # label for x axis
+     col = "blue") # color
+
+```
+
+:::{.callout-tip}
+You often *don't* need to use all of the options.  e.g. `hist(mydata$x)` will work just fine.
+:::
+
+### Barplot 
+
+```{r}
+#| fig-height: 3
+
+barplot(table(mydata$z), # what I'm graphing
+        names.arg = c("Group A", "Group B"), # names
+        main = "your title goes here", # title
+        xlab = "group", # label for x axis
+        col = "gold") # color
+
+```
+
+:::{.callout-tip}
+You often *don't* need to use all of the options.  e.g. `barplot(table(mydata$z))` will work just fine.
+:::
+
+### Scatterplot 
+
+```{r, tidy=FALSE}
+#| fig-height: 3
+
+plot(mydata$x, mydata$y, # plot x and y
+     main = "your title goes here", # title
+     xlab = "income", # label for x axis
+     ylab = "mental health", # label for y axis
+     pch = 19, # Plot CHaracter, 19 is filled dots
+     las = 2, # LAbel Style, 2 is "perpendicular"
+     col = "darkgreen") # color
+
+```
+
+:::{.callout-tip}
+You often *don't* need to use all of the options.  e.g. `plot(mydata$x, mydata$y)` will work just fine. 
+:::
+
+:::{.callout-tip}
+When scatterplots have fewer dots than you think they should have, often due to "over-printing", adding some random noise, or "jittering" the dots in the scatterplot may help:  `plot(jitter(mydata$y, factor = 5000) ~ mydata$x)`.  Experiment with different sizes of *factor*.
+:::
+
+## Analyze Data: Descriptive Statistics
+
+```{r}
+
+summary(mydata$x) # for continuous or factor variables
+
+table(mydata$z) # especially suitable for factor variables
+
+```
+
+For another approach to summarizing your data, try:
+
+```{r, eval=FALSE}
+
+library(skimr)
+
+skim(mydata)
+
+skim(mydata$x)
+
+```
+
+```{r, echo=FALSE,eval=FALSE}
+
+## t-Tests and Correlations[^ttest]
+
+# [^ttest]: A t-test is a test of whether there are differences between two groups.  A correlation is a measure, varying between -1 and +1 of the relationship between two continuous variables.
+
+```
+
+```{r, echo = FALSE, eval = FALSE}
+
+t.test(mydata$y ~ mydata$z) # y is numeric; z is a factor
+
+cor(mydata$x, mydata$y) # get the correlation
+
+```
+
+```{r, echo=FALSE,eval=FALSE}
+
+## Regressions[^regression]
+
+[^regression]: A regression is an analysis of the influence of one or more independent variables on an outcome of interest.
+
+```
+
+```{r, echo = FALSE, eval = FALSE}
+
+lm(y ~ x, data = mydata) # regression of y on x
+
+```
+
+
+
+
+
+
+

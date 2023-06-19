@@ -14,6 +14,48 @@
     "text": "Julie Ma, Principal Investigator\nAssociate Professor of Social Work, UM-Flint\nProfessor Ma’s research interests center around the effects of neighborhood disadvantage and negative parenting on the well-being of children. Her research builds on her experience in parent education programs that serve families in marginalized communities in Michigan. Much of her current research focuses on the risks of negative contextual and family influences such as neighborhood poverty and disorganization, and parental corporal punishment on behavior problems and maltreatment in early childhood.\nAndy Grogan-Kaylor, Co-Investigator\nSandra K. Danziger Collegiate Professor, Professor of Social Work\nProfessor Grogan-Kaylor’s research focuses on knowledge development and intervention research on children and families with the aim of reducing violence against children and improving family and child wellbeing. Grogan-Kaylor’s current research projects examine parenting behaviors such as physical punishment and parental expressions of emotional warmth and support, and their effects on children’s aggression, antisocial behavior, anxiety, and depression.\nShawna Lee, Co-Investigator\nProfessor of Social Work\nProfessor Lee is a professor at the University of Michigan School of Social Work. She is the director of the Parenting in Context Research Lab and the director of the Program Evaluation Group at the School. Lee has published on topics related to child maltreatment, fathers’ parenting, father-child relationships, parenting stress and family functioning, and parental discipline. Her recent research focuses on parenting and stress during the COVID-19 pandemic."
   },
   {
+    "objectID": "quick-intro-R.html#why",
+    "href": "quick-intro-R.html#why",
+    "title": "3  A Quick Introduction to R",
+    "section": "3.1 Why?",
+    "text": "3.1 Why?\nR has a reputation for being difficult to learn, and a lot of that reputation is deserved. However, it is possible to teach R in an accessible way, and a little bit of R can take you a long way.\nR is open source, and therefore free, statistical software that is particularly good at obtaining, analyzing and visualizing data.\nR Commands are stored in a script or code file that usually ends in .R, e.g. myscript.R. The command file is distinct from your actual data, stored in an .RData file, e.g. mydata.RData.\nA great deal of data analysis and visualization involves the same core set of steps.\nGiven the fact that we often want to apply the same core set of tasks to new questions and new data, there are ways to overcome the steep learning curve and learn a replicable set of commands that can be applied to problem after problem. The same 5 to 10 lines of R code can often be tweaked over and over again for multiple projects.\n\\[\\text{have a question} \\rightarrow \\text{get data} \\rightarrow \\text{process and clean data} \\rightarrow\\] \\[\\text{visualize data} \\rightarrow \\text{analyze data} \\rightarrow \\text{make conclusions}\\]"
+  },
+  {
+    "objectID": "quick-intro-R.html#get-r",
+    "href": "quick-intro-R.html#get-r",
+    "title": "3  A Quick Introduction to R",
+    "section": "3.2 Get R",
+    "text": "3.2 Get R\nR is available at https://www.r-project.org/. R is a lot easier to run if you run it from RStudio, http://www.rstudio.com."
+  },
+  {
+    "objectID": "quick-intro-R.html#get-data",
+    "href": "quick-intro-R.html#get-data",
+    "title": "3  A Quick Introduction to R",
+    "section": "3.3 Get Data",
+    "text": "3.3 Get Data\nData often comes from other types of data files like SPSS, Stata, or Excel. Especially in beginning R programming, getting the data into R can be the most complicated part of your program.\n\nload(\"the/path/to/mydata.Rdata\") # data in R format\n\nlibrary(haven) # library for importing data \nmydata <- read_sav(\"the/path/to/mySPSSfile.sav\") # SPSS\nmydata <- read_dta(\"the/path/to/myStatafile.dta\") # Stata\n\nlibrary(readxl) # library for importing Excel files\nmydata <- read_excel(\"the/path/to/mySpreadsheet.xls\")\n\nsave(mydata, file = \"mydata.RData\") # save in R format"
+  },
+  {
+    "objectID": "quick-intro-R.html#process-and-clean-data",
+    "href": "quick-intro-R.html#process-and-clean-data",
+    "title": "3  A Quick Introduction to R",
+    "section": "3.4 Process and Clean Data",
+    "text": "3.4 Process and Clean Data\nThe $ sign is a kind of “connector”. mydata$x means: “The variable x in the dataset called mydata”.\n\nmydata$x[mydata$x == -9] <- NA # missing to NA\n\nR makes a strong distinction between continuous numeric variables that measure scales like mental health or neighborhood safety, and categorical factor variables that measure non-ordered categories like religious identity or gender identity.\nMany statistical and graphical procedures are designed to recognize and work with different variable types. You often don’t need to use all of the options. e.g. mydata$w <- factor(mydata$z) will often work just fine. Changing variables from factor to numeric, and vice versa can sometimes be the simple solution that solves a lot of problems when you are trying to graph your variables.\n\nmydata$w <- factor(mydata$z, # original numeric variable\n                   levels = c(0, 1, 2), \n                   labels = c(\"Group A\", \"Group B\", \"Group C\"), \n                   ordered = TRUE) # whether order matters\n\nmydata$z <- as.numeric(mydata$w) # factor to numeric"
+  },
+  {
+    "objectID": "quick-intro-R.html#visualize-data",
+    "href": "quick-intro-R.html#visualize-data",
+    "title": "3  A Quick Introduction to R",
+    "section": "3.5 Visualize Data",
+    "text": "3.5 Visualize Data\n\n3.5.1 Histogram\n\nhist(mydata$x, # what I'm graphing\n     main = \"your title goes here\", # title\n     xlab = \"income\", # label for x axis\n     col = \"blue\") # color\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nYou often don’t need to use all of the options. e.g. hist(mydata$x) will work just fine.\n\n\n\n\n3.5.2 Barplot\n\nbarplot(table(mydata$z), # what I'm graphing\n        names.arg = c(\"Group A\", \"Group B\"), # names\n        main = \"your title goes here\", # title\n        xlab = \"group\", # label for x axis\n        col = \"gold\") # color\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nYou often don’t need to use all of the options. e.g. barplot(table(mydata$z)) will work just fine.\n\n\n\n\n3.5.3 Scatterplot\n\nplot(mydata$x, mydata$y, # plot x and y\n     main = \"your title goes here\", # title\n     xlab = \"income\", # label for x axis\n     ylab = \"mental health\", # label for y axis\n     pch = 19, # Plot CHaracter, 19 is filled dots\n     las = 2, # LAbel Style, 2 is \"perpendicular\"\n     col = \"darkgreen\") # color\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nYou often don’t need to use all of the options. e.g. plot(mydata$x, mydata$y) will work just fine.\n\n\n\n\n\n\n\n\nTip\n\n\n\nWhen scatterplots have fewer dots than you think they should have, often due to “over-printing”, adding some random noise, or “jittering” the dots in the scatterplot may help: plot(jitter(mydata$y, factor = 5000) ~ mydata$x). Experiment with different sizes of factor."
+  },
+  {
+    "objectID": "quick-intro-R.html#analyze-data-descriptive-statistics",
+    "href": "quick-intro-R.html#analyze-data-descriptive-statistics",
+    "title": "3  A Quick Introduction to R",
+    "section": "3.6 Analyze Data: Descriptive Statistics",
+    "text": "3.6 Analyze Data: Descriptive Statistics\n\nsummary(mydata$x) # for continuous or factor variables\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  77.54   90.82   99.62  100.16  108.16  127.57 \n\ntable(mydata$z) # especially suitable for factor variables\n\n\n 1  2 \n76 24 \n\n\nFor another approach to summarizing your data, try:\n\nlibrary(skimr)\n\nskim(mydata)\n\nskim(mydata$x)"
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "References",
