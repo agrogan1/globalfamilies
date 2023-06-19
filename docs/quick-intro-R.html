@@ -251,7 +251,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#why" id="toc-why" class="nav-link active" data-scroll-target="#why"><span class="toc-section-number">3.1</span>  Why?</a></li>
+  <li><a href="#why-use-r" id="toc-why-use-r" class="nav-link active" data-scroll-target="#why-use-r"><span class="toc-section-number">3.1</span>  Why Use R?</a></li>
   <li><a href="#get-r" id="toc-get-r" class="nav-link" data-scroll-target="#get-r"><span class="toc-section-number">3.2</span>  Get R</a></li>
   <li><a href="#get-data" id="toc-get-data" class="nav-link" data-scroll-target="#get-data"><span class="toc-section-number">3.3</span>  Get Data</a></li>
   <li><a href="#process-and-clean-data" id="toc-process-and-clean-data" class="nav-link" data-scroll-target="#process-and-clean-data"><span class="toc-section-number">3.4</span>  Process and Clean Data</a></li>
@@ -285,8 +285,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="why" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="why"><span class="header-section-number">3.1</span> Why?</h2>
+<section id="why-use-r" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="why-use-r"><span class="header-section-number">3.1</span> Why Use R?</h2>
 <p>R has a reputation for being difficult to learn, and a lot of that reputation is deserved. However, it is possible to teach R in an accessible way, and <strong>a little bit of R can take you a long way</strong>.</p>
 <p><a href="https://www.r-project.org/">R</a> is open source, and therefore free, statistical software that is particularly good at obtaining, analyzing and visualizing data.</p>
 <p>R Commands are stored in a <em>script</em> or <em>code</em> file that usually ends in .R, e.g.&nbsp;<code>myscript.R</code>. The command file is distinct from your actual data, stored in an .RData file, e.g.&nbsp;<code>mydata.RData</code>.</p>
@@ -435,13 +435,13 @@ Tip
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mydata<span class="sc">$</span>x) <span class="co"># for continuous or factor variables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  77.54   90.82   99.62  100.16  108.16  127.57 </code></pre>
+  79.51   95.05   99.31  100.25  106.11  126.40 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(mydata<span class="sc">$</span>z) <span class="co"># especially suitable for factor variables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
  1  2 
-76 24 </code></pre>
+64 36 </code></pre>
 </div>
 </div>
 <p>For another approach to summarizing your data, try:</p>
