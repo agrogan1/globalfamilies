@@ -10,11 +10,13 @@ load("./simulate-data/MICSsimulated.RData")
 
 ```
 
+# Variables and Variable Labels
+
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
 
-labelled::look_for(MICSsimulated)
+pander::pander(labelled::look_for(MICSsimulated))
 
 ```
 
@@ -27,7 +29,7 @@ A sample of the data is given below.
 #| tbl-cap: "Simulated Multicountry Data"
 #| code-fold: true
 #| code-summary: "Show the code"
-#| 
+
 pander::pander(head(MICSsimulated))
 
 ```

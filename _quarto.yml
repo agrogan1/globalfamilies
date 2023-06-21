@@ -19,6 +19,7 @@ book:
   chapters:
     - index.qmd
     - team.qmd
+    - simulated-multi-country-data.qmd
     - quick-intro-R.qmd
     - references.qmd
   appendices:
