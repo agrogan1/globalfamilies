@@ -60,7 +60,7 @@
     "href": "quick-intro-R.html#analyze-data-descriptive-statistics",
     "title": "4  A Quick Introduction to R",
     "section": "4.6 Analyze Data: Descriptive Statistics",
-    "text": "4.6 Analyze Data: Descriptive Statistics\n\nsummary(mydata$x) # for continuous or factor variables\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  72.01   93.49  100.38   99.43  105.72  118.58 \n\ntable(mydata$z) # especially suitable for factor variables\n\n\n 1  2 \n81 19 \n\n\nFor another approach to summarizing your data, try:\n\nlibrary(skimr)\n\nskim(mydata)\n\nskim(mydata$x)"
+    "text": "4.6 Analyze Data: Descriptive Statistics\n\nsummary(mydata$x) # for continuous or factor variables\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  70.54   91.29   98.57   99.06  106.36  125.28 \n\ntable(mydata$z) # especially suitable for factor variables\n\n\n 1  2 \n67 33 \n\n\nFor another approach to summarizing your data, try:\n\nlibrary(skimr)\n\nskim(mydata)\n\nskim(mydata$x)"
   },
   {
     "objectID": "references.html",
