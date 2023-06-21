@@ -2,6 +2,14 @@
 
 This website makes use of simulated data. Data come from 30 hypothetical countries. Data contain measures of a few key aspects of parenting[^parenting] or caregiving that have proven salient in the empirical literature on parenting to date. The outcome is `aggression` against other children.
 
+:::{.callout-note collapse="true"}
+## Download The Data
+
+* [R format](https://github.com/agrogan1/globalfamilies/raw/main/simulate-data/MICSsimulated.RData)
+* [Stata Format](https://github.com/agrogan1/globalfamilies/raw/main/simulate-data/MICSsimulated.dta)
+* [SPSS](https://github.com/agrogan1/globalfamilies/raw/main/simulate-data/MICSsimulated.sav)
+:::
+
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
