@@ -1,0 +1,33 @@
+# Simulated Multi-Country Data
+
+This website makes use of simulated data. Data come from 30 hypothetical countries. Data contain measures of a few key aspects of parenting[^parenting] or caregiving that have proven salient in the empirical literature on parenting to date. The outcome is `aggression` against other children.
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+load("./simulate-data/MICSsimulated.RData")
+
+```
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+labelled::look_for(MICSsimulated)
+
+```
+
+[^parenting]: We use the term parenting throughout this site, but are aware that such parenting may come from biological parents, or from other caregivers.
+
+A sample of the data is given below.
+
+```{r}
+#| label: tbl-simulateddata
+#| tbl-cap: "Simulated Multicountry Data"
+#| code-fold: true
+#| code-summary: "Show the code"
+#| 
+pander::pander(head(MICSsimulated))
+
+```
