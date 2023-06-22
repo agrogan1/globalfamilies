@@ -60,10 +60,11 @@ Many statistical and graphical procedures are designed to recognize and work wit
 
 ```{r, tidy=FALSE}
 
-MICSsimulated$cd1 <- factor(MICSsimulated$cd1, # original numeric variable
-                   levels = c(0, 1), 
-                   labels = c("no spank", "spank"), 
-                   ordered = TRUE) # whether order matters
+MICSsimulated$aggression <- 
+  factor(MICSsimulated$aggression, # original numeric variable
+         levels = c(0, 1), 
+         labels = c("no aggression", "aggression"), 
+         ordered = TRUE) # whether order matters
 
 # MICSsimulated$z <- as.numeric(MICSsimulated$w) # factor to numeric
 
@@ -77,8 +78,7 @@ MICSsimulated$cd1 <- factor(MICSsimulated$cd1, # original numeric variable
 #| fig-height: 3
 
 barplot(table(MICSsimulated$aggression), # what I'm graphing
-        names.arg = c("No Aggression", "Aggression"), # names
-        main = "Aggression Outcome in Data", # title
+        main = "Child Displays Aggression", # title
         xlab = "Aggression", # label for x axis
         col = "gold") # color
 
@@ -99,7 +99,9 @@ table(mydata$z) # especially suitable for factor variables
 ```
 
 ```{r}
-table(MICSsimulated$cd1)
+
+table(MICSsimulated$aggression)
+
 ```
 
 
