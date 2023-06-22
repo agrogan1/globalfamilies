@@ -59,17 +59,21 @@ This is multilevel data where individuals are nested, or clustered, inside count
 
 Simulating the second level of the data is relatively easy. We simply need to provide the number of countries, and then generate random effects for each country. Random effects are discussed in the above references, but essentially represent country level differences in the data.
 
+We also create `GII`, a gender inequality index variable, since this is a country level, or Level 2 variable. 
+
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
 
 country <- seq(1:N_countries) # sequence 1 to 30
 
+GII <- rbinom(N_countries, 100, .25) # gender inequality index
+
 u0 <- rnorm(N_countries, 0, .25) # random intercept
 
 u1 <- rnorm(N_countries, 0, .05) # random slope
 
-randomeffects <- data.frame(country, u0, u1) # dataframe of random effects
+randomeffects <- data.frame(country, GII, u0, u1) # dataframe of random effects
 
 ```
 
@@ -95,6 +99,7 @@ MICSsimulated <- randomeffects %>%
          cd3 = rbinom(N * N_countries, 1, .64), # shout
          cd4 = rbinom(N * N_countries, 1, .78)) %>% # explain
   mutate(z = 0 + # linear combination based on MICS
+           .01 * GII +
            .23 * cd1 +
            .52 * cd2 +
            .42 * cd3 +
@@ -102,7 +107,7 @@ MICSsimulated <- randomeffects %>%
            u0) %>%
   mutate(p = exp(z) / (1 + exp(z))) %>% # probability
   mutate(aggression = rbinom(N * N_countries, 1, p)) %>% # binomial y
-  select(id, country, 
+  select(id, country, GII,
          cd1, cd2, cd3, cd4, 
          aggression)
 
@@ -120,6 +125,8 @@ var_label(MICSsimulated$id) <- "id"
 
 var_label(MICSsimulated$country) <- "country"
 
+var_label(MICSsimulated$GII) <- "gender inequality index"
+
 var_label(MICSsimulated$cd1) <- "spank"
 
 var_label(MICSsimulated$cd2) <- "beat"
@@ -129,6 +136,8 @@ var_label(MICSsimulated$cd3) <- "shout"
 var_label(MICSsimulated$cd4) <- "explain"
 
 var_label(MICSsimulated$aggression) <- "aggression"
+
+pander::pander(labelled::look_for(MICSsimulated)[1:5]) # list out variable labels
 
 ```
 
@@ -164,10 +173,11 @@ Similarly, exploring the data with a logistic regression confirms that we have c
 #| code-fold: true
 #| code-summary: "Show the code"
 
-fit1 <- glmer(aggression ~ cd1 + cd2 + cd3 + cd4 +
+fit1 <- glmer(aggression ~ cd1 + cd2 + cd3 + cd4 + GII +
                 (1 | country), 
               family = "binomial",
-              data = MICSsimulated)
+              data = MICSsimulated,
+              control = glmerControl(optimizer ="bobyqa"))
 
 tab_model(fit1, # nice table
           transform = NULL) # untransformed estimates

@@ -18,17 +18,19 @@ load("./simulate-data/MICSsimulated.RData")
 
 ```
 
-# Variables and Variable Labels
+## Variables and Variable Labels
 
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
 
-pander::pander(labelled::look_for(MICSsimulated))
+pander::pander(labelled::look_for(MICSsimulated)[1:5])
 
 ```
 
 [^parenting]: We use the term parenting throughout this site, but are aware that such parenting may come from biological parents, or from other caregivers.
+
+## A Sample Of The Data
 
 A sample of the data is given below.
 
