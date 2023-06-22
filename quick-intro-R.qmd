@@ -21,13 +21,17 @@ $$\text{visualize data} \rightarrow \text{analyze data} \rightarrow \text{make c
 
 ## Get Data 
 
-Data often comes from other types of data files like SPSS, Stata, or Excel. Especially in beginning R programming, getting the data into R can be the most complicated part of your program.
+Data may already be in R format, or may come from other types of data files like SPSS, Stata, or Excel. Especially in beginning R programming, getting the data into R can be the most complicated part of your program.
+
+### Data in R Format
 
 ```{r}
 
 load("./simulate-data/MICSsimulated.RData") # data in R format
 
 ```
+
+### Data in Other Formats
 
 If data are in other formats, slightly different code may be required. 
 
@@ -46,6 +50,8 @@ save(mydata, file = "mydata.RData") # save in R format
 
 ## Process and Clean Data  
 
+### The `$` Sign
+
 The `$` sign is a kind of "connector".  `mydata$x` means:  "The variable `x` in the dataset called `mydata`". 
 
 ```{r}
@@ -53,6 +59,9 @@ The `$` sign is a kind of "connector".  `mydata$x` means:  "The variable `x` in 
 MICSsimulated$cd1[MICSsimulated$cd1 == -9] <- NA # missing (-9) to NA
 
 ```
+
+
+### Numeric and Factor Variables
 
 R makes a strong distinction between *continuous* *numeric* variables that measure  scales like mental health or neighborhood safety, and *categorical* *factor variables* that measure non-ordered categories like religious identity or gender identity. 
 

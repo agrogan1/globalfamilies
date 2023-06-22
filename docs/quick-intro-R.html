@@ -258,8 +258,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#why-use-r" id="toc-why-use-r" class="nav-link active" data-scroll-target="#why-use-r"><span class="toc-section-number">4.1</span>  Why Use R?</a></li>
   <li><a href="#get-r" id="toc-get-r" class="nav-link" data-scroll-target="#get-r"><span class="toc-section-number">4.2</span>  Get R</a></li>
-  <li><a href="#get-data" id="toc-get-data" class="nav-link" data-scroll-target="#get-data"><span class="toc-section-number">4.3</span>  Get Data</a></li>
-  <li><a href="#process-and-clean-data" id="toc-process-and-clean-data" class="nav-link" data-scroll-target="#process-and-clean-data"><span class="toc-section-number">4.4</span>  Process and Clean Data</a></li>
+  <li><a href="#get-data" id="toc-get-data" class="nav-link" data-scroll-target="#get-data"><span class="toc-section-number">4.3</span>  Get Data</a>
+  <ul class="collapse">
+  <li><a href="#data-in-r-format" id="toc-data-in-r-format" class="nav-link" data-scroll-target="#data-in-r-format"><span class="toc-section-number">4.3.1</span>  Data in R Format</a></li>
+  <li><a href="#data-in-other-formats" id="toc-data-in-other-formats" class="nav-link" data-scroll-target="#data-in-other-formats"><span class="toc-section-number">4.3.2</span>  Data in Other Formats</a></li>
+  </ul></li>
+  <li><a href="#process-and-clean-data" id="toc-process-and-clean-data" class="nav-link" data-scroll-target="#process-and-clean-data"><span class="toc-section-number">4.4</span>  Process and Clean Data</a>
+  <ul class="collapse">
+  <li><a href="#the-sign" id="toc-the-sign" class="nav-link" data-scroll-target="#the-sign"><span class="toc-section-number">4.4.1</span>  The <code>$</code> Sign</a></li>
+  <li><a href="#numeric-and-factor-variables" id="toc-numeric-and-factor-variables" class="nav-link" data-scroll-target="#numeric-and-factor-variables"><span class="toc-section-number">4.4.2</span>  Numeric and Factor Variables</a></li>
+  </ul></li>
   <li><a href="#visualize-data" id="toc-visualize-data" class="nav-link" data-scroll-target="#visualize-data"><span class="toc-section-number">4.5</span>  Visualize Data</a>
   <ul class="collapse">
   <li><a href="#histogram" id="toc-histogram" class="nav-link" data-scroll-target="#histogram"><span class="toc-section-number">4.5.1</span>  Histogram</a></li>
@@ -304,10 +312,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="get-data" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="get-data"><span class="header-section-number">4.3</span> Get Data</h2>
-<p>Data often comes from other types of data files like SPSS, Stata, or Excel. Especially in beginning R programming, getting the data into R can be the most complicated part of your program.</p>
+<p>Data may already be in R format, or may come from other types of data files like SPSS, Stata, or Excel. Especially in beginning R programming, getting the data into R can be the most complicated part of your program.</p>
+<section id="data-in-r-format" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="data-in-r-format"><span class="header-section-number">4.3.1</span> Data in R Format</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"./simulate-data/MICSsimulated.RData"</span>) <span class="co"># data in R format</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="data-in-other-formats" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="data-in-other-formats"><span class="header-section-number">4.3.2</span> Data in Other Formats</h3>
 <p>If data are in other formats, slightly different code may be required.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven) <span class="co"># library for importing data </span></span>
@@ -320,12 +333,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(mydata, <span class="at">file =</span> <span class="st">"mydata.RData"</span>) <span class="co"># save in R format</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
+</section>
 <section id="process-and-clean-data" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="process-and-clean-data"><span class="header-section-number">4.4</span> Process and Clean Data</h2>
+<section id="the-sign" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="the-sign"><span class="header-section-number">4.4.1</span> The <code>$</code> Sign</h3>
 <p>The <code>$</code> sign is a kind of “connector”. <code>mydata$x</code> means: “The variable <code>x</code> in the dataset called <code>mydata</code>”.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>MICSsimulated<span class="sc">$</span>cd1[MICSsimulated<span class="sc">$</span>cd1 <span class="sc">==</span> <span class="sc">-</span><span class="dv">9</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span> <span class="co"># missing (-9) to NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="numeric-and-factor-variables" class="level3" data-number="4.4.2">
+<h3 data-number="4.4.2" class="anchored" data-anchor-id="numeric-and-factor-variables"><span class="header-section-number">4.4.2</span> Numeric and Factor Variables</h3>
 <p>R makes a strong distinction between <em>continuous</em> <em>numeric</em> variables that measure scales like mental health or neighborhood safety, and <em>categorical</em> <em>factor variables</em> that measure non-ordered categories like religious identity or gender identity.</p>
 <p>Many statistical and graphical procedures are designed to recognize and work with different variable types. You often <em>don’t</em> need to use all of the options. e.g.&nbsp;<code>mydata$w &lt;- factor(mydata$z)</code> will often work just fine. <strong>Changing variables from factor to numeric, and vice versa can sometimes be the simple solution that solves a lot of problems when you are trying to graph your variables.</strong></p>
 <div class="cell">
@@ -337,6 +356,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># MICSsimulated$z &lt;- as.numeric(MICSsimulated$w) # factor to numeric</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
 </section>
 <section id="visualize-data" class="level2" data-number="4.5">
 <h2 data-number="4.5" class="anchored" data-anchor-id="visualize-data"><span class="header-section-number">4.5</span> Visualize Data</h2>
