@@ -94,7 +94,7 @@ MICSsimulated <- randomeffects %>%
          cd2 = rbinom(N * N_countries, 1, .05), # beat
          cd3 = rbinom(N * N_countries, 1, .64), # shout
          cd4 = rbinom(N * N_countries, 1, .78)) %>% # explain
-  mutate(z = .7 + # linear combination based on MICS
+  mutate(z = 0 + # linear combination based on MICS
            .23 * cd1 +
            .52 * cd2 +
            .42 * cd3 +
