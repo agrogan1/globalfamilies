@@ -58,7 +58,7 @@ R makes a strong distinction between *continuous* *numeric* variables that measu
 
 Many statistical and graphical procedures are designed to recognize and work with different variable types. You often *don't* need to use all of the options.  e.g. `mydata$w <- factor(mydata$z)` will often work just fine. **Changing variables from factor to numeric, and vice versa can sometimes be the simple solution that solves a lot of problems when you are trying to graph your variables.**
 
-```{r, tidy=FALSE}
+```{r}
 
 MICSsimulated$aggression <- 
   factor(MICSsimulated$aggression, # original numeric variable
@@ -71,6 +71,23 @@ MICSsimulated$aggression <-
 ```
 
 ## Visualize Data
+
+### Histogram
+
+```{r}
+#| fig-height: 3
+
+hist(MICSsimulated$GII, # what I'm graphing
+        main = "Gender Inequality Index", # title
+        xlab = "GII", # label for x axis
+        col = "blue") # color
+
+```
+
+:::{.callout-tip}
+You often *don't* need to use all of the options.  e.g. `hist(mydata$x)` will work just fine.
+:::
+
 
 ### Barplot 
 
@@ -99,6 +116,8 @@ table(mydata$z) # especially suitable for factor variables
 ```
 
 ```{r}
+
+summary(MICSsimulated$GII)
 
 table(MICSsimulated$aggression)
 
