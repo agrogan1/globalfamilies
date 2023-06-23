@@ -67,7 +67,7 @@
     "href": "quick-intro-R.html#analyze-data-descriptive-statistics",
     "title": "4  A Quick Introduction to R",
     "section": "4.6 Analyze Data: Descriptive Statistics",
-    "text": "4.6 Analyze Data: Descriptive Statistics\n\nsummary(mydata$x) # for continuous or factor variables\n\ntable(mydata$z) # especially suitable for factor variables\n\n\nsummary(MICSsimulated$GII)\ntable(MICSsimulated$aggression)\n\n\n?(caption)\n\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n   15.0    22.0    24.0    24.2    27.0    31.0 \n\n\n\n\n\nno aggression    aggression \n         1274          1726"
+    "text": "4.6 Analyze Data: Descriptive Statistics\n\nsummary(mydata$x) # for continuous or factor variables\n\ntable(mydata$z) # especially suitable for factor variables\n\n\nsummary(MICSsimulated$GII)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n   15.0    22.0    24.0    24.2    27.0    31.0 \n\ntable(MICSsimulated$aggression)\n\n\nno aggression    aggression \n         1274          1726"
   },
   {
     "objectID": "references.html",
