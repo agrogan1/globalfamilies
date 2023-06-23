@@ -85,6 +85,8 @@ MICSsimulated$aggression <-
 
 ```{r}
 #| fig-height: 3
+#| label: fig-hist
+#| fig-cap: "Histogram of Gender Inequality Index"
 
 hist(MICSsimulated$GII, # what I'm graphing
         main = "Gender Inequality Index", # title
@@ -102,6 +104,8 @@ You often *don't* need to use all of the options.  e.g. `hist(mydata$x)` will wo
 
 ```{r}
 #| fig-height: 3
+#| label: fig-barplot
+#| fig-cap: "Barplot of Aggression"
 
 barplot(table(MICSsimulated$aggression), # what I'm graphing
         main = "Child Displays Aggression", # title

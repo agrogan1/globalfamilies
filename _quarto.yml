@@ -38,6 +38,9 @@ format:
       dark: vapor
   pdf:
     documentclass: scrreprt
+    lot: true
+    lof: true
+
 
 
 

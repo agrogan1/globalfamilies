@@ -23,6 +23,8 @@ load("./simulate-data/MICSsimulated.RData")
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
+#| label: tbl-varlist
+#| tbl-cap: Variables in Simulated Multicountry Data
 
 pander::pander(labelled::look_for(MICSsimulated)[1:5])
 

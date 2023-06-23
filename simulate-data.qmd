@@ -137,6 +137,14 @@ var_label(MICSsimulated$cd4) <- "explain"
 
 var_label(MICSsimulated$aggression) <- "aggression"
 
+```
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+#| label: tbl-varlabels
+#| tbl-cap: "Variable Labels"
+
 pander::pander(labelled::look_for(MICSsimulated)[1:5]) # list out variable labels
 
 ```
@@ -149,6 +157,8 @@ Exploring the simulated data with a graph helps us to ensure that we have simula
 #| code-fold: true
 #| code-summary: "Show the code"
 #| message: false
+#| label: fig-p1
+#| fig-cap: "Graph of Simulated Data"
 
 ggplot(MICSsimulated,
        aes(x = cd1, # x is spanking
@@ -172,6 +182,9 @@ Similarly, exploring the data with a logistic regression confirms that we have c
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
+#| label: tbl-fit1
+#| tbl-cap: Multilevel Logistic Regression
+#| warning: false
 
 fit1 <- glmer(aggression ~ cd1 + cd2 + cd3 + cd4 + GII +
                 (1 | country), 
