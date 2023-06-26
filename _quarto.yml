@@ -22,6 +22,7 @@ book:
     - simulated-multi-country-data.qmd
     - quick-intro-R.qmd
     - quick-intro-ggplot2.qmd
+    - quantitative-data-analysis.qmd
     - references.qmd
   appendices:
     - simulate-data.qmd

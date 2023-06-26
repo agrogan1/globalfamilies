@@ -8,7 +8,7 @@ $$\text{have a question} \rightarrow \text{get data} \rightarrow \text{process a
 
 ## Some Tools for Analysis
 
-Below we describe some simple data cleaning with R. We begin, however, by comparing several different tools for analysis inlcuding: Excel, Google Sheets, R, and Stata.
+Below we describe some simple data cleaning with R. We begin, however, by comparing several different tools for analysis including: Excel, Google Sheets, R, and Stata.
 
 ----------------------------------------------------------------------------
 Tool     Cost         Ease         Analysis       Suitability   Keep                 
@@ -56,14 +56,14 @@ labelled::look_for(MICSsimulated) # look at data
 
 There are some basic data cleaning steps that are common to many projects.
 
-1. Only keep the variables of interest.
-2. Add variable labels (if we can).
-3. Add value labels (if we can).
-4. Recode outliers, values that are errors, or values that should be coded as missing
+* Only keep the variables of interest. @sec-onlykeep
+* Add variable labels (if we can). @sec-addvarlabels
+* Add value labels (if we can). @sec-addvaluelabels
+* Recode outliers, values that are errors, or values that should be coded as missing @sec-recodes
 
 > Much of R's functionality is accomplished through writing *code*, that is saved in a *script*. Notice how--as our tasks get more and more complicated--the saved script provides documentation for the decisions that we have made with the data.
 
-#### 1. Only keep the variables of interest.
+#### Only keep the variables of interest. {#sec-onlykeep}
 
 > We can easily accomplish this with the `subset` function
 
@@ -80,7 +80,7 @@ pander::pander(head(mynewdata))
 
 ```
 
-#### 2. Add variable labels (if we can).
+#### Add variable labels (if we can). {#sec-addvarlabels}
 
 > Adding *variable labels* is still somewhat new in R. The `labelled` library allows us to add or change variable labels. However, not every library in R recognizes *variable labels*.
 
@@ -97,7 +97,7 @@ var_label(MICSsimulated$cd4) <- "explain"
 ```
 
 
-#### 3. Add value labels (if we can).
+#### Add value labels (if we can). {#sec-addvaluelabels}
 
 > In contrast, *value labels* are straightforward in R, and can be accomplished by creating a *factor variable*. Below we demonstrate how to do this with the happy variable.
 
@@ -116,7 +116,7 @@ pander::pander(head(MICSsimulated))
 
 ```
 
-#### 4. Recode outliers, values that are errors, or values that should be coded as missing.
+#### Recode outliers, values that are errors, or values that should be coded as missing. {#sec-recodes}
 
 > We can easily accomplish this using Base R's syntax for recoding: `data$variable[rule] <- newvalue`.
 
