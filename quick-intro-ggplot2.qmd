@@ -49,6 +49,7 @@ load("./simulate-data/MICSsimulated.RData") # data in R format
 #| fig-height: 3
 #| label: fig-ggplot-histogram
 #| fig-cap: "Histogram of Gender Inequality Index"
+#| message: false
 
 # anything that starts with a '#' is a comment
 
