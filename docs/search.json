@@ -117,5 +117,40 @@
     "title": "Appendix A — Simulating MICS Data",
     "section": "A.6 Write data to various formats",
     "text": "A.6 Write data to various formats\nLastly, we write the data out to various formats: R, Stata, and SPSS.\n\n\nShow the code\nsave(MICSsimulated, \n     file = \"./simulate-data/MICSsimulated.RData\") # R\n\nwrite_dta(MICSsimulated, \n          \"./simulate-data/MICSsimulated.dta\") # Stata\n\nwrite_sav(MICSsimulated, \n          \"./simulate-data/MICSsimulated.sav\") # SPSS\n\n\n\n\n\n\nKreft, I., & de Leeuw, J. (1998). Introducing multilevel modeling. SAGE Publications. https://doi.org/10.4135/9781849209366\n\n\nLuke, D. (2004). Multilevel modeling. SAGE Publications, Inc. https://doi.org/10.4135/9781412985147\n\n\nRabe-Hesketh, S., & Skrondal, A. (2022). Multilevel and longitudinal modeling using Stata. In Stata Press (4th ed.). Stata Press.\n\n\nRaudenbush, S. W., & Bryk, A. S. (2002). Hierarchical linear models: Applications and data analysis methods (pp. xxiv, 485 p.). Sage Publications.\n\n\nSinger, J. D., & Willett, J. B. (2003). Applied longitudinal data analysis : Modeling change and event occurrence. In Applied longitudinal data analysis : modeling change and event occurrence. Oxford University Press."
+  },
+  {
+    "objectID": "quick-intro-ggplot2.html#why-use-ggplotmoreinformation",
+    "href": "quick-intro-ggplot2.html#why-use-ggplotmoreinformation",
+    "title": "5  A Quick Introduction To ggplot2",
+    "section": "5.1 Why Use ggplot?1",
+    "text": "5.1 Why Use ggplot?1\nA great deal of data analysis and visualization involves the same core set of steps: get some data, clean it up a little, run some descriptive statistics, run some bivariate statistics, create a graph or a visualization. ggplot2 can be an important part of a replicable, automated, documented workflow for complex projects.\n\\[\\text{have a question} \\rightarrow \\text{get data} \\rightarrow \\text{process and clean data} \\rightarrow\\] \\[\\text{visualize data} \\rightarrow \\text{analyze data} \\rightarrow \\text{make conclusions}\\]\nGiven the fact that we often want to apply the same core set of tasks to new questions and new data, there are ways to overcome the steep learning curve and learn a replicable set of commands that can be applied to problem after problem.\n\nThe same 5 to 10 lines of ggplot2 code can often be tweaked over and over again for multiple projects."
+  },
+  {
+    "objectID": "quick-intro-ggplot2.html#the-essential-idea-of-ggplot-is-simple",
+    "href": "quick-intro-ggplot2.html#the-essential-idea-of-ggplot-is-simple",
+    "title": "5  A Quick Introduction To ggplot2",
+    "section": "5.2 The Essential Idea Of ggplot Is Simple",
+    "text": "5.2 The Essential Idea Of ggplot Is Simple\nThere are 3 essential elements to any ggplot call:\n\nA reference to the data you are using.\nAn aesthetic that tells ggplot which variables are being mapped to the x axis, y axis, (and often other attributes of the graph, such as the color fill). Intuitively, the aesthetic can be thought of as what you are graphing.\nA geom or geometry that tells ggplot about the basic structure of the graph. Intuitively, the geom can be thought of as how you are graphing it.\n\nYou can also add other options, such as a graph title, axis labels and overall theme for the graph."
+  },
+  {
+    "objectID": "quick-intro-ggplot2.html#get-started",
+    "href": "quick-intro-ggplot2.html#get-started",
+    "title": "5  A Quick Introduction To ggplot2",
+    "section": "5.3 Get Started",
+    "text": "5.3 Get Started\n\n5.3.1 Call Libraries\n\nlibrary(ggplot2) # beautiful graphs\n\nlibrary(ggthemes) # nice themes for ggplot2\n\n\n\n5.3.2 Get Data\n\nload(\"./simulate-data/MICSsimulated.RData\") # data in R format"
+  },
+  {
+    "objectID": "quick-intro-ggplot2.html#some-examplesvartype",
+    "href": "quick-intro-ggplot2.html#some-examplesvartype",
+    "title": "5  A Quick Introduction To ggplot2",
+    "section": "5.4 Some Examples2",
+    "text": "5.4 Some Examples2\n\n5.4.1 One Continuous Variable\n\n# anything that starts with a '#' is a comment\n\nggplot(MICSsimulated, # the data I am using\n       aes(x = GII)) + # the variable I am using\n  geom_histogram() # how I am graphing it\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nFigure 5.1: Histogram of Gender Inequality Index\n\n\n\n\n\n\n5.4.2 One Categorical Variable3\nMake sure R knows this is a categorical variable.\n\nMICSsimulated$aggression <- \n  factor(MICSsimulated$aggression, # original numeric variable\n         levels = c(0, 1), \n         labels = c(\"no aggression\", \"aggression\"), \n         ordered = TRUE) # whether order matters\n\n\nggplot(MICSsimulated, # the data I am using\n       aes(x = aggression, \n           fill = aggression)) + # the variable I am using\n  geom_bar() # how I am graphing it"
+  },
+  {
+    "objectID": "quick-intro-ggplot2.html#add-some-optionslegend",
+    "href": "quick-intro-ggplot2.html#add-some-optionslegend",
+    "title": "5  A Quick Introduction To ggplot2",
+    "section": "5.5 Add Some Options4",
+    "text": "5.5 Add Some Options4\nMake sure R knows this is a categorical variable.\n\nMICSsimulated$cd1 <- \n  factor(MICSsimulated$cd1, # original numeric variable\n         levels = c(0, 1), \n         labels = c(\"no spank\", \"spank\"), \n         ordered = TRUE) # whether order matters\n\n\nggplot(MICSsimulated, # the data I am using\n       aes(x = cd1, \n           fill = aggression)) + # the variables I am using\n  geom_bar() + # graph with bars\n  labs(title = \"Spanking and Aggression\", \n       x = \"spanking\", \n       y = \"count\") +\n  theme_minimal()  # theme"
   }
 ]
