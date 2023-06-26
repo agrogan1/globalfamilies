@@ -54,6 +54,24 @@ save(mydata, file = "mydata.RData") # save in R format
 
 The `$` sign is a kind of "connector".  `mydata$x` means:  "The variable `x` in the dataset called `mydata`". 
 
+### Recoding Data
+
+Data sometimes need to be recoded. For example, outliers may need to be changed to missing, or a value that is supposed to indicated missing data (e.g. `-9`) may need to be changed to missing.
+
+Recoding uses the following construction: 
+
+`data$variable[condition] <- new value`
+
+For example, change an outlier value: When `cd1` is `2` change it to missing (`NA`).
+
+```{r}
+
+MICSsimulated$cd1[MICSsimulated$cd1 == 2] <- NA # outlier (2) to NA
+
+```
+
+Change variable cd1 to missing (`NA`) when it is `-9`.
+
 ```{r}
 
 MICSsimulated$cd1[MICSsimulated$cd1 == -9] <- NA # missing (-9) to NA
