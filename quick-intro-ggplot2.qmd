@@ -60,7 +60,7 @@ ggplot(MICSsimulated, # the data I am using
 
 [^vartype]: Changing variables from factor to numeric (e.g. `aes(x = as.numeric(outcome))`), and *vice versa* can sometimes be a simple solution that solves a lot of problems when you are trying to graph your variables.
 
-### One Categorical Variable[^fill]
+### One Categorical Variable
 
 Make sure R knows this is a categorical variable.
 
@@ -83,7 +83,6 @@ ggplot(MICSsimulated, # the data I am using
 
 ```
 
-[^fill]: Notice how the use of `fill` in the aesthetic generates a legend.
 
 ## Add Some Options[^legend]
 
