@@ -1,0 +1,158 @@
+# Quantitative Data Analysis
+
+## Introduction
+
+A great deal of data analysis and visualization involves the same core set of steps.
+
+$$\text{have a question} \rightarrow \text{get data} \rightarrow \text{process and clean data} \rightarrow \text{analyze data}$$ 
+
+## Some Tools for Analysis
+
+Below we describe some simple data cleaning with R. We begin, however, by comparing several different tools for analysis inlcuding: Excel, Google Sheets, R, and Stata.
+
+----------------------------------------------------------------------------
+Tool     Cost         Ease         Analysis       Suitability   Keep                 
+                      of           Capabilities   for           Track of
+                      Use                         Large Data    Complicated
+                                                                Workflows
+-------- ---------    ------------ -------------  ------------  --------------
+Excel    Comes        Easy         Limited        Difficult     Difficult to
+         installed                                when          Impossible
+         on many                                  N > 100
+         computers
+
+Google   Free         Easy         Limited        Difficult     Difficult to
+Sheets   with a                                   when          Impossible
+         Google                                   N > 100
+         account
+            
+R        Free         Challenging  Extensive      Excellent     Yes, with
+                                                  with          script
+                                                  large 
+                                                  datasets
+                                                    
+Stata    Some         Learning     Extensive      Excellent     Yes, with
+         cost         Curve                       with          command
+                      but                         large         file
+                      Intuitive                   datasets
+----------------------------------------------------------------------------
+
+## Working With R
+
+### Our Data
+
+We take a look at our *simulated* data. 
+
+```{r}
+
+load("./simulate-data/MICSsimulated.RData") # data in R format
+
+labelled::look_for(MICSsimulated) # look at data
+
+```
+
+
+### Cleaning Data
+
+There are some basic data cleaning steps that are common to many projects.
+
+1. Only keep the variables of interest.
+2. Add variable labels (if we can).
+3. Add value labels (if we can).
+4. Recode outliers, values that are errors, or values that should be coded as missing
+
+> Much of R's functionality is accomplished through writing *code*, that is saved in a *script*. Notice how--as our tasks get more and more complicated--the saved script provides documentation for the decisions that we have made with the data.
+
+#### 1. Only keep the variables of interest.
+
+> We can easily accomplish this with the `subset` function
+
+```{r, echo=TRUE}
+
+mynewdata <- subset(MICSsimulated,
+                    select = c(id, country, aggression))
+
+```
+
+```{r}
+
+pander::pander(head(mynewdata))
+
+```
+
+#### 2. Add variable labels (if we can).
+
+> Adding *variable labels* is still somewhat new in R. The `labelled` library allows us to add or change variable labels. However, not every library in R recognizes *variable labels*.
+
+```{r}
+
+library(labelled)
+
+var_label(MICSsimulated$id) <- "id"
+
+var_label(MICSsimulated$country) <- "country"
+
+var_label(MICSsimulated$cd4) <- "explain"
+
+```
+
+
+#### 3. Add value labels (if we can).
+
+> In contrast, *value labels* are straightforward in R, and can be accomplished by creating a *factor variable*. Below we demonstrate how to do this with the happy variable.
+
+```{r, echo=TRUE}
+
+MICSsimulated$cd4 <- factor(MICSsimulated$cd4,
+                             levels = c(0, 1),
+                             labels = c("Did not explain",
+                                        "Explained"))
+
+```
+
+```{r}
+
+pander::pander(head(MICSsimulated))
+
+```
+
+#### 4. Recode outliers, values that are errors, or values that should be coded as missing.
+
+> We can easily accomplish this using Base R's syntax for recoding: `data$variable[rule] <- newvalue`.
+
+```{r, echo=TRUE}
+
+MICSsimulated$aggression[MICSsimulated$aggression > 1] <- NA # recode > 1 to NA
+
+MICSsimulated$GII[MICSsimulated$GII > 100] <- NA # recode > 100 to NA
+
+```
+
+```{r}
+
+pander::pander(head(MICSsimulated))
+
+```
+
+### Simple Analysis
+
+Our first step in analysis is to discover what kind of variables we have. We need to make a distinction between *continuous variables* that measure things like mental health or neighborhood safety, or age, and *categorical variables* that measure non-ordered categories like religious identity or gender identity.
+
+* For continuous variables, it is most appropriate to take the *average* or *mean*.
+* For categorical variables, it is most appropriate to generate a *frequency table*.
+
+
+> As a mostly command based language, R relies on the idea of `do_something(dataset$variable)`.
+
+```{r}
+
+summary(MICSsimulated$GII) # descriptive statistics for GII
+
+```
+
+```{r, echo=TRUE}
+
+table(MICSsimulated$cd4) # frequency table of cd4
+
+```
+
