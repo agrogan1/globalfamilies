@@ -78,8 +78,7 @@ MICSsimulated$aggression <-
 ```{r}
 
 ggplot(MICSsimulated, # the data I am using
-       aes(x = aggression, 
-           fill = aggression)) + # the variable I am using
+       aes(x = aggression)) + # the variable I am using
   geom_bar() # how I am graphing it
 
 ```
