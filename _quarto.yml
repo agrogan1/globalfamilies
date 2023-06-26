@@ -37,6 +37,7 @@ format:
     theme: 
       light: cosmo
       dark: vapor
+    css: globalfamilies.css
   pdf:
     documentclass: scrreprt
     lot: true
