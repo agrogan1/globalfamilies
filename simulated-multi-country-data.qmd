@@ -23,8 +23,6 @@ load("./simulate-data/MICSsimulated.RData")
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
-#| label: tbl-varlist
-#| tbl-cap: Variables in Simulated Multicountry Data
 
 labelled::look_for(MICSsimulated)
 
@@ -37,8 +35,6 @@ labelled::look_for(MICSsimulated)
 A sample of the data is given below.
 
 ```{r}
-#| label: tbl-simulateddata
-#| tbl-cap: "Simulated Multicountry Data"
 #| code-fold: true
 #| code-summary: "Show the code"
 

@@ -18,14 +18,14 @@
     "href": "simulated-multi-country-data.html#variables-and-variable-labels",
     "title": "3  Simulated Multi-Country Data",
     "section": "3.1 Variables and Variable Labels",
-    "text": "3.1 Variables and Variable Labels\n\n\nShow the code\nlabelled::look_for(MICSsimulated)\n\n\n\n?(caption)\n\n\n\n pos variable   label                   col_type values\n 1   id         id                      int            \n 2   country    country                 int            \n 3   GII        gender inequality index int            \n 4   cd1        spank                   int            \n 5   cd2        beat                    int            \n 6   cd3        shout                   int            \n 7   cd4        explain                 int            \n 8   aggression aggression              int"
+    "text": "3.1 Variables and Variable Labels\n\n\nShow the code\nlabelled::look_for(MICSsimulated)\n\n\n pos variable   label                   col_type values\n 1   id         id                      int            \n 2   country    country                 int            \n 3   GII        gender inequality index int            \n 4   cd1        spank                   int            \n 5   cd2        beat                    int            \n 6   cd3        shout                   int            \n 7   cd4        explain                 int            \n 8   aggression aggression              int"
   },
   {
     "objectID": "simulated-multi-country-data.html#a-sample-of-the-data",
     "href": "simulated-multi-country-data.html#a-sample-of-the-data",
     "title": "3  Simulated Multi-Country Data",
     "section": "3.2 A Sample Of The Data",
-    "text": "3.2 A Sample Of The Data\nA sample of the data is given below.\n\n\nShow the code\nhead(MICSsimulated)\n\n\n\n?(caption)\n\n\n\n  id country GII cd1 cd2 cd3 cd4 aggression\n1  1       1  20   0   1   0   1          1\n2  2       1  20   0   0   1   0          1\n3  3       1  20   0   0   0   1          1\n4  4       1  20   1   1   0   1          1\n5  5       1  20   0   0   1   1          0\n6  6       1  20   1   0   0   1          1"
+    "text": "3.2 A Sample Of The Data\nA sample of the data is given below.\n\n\nShow the code\nhead(MICSsimulated)\n\n\n  id country GII cd1 cd2 cd3 cd4 aggression\n1  1       1  20   0   1   0   1          1\n2  2       1  20   0   0   1   0          1\n3  3       1  20   0   0   0   1          1\n4  4       1  20   1   1   0   1          1\n5  5       1  20   0   0   1   1          0\n6  6       1  20   1   0   0   1          1"
   },
   {
     "objectID": "quick-intro-R.html#why-use-r",
