@@ -145,7 +145,7 @@ var_label(MICSsimulated$aggression) <- "aggression"
 #| label: tbl-varlabels
 #| tbl-cap: "Variable Labels"
 
-pander::pander(labelled::look_for(MICSsimulated)[1:5]) # list out variable labels
+labelled::look_for(MICSsimulated) # list out variable labels
 
 ```
 

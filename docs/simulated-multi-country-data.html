@@ -320,90 +320,27 @@ Download The Data
 </div>
 <section id="variables-and-variable-labels" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="variables-and-variable-labels"><span class="header-section-number">3.1</span> Variables and Variable Labels</h2>
-<div class="cell">
+<div>
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pander<span class="sc">::</span><span class="fu">pander</span>(labelled<span class="sc">::</span><span class="fu">look_for</span>(MICSsimulated)[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>labelled<span class="sc">::</span><span class="fu">look_for</span>(MICSsimulated)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output-display">
-<div id="tbl-varlist" class="anchored">
-<table class="table table-sm table-striped">
-<caption>Table&nbsp;3.1: Variables in Simulated Multicountry Data</caption>
-<colgroup>
-<col style="width: 8%">
-<col style="width: 18%">
-<col style="width: 36%">
-<col style="width: 15%">
-<col style="width: 15%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">pos</th>
-<th style="text-align: center;">variable</th>
-<th style="text-align: center;">label</th>
-<th style="text-align: center;">col_type</th>
-<th style="text-align: center;">levels</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">id</td>
-<td style="text-align: center;">id</td>
-<td style="text-align: center;">int</td>
-<td style="text-align: center;">NULL</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">country</td>
-<td style="text-align: center;">country</td>
-<td style="text-align: center;">int</td>
-<td style="text-align: center;">NULL</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">GII</td>
-<td style="text-align: center;">gender inequality index</td>
-<td style="text-align: center;">int</td>
-<td style="text-align: center;">NULL</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">cd1</td>
-<td style="text-align: center;">spank</td>
-<td style="text-align: center;">int</td>
-<td style="text-align: center;">NULL</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">cd2</td>
-<td style="text-align: center;">beat</td>
-<td style="text-align: center;">int</td>
-<td style="text-align: center;">NULL</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">cd3</td>
-<td style="text-align: center;">shout</td>
-<td style="text-align: center;">int</td>
-<td style="text-align: center;">NULL</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">7</td>
-<td style="text-align: center;">cd4</td>
-<td style="text-align: center;">explain</td>
-<td style="text-align: center;">int</td>
-<td style="text-align: center;">NULL</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">8</td>
-<td style="text-align: center;">aggression</td>
-<td style="text-align: center;">aggression</td>
-<td style="text-align: center;">int</td>
-<td style="text-align: center;">NULL</td>
-</tr>
-</tbody>
-</table>
+<div id="tbl-varlist" class="cell tbl-parent quarto-layout-panel anchored" data-tbl-cap="Variables in Simulated Multicountry Data">
+<div class="panel-caption table-caption">
+<p><strong>?(caption)</strong></p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output cell-output-stdout quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<pre><code> pos variable   label                   col_type values
+ 1   id         id                      int            
+ 2   country    country                 int            
+ 3   GII        gender inequality index int            
+ 4   cd1        spank                   int            
+ 5   cd2        beat                    int            
+ 6   cd3        shout                   int            
+ 7   cd4        explain                 int            
+ 8   aggression aggression              int            </code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -411,100 +348,25 @@ Download The Data
 <section id="a-sample-of-the-data" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="a-sample-of-the-data"><span class="header-section-number">3.2</span> A Sample Of The Data</h2>
 <p>A sample of the data is given below.</p>
-<div class="cell">
+<div>
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pander<span class="sc">::</span><span class="fu">pander</span>(<span class="fu">head</span>(MICSsimulated))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(MICSsimulated)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output-display">
-<div id="tbl-simulateddata" class="anchored">
-<table class="table table-sm table-striped">
-<caption>Table&nbsp;3.2: Simulated Multicountry Data</caption>
-<colgroup>
-<col style="width: 6%">
-<col style="width: 13%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 18%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">id</th>
-<th style="text-align: center;">country</th>
-<th style="text-align: center;">GII</th>
-<th style="text-align: center;">cd1</th>
-<th style="text-align: center;">cd2</th>
-<th style="text-align: center;">cd3</th>
-<th style="text-align: center;">cd4</th>
-<th style="text-align: center;">aggression</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">20</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">20</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">20</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">20</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">20</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">20</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-</tr>
-</tbody>
-</table>
+<div id="tbl-simulateddata" class="cell tbl-parent quarto-layout-panel anchored" data-tbl-cap="Simulated Multicountry Data">
+<div class="panel-caption table-caption">
+<p><strong>?(caption)</strong></p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output cell-output-stdout quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<pre><code>  id country GII cd1 cd2 cd3 cd4 aggression
+1  1       1  20   0   1   0   1          1
+2  2       1  20   0   0   1   0          1
+3  3       1  20   0   0   0   1          1
+4  4       1  20   1   1   0   1          1
+5  5       1  20   0   0   1   1          0
+6  6       1  20   1   0   0   1          1</code></pre>
+</div>
 </div>
 </div>
 </div>

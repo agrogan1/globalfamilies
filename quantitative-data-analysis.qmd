@@ -76,7 +76,7 @@ mynewdata <- subset(MICSsimulated,
 
 ```{r}
 
-pander::pander(head(mynewdata))
+head(mynewdata)
 
 ```
 
@@ -112,7 +112,7 @@ MICSsimulated$cd4 <- factor(MICSsimulated$cd4,
 
 ```{r}
 
-pander::pander(head(MICSsimulated))
+head(MICSsimulated)
 
 ```
 
@@ -130,7 +130,7 @@ MICSsimulated$GII[MICSsimulated$GII > 100] <- NA # recode > 100 to NA
 
 ```{r}
 
-pander::pander(head(MICSsimulated))
+head(MICSsimulated)
 
 ```
 

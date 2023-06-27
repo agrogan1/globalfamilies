@@ -26,7 +26,7 @@ load("./simulate-data/MICSsimulated.RData")
 #| label: tbl-varlist
 #| tbl-cap: Variables in Simulated Multicountry Data
 
-pander::pander(labelled::look_for(MICSsimulated)[1:5])
+labelled::look_for(MICSsimulated)
 
 ```
 
@@ -42,6 +42,6 @@ A sample of the data is given below.
 #| code-fold: true
 #| code-summary: "Show the code"
 
-pander::pander(head(MICSsimulated))
+head(MICSsimulated)
 
 ```
