@@ -104,9 +104,9 @@ MICSsimulated$cd1 <-
 ```{r}
 
 ggplot(MICSsimulated, # the data I am using
-       aes(x = cd1, 
-           fill = aggression)) + # the variables I am using
-  geom_bar() + # graph with bars
+       aes(x = cd1, # x is spanking
+           fill = aggression)) + # fill is aggression
+  geom_bar(position = position_dodge()) + # graph with "dodged" bars
   labs(title = "Spanking and Aggression", 
        x = "spanking", 
        y = "count") +

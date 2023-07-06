@@ -102,7 +102,7 @@
     "href": "quick-intro-ggplot2.html#add-some-optionslegend",
     "title": "5  A Quick Introduction To ggplot2",
     "section": "5.5 Add Some Options3",
-    "text": "5.5 Add Some Options3\nMake sure R knows this is a categorical variable.\n\nMICSsimulated$cd1 <- \n  factor(MICSsimulated$cd1, # original numeric variable\n         levels = c(0, 1), \n         labels = c(\"no spank\", \"spank\"), \n         ordered = TRUE) # whether order matters\n\n\nggplot(MICSsimulated, # the data I am using\n       aes(x = cd1, \n           fill = aggression)) + # the variables I am using\n  geom_bar() + # graph with bars\n  labs(title = \"Spanking and Aggression\", \n       x = \"spanking\", \n       y = \"count\") +\n  theme_minimal()  # theme"
+    "text": "5.5 Add Some Options3\nMake sure R knows this is a categorical variable.\n\nMICSsimulated$cd1 <- \n  factor(MICSsimulated$cd1, # original numeric variable\n         levels = c(0, 1), \n         labels = c(\"no spank\", \"spank\"), \n         ordered = TRUE) # whether order matters\n\n\nggplot(MICSsimulated, # the data I am using\n       aes(x = cd1, # x is spanking\n           fill = aggression)) + # fill is aggression\n  geom_bar(position = position_dodge()) + # graph with \"dodged\" bars\n  labs(title = \"Spanking and Aggression\", \n       x = \"spanking\", \n       y = \"count\") +\n  theme_minimal()  # theme"
   },
   {
     "objectID": "quantitative-data-analysis.html#introduction",
