@@ -61,9 +61,26 @@ ggplot(MICSsimulated, # the data I am using
 
 [^vartype]: Changing variables from factor to numeric (e.g. `aes(x = as.numeric(outcome))`), and *vice versa* can sometimes be a simple solution that solves a lot of problems when you are trying to graph your variables.
 
+We can add color and a theme.
+
+```{r}
+#| fig-height: 3
+#| label: fig-ggplot-histogram-color
+#| fig-cap: "Histogram of Gender Inequality Index"
+#| message: false
+
+# anything that starts with a '#' is a comment
+
+ggplot(MICSsimulated, # the data I am using
+       aes(x = GII)) + # the variable I am using
+  geom_histogram(fill = "dodgerblue") + # how I am graphing it
+  theme_minimal()
+
+```
+
 ### One Categorical Variable
 
-Make sure R knows this is a categorical variable.
+Make sure R knows `aggression` is a categorical variable.
 
 ```{r}
 
@@ -77,6 +94,10 @@ MICSsimulated$aggression <-
 
 
 ```{r}
+#| fig-height: 3
+#| label: fig-ggplot-bar
+#| fig-cap: "Bar Graph of Aggression"
+#| message: false
 
 ggplot(MICSsimulated, # the data I am using
        aes(x = aggression)) + # the variable I am using
@@ -84,12 +105,27 @@ ggplot(MICSsimulated, # the data I am using
 
 ```
 
+We can add color and a theme.
 
-## Add Some Options[^legend]
+```{r}
+#| fig-height: 3
+#| label: fig-ggplot-bar-color
+#| fig-cap: "Bar Graph of Aggression"
+#| message: false
+
+ggplot(MICSsimulated, # the data I am using
+       aes(x = aggression, # x is aggression
+           fill = aggression)) + # fill is also aggression
+  geom_bar() + # how I am graphing it
+  theme_minimal()
+
+```
+
+## Make a More Complex Graph[^legend]
 
 [^legend]: Notice how use of `fill` governs both the use of color in the graph below, as well as the legend that is produced in the graph. 
 
-Make sure R knows this is a categorical variable.
+Make sure R knows `cd1` is a categorical variable.
 
 ```{r}
 
@@ -113,6 +149,8 @@ ggplot(MICSsimulated, # the data I am using
   theme_minimal()  # theme
 
 ```
+
+An interactive tutorial to create this plot can be found [here](https://agrogan1.github.io/globalfamilies-flipbook/).
 
 [^moreinformation]: More information can be found here:  https://agrogan1.github.io/R/introduction-to-ggplot2/introduction-to-ggplot2.html
 
