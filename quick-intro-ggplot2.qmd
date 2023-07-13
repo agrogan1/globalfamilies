@@ -16,7 +16,7 @@ Given the fact that we often want to apply the same core set of tasks to new que
 There are 3 essential elements to any `ggplot` call:
 
 1. A reference to the data you are using.
-2. An *aesthetic* that tells `ggplot` which variables are being mapped to the *x axis*, *y axis*, (and often other attributes of the graph, such as the *color fill*).  Intuitively, the aesthetic can be thought of as **what you are graphing**.
+2. An *aesthetic* that tells `ggplot` which variables are being mapped to the *x axis*, *y axis*, (and often other attributes of the graph, such as the *color*, * color fill*, or even the *shape*, *size*, *transparency*, or *line type*).  Intuitively, the aesthetic can be thought of as **what you are graphing**.
 3. A *geom* or *geometry* that tells ggplot about the basic structure of the graph.  Intuitively, the geom can be thought of as **how you are graphing it**.
 
 You can also add other options, such as a *graph title*, *axis labels* and *overall theme* for the graph.
@@ -123,7 +123,7 @@ ggplot(MICSsimulated, # the data I am using
 
 ## Make a More Complex Graph[^legend]
 
-[^legend]: Notice how use of `fill` governs both the use of color in the graph below, as well as the legend that is produced in the graph. 
+[^legend]: Notice how use of `fill` governs both the color fill in the graph below, as well as the legend that is produced in the graph. 
 
 Make sure R knows `cd1` is a categorical variable.
 
