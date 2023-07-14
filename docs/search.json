@@ -81,7 +81,7 @@
     "href": "quick-intro-ggplot2.html#the-essential-idea-of-ggplot-is-simple",
     "title": "5  A Quick Introduction To ggplot2",
     "section": "5.2 The Essential Idea Of ggplot Is Simple",
-    "text": "5.2 The Essential Idea Of ggplot Is Simple\nThere are 3 essential elements to any ggplot call:\n\nA reference to the data you are using.\nAn aesthetic that tells ggplot which variables are being mapped to the x axis, y axis, (and often other attributes of the graph, such as the color fill). Intuitively, the aesthetic can be thought of as what you are graphing.\nA geom or geometry that tells ggplot about the basic structure of the graph. Intuitively, the geom can be thought of as how you are graphing it.\n\nYou can also add other options, such as a graph title, axis labels and overall theme for the graph."
+    "text": "5.2 The Essential Idea Of ggplot Is Simple\nThere are 3 essential elements to any ggplot call:\n\nA reference to the data you are using.\nAn aesthetic that tells ggplot which variables are being mapped to the x axis, y axis, (and often other attributes of the graph, such as the color, * color fill, or even the shape, size, transparency, or line type*). Intuitively, the aesthetic can be thought of as what you are graphing.\nA geom or geometry that tells ggplot about the basic structure of the graph. Intuitively, the geom can be thought of as how you are graphing it.\n\nYou can also add other options, such as a graph title, axis labels and overall theme for the graph."
   },
   {
     "objectID": "quick-intro-ggplot2.html#get-started",
