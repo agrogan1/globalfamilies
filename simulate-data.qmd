@@ -29,7 +29,9 @@ library(dplyr) # wrangle data
 
 library(lme4) # multilevel models
 
-library(sjPlot) # nice tables
+library(sjPlot) # nice tables for MLM
+
+library(pander) # nice tables
 
 ```
 
@@ -59,7 +61,7 @@ This is multilevel data where individuals are nested, or clustered, inside count
 
 Simulating the second level of the data is relatively easy. We simply need to provide the number of countries, and then generate random effects for each country. Random effects are discussed in the above references, but essentially represent country level differences in the data.
 
-We also create `GII`, a gender inequality index variable, since this is a country level, or Level 2 variable. 
+We also create `GII`, a *Gender Inequality Index* [@UNDPGII] variable, and `HDI`, a measure of the *Human Development Index* [@UNDPHDI], since these are country level, or Level 2 variables. 
 
 ```{r}
 #| code-fold: true
@@ -69,11 +71,17 @@ country <- seq(1:N_countries) # sequence 1 to 30
 
 GII <- rbinom(N_countries, 100, .25) # gender inequality index
 
+HDI <- rbinom(N_countries, 100, .25) # Human Development Index
+
 u0 <- rnorm(N_countries, 0, .25) # random intercept
 
 u1 <- rnorm(N_countries, 0, .05) # random slope
 
-randomeffects <- data.frame(country, GII, u0, u1) # dataframe of random effects
+randomeffects <- data.frame(country, 
+                            GII, 
+                            HDI, 
+                            u0, 
+                            u1) # dataframe of random effects
 
 ```
 
@@ -107,7 +115,7 @@ MICSsimulated <- randomeffects %>%
            u0) %>%
   mutate(p = exp(z) / (1 + exp(z))) %>% # probability
   mutate(aggression = rbinom(N * N_countries, 1, p)) %>% # binomial y
-  select(id, country, GII,
+  select(id, country, GII, HDI,
          cd1, cd2, cd3, cd4, 
          aggression)
 
@@ -125,7 +133,9 @@ var_label(MICSsimulated$id) <- "id"
 
 var_label(MICSsimulated$country) <- "country"
 
-var_label(MICSsimulated$GII) <- "gender inequality index"
+var_label(MICSsimulated$GII) <- "Gender Inequality Index"
+
+var_label(MICSsimulated$HDI) <- "Human Development Index"
 
 var_label(MICSsimulated$cd1) <- "spank"
 
@@ -145,7 +155,7 @@ var_label(MICSsimulated$aggression) <- "aggression"
 #| label: tbl-varlabels
 #| tbl-cap: "Variable Labels"
 
-labelled::look_for(MICSsimulated) # list out variable labels
+pander(labelled::look_for(MICSsimulated)[1:4]) # list out variable labels
 
 ```
 
