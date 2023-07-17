@@ -27,7 +27,7 @@ book:
   appendices:
     - simulate-data.qmd
  
-bibliography: references.bib
+bibliography: globalfamilies.bib
 
 csl: apa.csl
 
