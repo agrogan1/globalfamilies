@@ -92,6 +92,7 @@ MICSsimulated$aggression <-
 
 ```
 
+Now make the graph.
 
 ```{r}
 #| fig-height: 3
@@ -105,7 +106,9 @@ ggplot(MICSsimulated, # the data I am using
 
 ```
 
-We can add color and a theme.
+We can add color and a theme.[^legend]
+
+[^legend]: Notice how use of `fill` governs both the color fill in the graph below, as well as the legend that is produced in the graph. 
 
 ```{r}
 #| fig-height: 3
@@ -121,9 +124,9 @@ ggplot(MICSsimulated, # the data I am using
 
 ```
 
-## Make a More Complex Graph[^legend]
+## Make a More Complex Graph[^legend2]
 
-[^legend]: Notice how use of `fill` governs both the color fill in the graph below, as well as the legend that is produced in the graph. 
+[^legend2]: Notice how use of `fill` governs both the color fill in the graph below, as well as the legend that is produced in the graph. 
 
 Make sure R knows `cd1` is a categorical variable.
 
@@ -136,6 +139,8 @@ MICSsimulated$cd1 <-
          ordered = TRUE) # whether order matters
 
 ```
+
+Now make the graph.
 
 ```{r}
 

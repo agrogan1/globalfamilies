@@ -282,7 +282,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#one-continuous-variable" id="toc-one-continuous-variable" class="nav-link" data-scroll-target="#one-continuous-variable"><span class="toc-section-number">5.4.1</span>  One Continuous Variable</a></li>
   <li><a href="#one-categorical-variable" id="toc-one-categorical-variable" class="nav-link" data-scroll-target="#one-categorical-variable"><span class="toc-section-number">5.4.2</span>  One Categorical Variable</a></li>
   </ul></li>
-  <li><a href="#make-a-more-complex-graphlegend" id="toc-make-a-more-complex-graphlegend" class="nav-link" data-scroll-target="#make-a-more-complex-graphlegend"><span class="toc-section-number">5.5</span>  Make a More Complex Graph</a></li>
+  <li><a href="#make-a-more-complex-graphlegend2" id="toc-make-a-more-complex-graphlegend2" class="nav-link" data-scroll-target="#make-a-more-complex-graphlegend2"><span class="toc-section-number">5.5</span>  Make a More Complex Graph</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/agrogan1/globalfamilies/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -389,6 +389,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"no aggression"</span>, <span class="st">"aggression"</span>), </span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">ordered =</span> <span class="cn">TRUE</span>) <span class="co"># whether order matters</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Now make the graph.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(MICSsimulated, <span class="co"># the data I am using</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> aggression)) <span class="sc">+</span> <span class="co"># the variable I am using</span></span>
@@ -402,7 +403,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<p>We can add color and a theme.</p>
+<p>We can add color and a theme.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(MICSsimulated, <span class="co"># the data I am using</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> aggression, <span class="co"># x is aggression</span></span>
@@ -420,8 +421,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </section>
 </section>
-<section id="make-a-more-complex-graphlegend" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="make-a-more-complex-graphlegend"><span class="header-section-number">5.5</span> Make a More Complex Graph<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></h2>
+<section id="make-a-more-complex-graphlegend2" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="make-a-more-complex-graphlegend2"><span class="header-section-number">5.5</span> Make a More Complex Graph<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></h2>
 <p>Make sure R knows <code>cd1</code> is a categorical variable.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>MICSsimulated<span class="sc">$</span>cd1 <span class="ot">&lt;-</span> </span>
@@ -430,6 +431,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"no spank"</span>, <span class="st">"spank"</span>), </span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">ordered =</span> <span class="cn">TRUE</span>) <span class="co"># whether order matters</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Now make the graph.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(MICSsimulated, <span class="co"># the data I am using</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> cd1, <span class="co"># x is spanking</span></span>
@@ -453,6 +455,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li id="fn1"><p>More information can be found here: https://agrogan1.github.io/R/introduction-to-ggplot2/introduction-to-ggplot2.html<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Changing variables from factor to numeric (e.g.&nbsp;<code>aes(x = as.numeric(outcome))</code>), and <em>vice versa</em> can sometimes be a simple solution that solves a lot of problems when you are trying to graph your variables.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>Notice how use of <code>fill</code> governs both the color fill in the graph below, as well as the legend that is produced in the graph.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Notice how use of <code>fill</code> governs both the color fill in the graph below, as well as the legend that is produced in the graph.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
