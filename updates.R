@@ -16,9 +16,9 @@ system("quarto publish quarto-pub")
 
 library(RefManageR)
 
-mybib <- ReadBib("references.bib")
+mybib <- ReadBib("globalfamilies.bib")
 
 mybib <- sort(mybib, sorting = "nyt") # sort by name - year - title
 
-WriteBib(mybib, file = "references.bib")
+WriteBib(mybib, file = "globalfamilies.bib")
 
