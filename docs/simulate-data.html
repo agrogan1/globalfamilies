@@ -157,6 +157,8 @@ div.csl-indent {
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/globalfamilies/simulate-data.html">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=The climate crisis and violence against children;,citation_author=Jorge Cuartas;,citation_author=Amiya Bhatia;,citation_author=Daniel Carter;,citation_author=Lucie Cluver;,citation_author=Carolina Coll;,citation_author=Catherine E Draper;,citation_author=Elizabeth Donger;,citation_author=Frances Gardner;,citation_author=Hernando Grueso;,citation_author=Bess Herbert;,citation_author=Jamie Lachman;,citation_author=Najat Maalla M’jid;,citation_author=Frederique Seidel;,citation_author=Orla Kelly;,citation_publication_date=2023-07;,citation_cover_date=2023-07;,citation_year=2023;,citation_fulltext_html_url=https://doi.org/10.1016/S2352-4642(23)00137-2;,citation_doi=10.1016/S2352-4642(23)00137-2;,citation_issn=2352-4642;,citation_journal_title=The Lancet Child &amp;amp;amp; Adolescent Health;,citation_publisher=Elsevier;">
+<meta name="citation_reference" content="citation_title=Human Development Index (HDI);,citation_author=United Nations Development Program;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_fulltext_html_url=https://hdr.undp.org/data-center/human-development-index#/indicies/HDI;">
+<meta name="citation_reference" content="citation_title=Gender Inequality Index (GII);,citation_author=United Nations Development Program;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_fulltext_html_url=https://hdr.undp.org/data-center/thematic-composite-indices/gender-inequality-index#/indicies/GII;">
 <meta name="citation_reference" content="citation_title=How chronic violence affects human development, social relations, and the practice of citizenship: A systemic framework for action;,citation_author=Tani Marilena Adams;,citation_publication_date=2017;,citation_cover_date=2017;,citation_year=2017;,citation_publisher=Woodrow Wilson International Center for Scholars;">
 <meta name="citation_reference" content="citation_title=Neighborhood crime undermines parenting: Violence in the vicinity of households as a predictor of aggressive discipline;,citation_abstract=Child discipline is a central component of parent-child interactions. Evidence suggests corporal discipline impairs children’s physical, cognitive, and socioemotional development and compromises their future chances, especially since it is more frequently used against at-risk children. Using geocoded data for 1209 children under the age of five and their mothers, this study analyses the relation between the occurrence of crimes in close proximity to households in four major urban municipalities of Colombia and a particularly violent corporal discipline practice: hitting children with objects. Results indicate that exposure to violent crimes, such as homicides and personal injuries, predicts a higher probability of hitting children with objects, even after controlling for a set of individual, family, and neighborhood characteristics. Sensitivity analyses suggest violent crimes are not related to other discipline methods, and less threatening crimes, such as robbery and drug trafficking, are not associated with hitting children with objects. These findings suggest households’ walls are permeable, and outside threats may interfere with families’ dynamics and well-being. Future directions and implications are discussed.;,citation_author=Jorge Cuartas;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_fulltext_html_url=https://www.sciencedirect.com/science/article/pii/S0145213417304544;,citation_doi=https://doi.org/10.1016/j.chiabu.2017.12.006;,citation_issn=0145-2134;,citation_volume=76;,citation_journal_title=Child Abuse &amp;amp;amp; Neglect;">
 <meta name="citation_reference" content="citation_title=Civil conflict, domestic violence, and poverty as predictors of corporal punishment in colombia;,citation_abstract=Background: With lingering effects from more than 50 years of war, young children in Colombia are exposed to multiple risk factors such as poverty, civil conflict, and domestic violence. In addition to these environmental stressors, public and legal support for corporal punishment remains high, which is shown by the high prevalence of young children exposed to corporal punishment in Colombia. Objective: The purpose of this study is to identify individual, family, and municipality-level predictors of corporal punishment (i.e., hitting with objects and spanking) in Colombia in order to inform prevention and intervention strategies. Participants and setting: We use information gathered in 2015 from a representative sample of 11,759 mothers of children younger than five in Colombia. Methods: We employed multi-level models to account for the clustering of families in 217 municipalities. Results: Results show that mothers’ prior exposure to corporal punishment by their own parents (β=0.229;p&amp;amp;amp;lt;0.01), attitudes towards domestic violence β=0.013;p&amp;lt;0.05, municipality homicide rates β=0.028;p<0.05 and presence of armed groups β=0.031;p<0.05, household poverty β=0.030;p<0.01 and poverty of the municipality β=0.022;p<0.05 predicted mothers’ hitting their young children with an object. However, family β=-0.028;p<0.05 and municipality poverty β=-0.016;p<0.05 had a negative association with mothers’ use of spanking. Conclusions: These findings suggest that both family and neighborhood level factors have simultaneous associations with parents’ use of corporal punishment. Given the accumulating evidence concerning the adverse effects of corporal punishment on child well-being and development, legislative efforts aimed at reducing and ultimately banning corporal punishment are warranted.;,citation_author=Jorge Cuartas;,citation_author=Andrew Grogan-Kaylor;,citation_author=Julie Ma;,citation_author=Berenice Castillo;,citation_publication_date=2019-04;,citation_cover_date=2019-04;,citation_year=2019;,citation_doi=10.1016/j.chiabu.2019.02.003;,citation_issn=18737757;,citation_pmid=30772750;,citation_volume=90;,citation_journal_title=Child Abuse and Neglect;,citation_publisher=Elsevier Ltd;">
@@ -342,7 +344,9 @@ div.csl-indent {
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4) <span class="co"># multilevel models</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sjPlot) <span class="co"># nice tables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sjPlot) <span class="co"># nice tables for MLM</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pander) <span class="co"># nice tables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -367,7 +371,7 @@ div.csl-indent {
 <section id="level-2" class="level3" data-number="A.3.1">
 <h3 data-number="A.3.1" class="anchored" data-anchor-id="level-2"><span class="header-section-number">A.3.1</span> Level 2</h3>
 <p>Simulating the second level of the data is relatively easy. We simply need to provide the number of countries, and then generate random effects for each country. Random effects are discussed in the above references, but essentially represent country level differences in the data.</p>
-<p>We also create <code>GII</code>, a gender inequality index variable, since this is a country level, or Level 2 variable.</p>
+<p>We also create <code>GII</code>, a <em>Gender Inequality Index</em> <span class="citation" data-cites="UNDPGII">(<a href="references.html#ref-UNDPGII" role="doc-biblioref">United Nations Development Program, 2023</a>)</span> variable, and <code>HDI</code>, a measure of the <em>Human Development Index</em> <span class="citation" data-cites="UNDPHDI">(<a href="references.html#ref-UNDPHDI" role="doc-biblioref">United Nations Development Program, 2022</a>)</span>, since these are country level, or Level 2 variables.</p>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
@@ -375,11 +379,17 @@ div.csl-indent {
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>GII <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(N_countries, <span class="dv">100</span>, .<span class="dv">25</span>) <span class="co"># gender inequality index</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>u0 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(N_countries, <span class="dv">0</span>, .<span class="dv">25</span>) <span class="co"># random intercept</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>HDI <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(N_countries, <span class="dv">100</span>, .<span class="dv">25</span>) <span class="co"># Human Development Index</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>u1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(N_countries, <span class="dv">0</span>, .<span class="dv">05</span>) <span class="co"># random slope</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>u0 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(N_countries, <span class="dv">0</span>, .<span class="dv">25</span>) <span class="co"># random intercept</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>randomeffects <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(country, GII, u0, u1) <span class="co"># dataframe of random effects</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>u1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(N_countries, <span class="dv">0</span>, .<span class="dv">05</span>) <span class="co"># random slope</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>randomeffects <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(country, </span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>                            GII, </span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>                            HDI, </span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>                            u0, </span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>                            u1) <span class="co"># dataframe of random effects</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -408,7 +418,7 @@ div.csl-indent {
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>           u0) <span class="sc">%&gt;%</span></span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">p =</span> <span class="fu">exp</span>(z) <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(z))) <span class="sc">%&gt;%</span> <span class="co"># probability</span></span>
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">aggression =</span> <span class="fu">rbinom</span>(N <span class="sc">*</span> N_countries, <span class="dv">1</span>, p)) <span class="sc">%&gt;%</span> <span class="co"># binomial y</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(id, country, GII,</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(id, country, GII, HDI,</span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>         cd1, cd2, cd3, cd4, </span>
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>         aggression)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -424,40 +434,101 @@ div.csl-indent {
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>country) <span class="ot">&lt;-</span> <span class="st">"country"</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>GII) <span class="ot">&lt;-</span> <span class="st">"gender inequality index"</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>GII) <span class="ot">&lt;-</span> <span class="st">"Gender Inequality Index"</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>cd1) <span class="ot">&lt;-</span> <span class="st">"spank"</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>HDI) <span class="ot">&lt;-</span> <span class="st">"Human Development Index"</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>cd2) <span class="ot">&lt;-</span> <span class="st">"beat"</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>cd1) <span class="ot">&lt;-</span> <span class="st">"spank"</span></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>cd3) <span class="ot">&lt;-</span> <span class="st">"shout"</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>cd2) <span class="ot">&lt;-</span> <span class="st">"beat"</span></span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>cd4) <span class="ot">&lt;-</span> <span class="st">"explain"</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>cd3) <span class="ot">&lt;-</span> <span class="st">"shout"</span></span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>aggression) <span class="ot">&lt;-</span> <span class="st">"aggression"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>cd4) <span class="ot">&lt;-</span> <span class="st">"explain"</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>aggression) <span class="ot">&lt;-</span> <span class="st">"aggression"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div>
+<div class="cell">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>labelled<span class="sc">::</span><span class="fu">look_for</span>(MICSsimulated) <span class="co"># list out variable labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pander</span>(labelled<span class="sc">::</span><span class="fu">look_for</span>(MICSsimulated)[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]) <span class="co"># list out variable labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="tbl-varlabels" class="cell tbl-parent quarto-layout-panel anchored" data-tbl-cap="Variable Labels">
-<div class="panel-caption table-caption">
-<p><strong>?(caption)</strong></p>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output cell-output-stdout quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<pre><code> pos variable   label                   col_type values
- 1   id         id                      int            
- 2   country    country                 int            
- 3   GII        gender inequality index int            
- 4   cd1        spank                   int            
- 5   cd2        beat                    int            
- 6   cd3        shout                   int            
- 7   cd4        explain                 int            
- 8   aggression aggression              int            </code></pre>
-</div>
+<div class="cell-output-display">
+<div id="tbl-varlabels" class="anchored">
+<table class="table table-sm table-striped">
+<caption>Table&nbsp;A.1: Variable Labels</caption>
+<colgroup>
+<col style="width: 8%">
+<col style="width: 18%">
+<col style="width: 36%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">pos</th>
+<th style="text-align: center;">variable</th>
+<th style="text-align: center;">label</th>
+<th style="text-align: center;">col_type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">id</td>
+<td style="text-align: center;">id</td>
+<td style="text-align: center;">int</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">country</td>
+<td style="text-align: center;">country</td>
+<td style="text-align: center;">int</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">GII</td>
+<td style="text-align: center;">Gender Inequality Index</td>
+<td style="text-align: center;">int</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">HDI</td>
+<td style="text-align: center;">Human Development Index</td>
+<td style="text-align: center;">int</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">cd1</td>
+<td style="text-align: center;">spank</td>
+<td style="text-align: center;">int</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">cd2</td>
+<td style="text-align: center;">beat</td>
+<td style="text-align: center;">int</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">cd3</td>
+<td style="text-align: center;">shout</td>
+<td style="text-align: center;">int</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">cd4</td>
+<td style="text-align: center;">explain</td>
+<td style="text-align: center;">int</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">aggression</td>
+<td style="text-align: center;">aggression</td>
+<td style="text-align: center;">int</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -469,18 +540,18 @@ div.csl-indent {
 <div class="cell">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(MICSsimulated,</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> cd1, <span class="co"># x is spanking</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> aggression, <span class="co"># y is aggression</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="fu">factor</span>(country))) <span class="sc">+</span> <span class="co"># color is country</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"glm"</span>, <span class="co"># glm smoother</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family =</span> <span class="st">"binomial"</span>),</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">alpha =</span> .<span class="dv">1</span>) <span class="sc">+</span> <span class="co"># transparency for CI's</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Aggression as a Function of Spanking"</span>,</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"spank"</span>,</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"aggression"</span>) <span class="sc">+</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>(<span class="at">name =</span> <span class="st">"Country"</span>) <span class="sc">+</span> <span class="co"># nice colors</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(MICSsimulated,</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> cd1, <span class="co"># x is spanking</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> aggression, <span class="co"># y is aggression</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="fu">factor</span>(country))) <span class="sc">+</span> <span class="co"># color is country</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"glm"</span>, <span class="co"># glm smoother</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family =</span> <span class="st">"binomial"</span>),</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">alpha =</span> .<span class="dv">1</span>) <span class="sc">+</span> <span class="co"># transparency for CI's</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Aggression as a Function of Spanking"</span>,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"spank"</span>,</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"aggression"</span>) <span class="sc">+</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>(<span class="at">name =</span> <span class="st">"Country"</span>) <span class="sc">+</span> <span class="co"># nice colors</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-p1" class="quarto-figure quarto-figure-center anchored">
@@ -498,19 +569,19 @@ div.csl-indent {
 <div class="cell">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">glmer</span>(aggression <span class="sc">~</span> cd1 <span class="sc">+</span> cd2 <span class="sc">+</span> cd3 <span class="sc">+</span> cd4 <span class="sc">+</span> GII <span class="sc">+</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                (<span class="dv">1</span> <span class="sc">|</span> country), </span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">family =</span> <span class="st">"binomial"</span>,</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> MICSsimulated,</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">control =</span> <span class="fu">glmerControl</span>(<span class="at">optimizer =</span><span class="st">"bobyqa"</span>))</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">tab_model</span>(fit1, <span class="co"># nice table</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">transform =</span> <span class="cn">NULL</span>) <span class="co"># untransformed estimates</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">glmer</span>(aggression <span class="sc">~</span> cd1 <span class="sc">+</span> cd2 <span class="sc">+</span> cd3 <span class="sc">+</span> cd4 <span class="sc">+</span> GII <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                (<span class="dv">1</span> <span class="sc">|</span> country), </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">family =</span> <span class="st">"binomial"</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> MICSsimulated,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">control =</span> <span class="fu">glmerControl</span>(<span class="at">optimizer =</span><span class="st">"bobyqa"</span>))</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">tab_model</span>(fit1, <span class="co"># nice table</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">transform =</span> <span class="cn">NULL</span>) <span class="co"># untransformed estimates</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div id="tbl-fit1" class="anchored">
 
-<table style="border-collapse:collapse; border:none;"><caption>Table&nbsp;A.1:  Multilevel Logistic Regression </caption>
+<table style="border-collapse:collapse; border:none;"><caption>Table&nbsp;A.2:  Multilevel Logistic Regression </caption>
 <tbody><tr>
 <th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; ">&nbsp;</th>
 <th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">aggression</th>
@@ -523,39 +594,39 @@ div.csl-indent {
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">(Intercept)</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.42</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-1.05&nbsp;–&nbsp;0.21</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.190</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.41</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-1.10&nbsp;–&nbsp;0.28</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.249</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">spank</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.16</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.01&nbsp;–&nbsp;0.32</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "><strong>0.034</strong></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.21</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.06&nbsp;–&nbsp;0.37</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "><strong>0.006</strong></td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">beat</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.61</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.25&nbsp;–&nbsp;0.96</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.59</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.23&nbsp;–&nbsp;0.94</td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "><strong>0.001</strong></td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">shout</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.35</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.20&nbsp;–&nbsp;0.51</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.45</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.30&nbsp;–&nbsp;0.60</td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "><strong>&lt;0.001</strong></td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">explain</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.41</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.59&nbsp;–&nbsp;-0.23</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.37</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.55&nbsp;–&nbsp;-0.19</td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "><strong>&lt;0.001</strong></td>
 </tr>
 <tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">gender inequality index</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.03</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.01&nbsp;–&nbsp;0.05</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "><strong>0.015</strong></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Gender Inequality Index</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.02</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.00&nbsp;–&nbsp;0.05</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.102</td>
 </tr>
 <tr>
 <td colspan="4" style="font-weight:bold; text-align:left; padding-top:.8em;">Random Effects</td>
@@ -568,7 +639,7 @@ div.csl-indent {
 
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">τ<sub>00</sub> <sub>country</sub></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">0.03</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">0.05</td>
 
 </tr><tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">ICC</td>
@@ -583,7 +654,7 @@ div.csl-indent {
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">Marginal R<sup>2</sup> / Conditional R<sup>2</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">0.029 / 0.037</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">0.031 / 0.044</td>
 </tr>
 
 </tbody></table>
@@ -598,14 +669,14 @@ div.csl-indent {
 <div class="cell">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(MICSsimulated, </span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">file =</span> <span class="st">"./simulate-data/MICSsimulated.RData"</span>) <span class="co"># R</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write_dta</span>(MICSsimulated, </span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>          <span class="st">"./simulate-data/MICSsimulated.dta"</span>) <span class="co"># Stata</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">write_sav</span>(MICSsimulated, </span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>          <span class="st">"./simulate-data/MICSsimulated.sav"</span>) <span class="co"># SPSS</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(MICSsimulated, </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">file =</span> <span class="st">"./simulate-data/MICSsimulated.RData"</span>) <span class="co"># R</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write_dta</span>(MICSsimulated, </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>          <span class="st">"./simulate-data/MICSsimulated.dta"</span>) <span class="co"># Stata</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">write_sav</span>(MICSsimulated, </span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>          <span class="st">"./simulate-data/MICSsimulated.sav"</span>) <span class="co"># SPSS</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 
@@ -625,6 +696,12 @@ Raudenbush, S. W., &amp; Bryk, A. S. (2002). <em>Hierarchical linear models: App
 </div>
 <div id="ref-Singer2003" class="csl-entry" role="doc-biblioentry">
 Singer, J. D., &amp; Willett, J. B. (2003). Applied longitudinal data analysis : Modeling change and event occurrence. In <em>Applied longitudinal data analysis : modeling change and event occurrence</em>. Oxford University Press.
+</div>
+<div id="ref-UNDPHDI" class="csl-entry" role="doc-biblioentry">
+United Nations Development Program. (2022). <em><span>Human Development Index (HDI)</span></em>. <a href="https://hdr.undp.org/data-center/human-development-index#/indicies/HDI">https://hdr.undp.org/data-center/human-development-index#/indicies/HDI</a>
+</div>
+<div id="ref-UNDPGII" class="csl-entry" role="doc-biblioentry">
+United Nations Development Program. (2023). <em><span>Gender Inequality Index (GII)</span></em>. <a href="https://hdr.undp.org/data-center/thematic-composite-indices/gender-inequality-index#/indicies/GII">https://hdr.undp.org/data-center/thematic-composite-indices/gender-inequality-index#/indicies/GII</a>
 </div>
 </div>
 </section>
