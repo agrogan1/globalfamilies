@@ -41,6 +41,9 @@ format:
       light: cosmo
       dark: vapor
     css: globalfamilies.css
+    execute:
+      freeze: auto
+
   pdf:
     documentclass: scrreprt
     lot: true
