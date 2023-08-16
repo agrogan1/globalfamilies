@@ -27,7 +27,7 @@ book:
   appendices:
     - simulate-data.qmd
   navbar:
-    background: primary
+    background: "#1CABE2"
      
 bibliography: globalfamilies.bib
 
