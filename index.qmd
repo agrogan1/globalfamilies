@@ -1,5 +1,101 @@
 # Project Summary
 
+```{r}
+#| echo: false
+#| output: false
+
+# library(readr) # get data
+
+# library(haven) # Stata data
+
+library(ggplot2) # beautiful graphs
+
+library(dplyr) # data wrangling
+
+library(tidyr) # tidy data
+
+# library(DT) # nice data table
+
+library(tibble) # tibbles
+
+library(countrycode) # manage country data
+
+# library(maps) # maps
+
+library(leaflet) # web maps
+
+# library(sp) # spatial data
+
+library(sf) # simple features
+
+```
+
+```{r}
+#| echo: false
+#| output: false
+
+global_data <- read_sf("../mapping/shapefiles/wrld_simpl/wrld_simpl.shp") 
+
+# get MICS countries
+
+country <- c("Afghanistan", "Algeria",  "Argentina",  
+             "Bangladesh",  "Barbados",  "Belarus",  
+             "Belize",  "Benin",  "Bosnia and Herzegovina",  
+             "Cameroon",  "Central African Republic",  "Chad",  
+             "Democratic Republic of the Congo",  
+             "Republic of the Congo",  
+             "Costa Rica",  "Cote d'Ivoire",  
+             "Dominican Republic",  
+             "El Salvador",  "Eswatini",  "Ghana",  
+             "Guinea",  "Guinea Bissau",  "Guyana",  
+             "Iraq",  "Jamaica",  "Kazakhstan",  
+             "Kenya",  "Kosovo",  "Kyrgyzstan",  
+             "Laos", "Macedonia",  "Madagascar",  
+             "Malawi",  "Mali",  "Mauritania",  
+             "Mexico",  "Moldova",  "Mongolia",  
+             "Montenegro",  "Nepal",  "Nigeria",  
+             "Pakistan",  "Panama",  "Paraguay",  
+             "Sao Tome and Principe",  "Senegal",  "Serbia",  
+             "Sierra Leone",  "Somalia",  "St. Lucia",  
+             "State of Palestine",  "Suriname",  "Thailand",  
+             "The Gambia",  "Togo",  "Trinidad and Tobago",  
+             "Tunisia",  "Turkmenistan",  "Ukraine",  
+             "Uruguay",  "Vietnam",  "Zimbabwe")
+
+# convert to ISO3
+
+country_iso <- countrycode(country, 
+                           'country.name', 
+                           'iso3c')
+
+# MICS is an sf object that is subset of global_data
+
+MICS <- global_data %>% 
+  filter(ISO3 %in% country_iso)
+  
+```
+
+```{r}
+#| fig-cap: "Locations of Countries in MICS"
+#| fig-height: 3
+#| echo: false
+
+library(leaflet)
+
+leaflet() %>%
+  setView(-25, 25, zoom = 1.25) %>%
+  # addTiles() %>%
+  addProviderTiles(providers$Esri.WorldImagery) %>%
+  addPolygons(data = MICS, 
+              fillOpacity = .75, 
+              color = "#5b92e5", 
+              label = MICS$NAME,
+              highlightOptions = highlightOptions(color = "red", 
+                                                  weight = 2,
+                                                  bringToFront = TRUE)) 
+
+```
+
 Gender inequality perpetuates harmful norms that justify violence against women and children and is associated with higher rates of family violence. 
 
 Worldwide, parental physical abuse is a common form of family violence that children are exposed to at alarming rates. Parental engagement in physical abuse is linked to negative child outcomes including depression, anxiety, and aggression that may persist into adulthood. Globally, these continuing mental health and aggression problems may have high financial costs, with effects both on social service systems and developing economies. 
