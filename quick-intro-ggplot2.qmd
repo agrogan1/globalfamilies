@@ -73,7 +73,7 @@ We can add color and a theme.
 
 ggplot(MICSsimulated, # the data I am using
        aes(x = GII)) + # the variable I am using
-  geom_histogram(fill = "dodgerblue") + # how I am graphing it
+  geom_histogram(fill = "#1CABE2") + # how I am graphing it
   theme_minimal()
 
 ```
@@ -151,6 +151,8 @@ ggplot(MICSsimulated, # the data I am using
   labs(title = "Spanking and Aggression", 
        x = "spanking", 
        y = "count") +
+  scale_fill_manual(values = c("#1CABE2", # UNICEF colors
+                               "#D8D1C9")) +
   theme_minimal()  # theme
 
 ```
