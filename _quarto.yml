@@ -35,6 +35,8 @@ csl: apa.csl
 
 google-scholar: true
 
+prefer-html: true
+
 format:
   html:
     theme: 
@@ -43,8 +45,8 @@ format:
     css: globalfamilies.css
     execute:
       freeze: auto
-  pdf:
-    documentclass: scrreprt
-    lot: true
-    lof: true
-
+ 
+ 
+ 
+   
+    

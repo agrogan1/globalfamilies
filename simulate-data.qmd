@@ -195,6 +195,7 @@ Similarly, exploring the data with a logistic regression confirms that we have c
 #| label: tbl-fit1
 #| tbl-cap: Multilevel Logistic Regression
 #| warning: false
+#| eval: false
 
 fit1 <- glmer(aggression ~ cd1 + cd2 + cd3 + cd4 + GII +
                 (1 | country), 
