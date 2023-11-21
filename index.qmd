@@ -79,20 +79,24 @@ MICS <- global_data %>%
 #| fig-cap: "Locations of Countries in MICS"
 #| fig-height: 3
 #| echo: false
+#| eval: true
 
-library(leaflet)
-
-leaflet() %>%
-  setView(-25, 25, zoom = 1.25) %>%
-  # addTiles() %>%
-  addProviderTiles(providers$Esri.WorldImagery) %>%
-  addPolygons(data = MICS, 
-              fillOpacity = .75, 
-              color = "#5b92e5", 
-              label = MICS$NAME,
-              highlightOptions = highlightOptions(color = "red", 
-                                                  weight = 2,
-                                                  bringToFront = TRUE)) 
+if (knitr::is_html_output()) {
+  
+  library(leaflet)
+  
+  leaflet() %>%
+    setView(-25, 25, zoom = 1.25) %>%
+    # addTiles() %>%
+    addProviderTiles(providers$Esri.WorldImagery) %>%
+    addPolygons(data = MICS, 
+                fillOpacity = .75, 
+                color = "#5b92e5", 
+                label = MICS$NAME,
+                highlightOptions = highlightOptions(color = "red", 
+                                                    weight = 2,
+                                                    bringToFront = TRUE)) 
+}
 
 ```
 
