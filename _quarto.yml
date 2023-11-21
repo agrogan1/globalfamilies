@@ -45,8 +45,12 @@ format:
     css: globalfamilies.css
     execute:
       freeze: auto
- 
- 
+  pdf:
+    lot: true
+    lof: true
+    execute:
+      freeze: auto    
+      
  
    
     
