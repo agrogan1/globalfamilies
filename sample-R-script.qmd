@@ -1,0 +1,52 @@
+# A Sample R Script {#sec-Rscript}
+
+This is a sample R script for the steps of analysis found in {@sec-analysis}. Usually, an R script is stored in a text file ending in `.R`, so this R code could be stored an a text file called `myscript.R`.
+
+```{r}
+#| eval: false
+
+###############
+# get the data
+###############
+
+load("./simulate-data/MICSsimulated.RData") # data in R format
+
+####################
+# data wrangling
+####################
+
+labelled::look_for(MICSsimulated) # look at data
+
+mynewdata <- subset(MICSsimulated,
+                    select = c(id, country, aggression)) # subset of data
+
+library(labelled) # variable labels
+
+var_label(MICSsimulated$id) <- "id"
+
+var_label(MICSsimulated$country) <- "country"
+
+var_label(MICSsimulated$cd4) <- "explain"
+
+# make variable into factor
+
+MICSsimulated$cd4 <- factor(MICSsimulated$cd4,
+                             levels = c(0, 1),
+                             labels = c("Did not explain",
+                                        "Explained"))
+
+# recoding
+
+MICSsimulated$aggression[MICSsimulated$aggression > 1] <- NA # recode > 1 to NA
+
+MICSsimulated$GII[MICSsimulated$GII > 100] <- NA # recode > 100 to NA
+
+##############################
+# descriptive statistics
+##############################
+
+summary(MICSsimulated$GII) # descriptive statistics for GII
+
+table(MICSsimulated$cd4) # frequency table of cd4
+
+```

@@ -1,4 +1,4 @@
-# Quantitative Data Analysis
+# Quantitative Data Analysis {#sec-analysis}
 
 ## Introduction
 
@@ -61,7 +61,7 @@ There are some basic data cleaning steps that are common to many projects.
 * Add value labels (if we can). @sec-addvaluelabels
 * Recode outliers, values that are errors, or values that should be coded as missing @sec-recodes
 
-> Much of R's functionality is accomplished through writing *code*, that is saved in a *script*. Notice how--as our tasks get more and more complicated--the saved script provides documentation for the decisions that we have made with the data.
+> Much of R's functionality is accomplished through writing *code*, that is saved in a *script*. Notice how--as our tasks get more and more complicated--the saved script provides documentation for the decisions that we have made with the data. A sample R script for the steps found in this chapter can be found in {@sec-Rscript}.
 
 #### Only keep the variables of interest. {#sec-onlykeep}
 
@@ -70,13 +70,13 @@ There are some basic data cleaning steps that are common to many projects.
 ```{r, echo=TRUE}
 
 mynewdata <- subset(MICSsimulated,
-                    select = c(id, country, aggression))
+                    select = c(id, country, aggression)) # subset of data
 
 ```
 
 ```{r}
 
-head(mynewdata)
+head(mynewdata) # look at top (head) of data
 
 ```
 
@@ -86,7 +86,7 @@ head(mynewdata)
 
 ```{r}
 
-library(labelled)
+library(labelled) # variable labels
 
 var_label(MICSsimulated$id) <- "id"
 
@@ -112,7 +112,7 @@ MICSsimulated$cd4 <- factor(MICSsimulated$cd4,
 
 ```{r}
 
-head(MICSsimulated)
+head(MICSsimulated) # head (top) of data
 
 ```
 
@@ -130,7 +130,7 @@ MICSsimulated$GII[MICSsimulated$GII > 100] <- NA # recode > 100 to NA
 
 ```{r}
 
-head(MICSsimulated)
+head(MICSsimulated) # head (top) of data
 
 ```
 

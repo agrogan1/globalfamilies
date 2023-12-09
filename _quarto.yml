@@ -25,6 +25,7 @@ book:
     - quantitative-data-analysis.qmd
     - references.qmd
   appendices:
+    - sample-R-script.qmd
     - simulate-data.qmd
   navbar:
     background: "#1CABE2"

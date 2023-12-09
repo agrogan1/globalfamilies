@@ -38,10 +38,12 @@ If data are in other formats, slightly different code may be required.
 ```{r, eval=FALSE}
 
 library(haven) # library for importing data 
+
 mydata <- read_sav("the/path/to/mySPSSfile.sav") # SPSS
 mydata <- read_dta("the/path/to/myStatafile.dta") # Stata
 
 library(readxl) # library for importing Excel files
+
 mydata <- read_excel("the/path/to/mySpreadsheet.xls")
 
 save(mydata, file = "mydata.RData") # save in R format
