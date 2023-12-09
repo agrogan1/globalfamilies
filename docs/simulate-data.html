@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Global Families Project - Appendix A — Simulating MICS Data</title>
+<title>Global Families Project - Appendix B — Simulating MICS Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -83,7 +83,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="prev">
+<link href="./sample-R-script.html" rel="prev">
 <link href="./logo-globe.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -119,19 +119,19 @@ div.csl-indent {
 
 
 <link rel="stylesheet" href="globalfamilies.css">
-<meta property="og:title" content="Global Families Project - Appendix A — Simulating MICS Data">
+<meta property="og:title" content="Global Families Project - Appendix B — Simulating MICS Data">
 <meta property="og:description" content="">
 <meta property="og:image" content="https://agrogan1.github.io/globalfamilies/simulate-data_files/figure-html/fig-p1-1.png">
 <meta property="og:site-name" content="Global Families Project">
 <meta property="og:image:height" content="960">
 <meta property="og:image:width" content="1344">
-<meta name="twitter:title" content="Global Families Project - Appendix A — Simulating MICS Data">
+<meta name="twitter:title" content="Global Families Project - Appendix B — Simulating MICS Data">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://agrogan1.github.io/globalfamilies/simulate-data_files/figure-html/fig-p1-1.png">
 <meta name="twitter:image-height" content="960">
 <meta name="twitter:image-width" content="1344">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="citation_title" content="Appendix A — Simulating MICS Data">
+<meta name="citation_title" content="Appendix B — Simulating MICS Data">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/globalfamilies/simulate-data.html">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Publishing child development research from around the world: An unfair playing field resulting in most of the world’s child population under-represented in research;,citation_abstract=Abstract It has become increasingly apparent that publishing research on child development from certain countries is especially challenging. These countries have been referred to collectively as the Majority World, the Global South, non-WEIRD (Western, Educated, Industrial, Rich, and Democratic), or low- and middle-income countries. The aim of this paper is to draw attention to these persistent challenges, and provide constructive recommendations to contribute to better representation of children from these countries in child development research. In this paper, we outline the history of publication bias in developmental science, and issues of generalization of research from these countries and hence where it ?fits? in terms of publishing. The importance of explaining context is highlighted, including for research on measurement child development outcomes, and attention is drawn to the vicious publication-funding cycle that further exacerbates the challenges of publishing this research. Specific recommendations are made to assist child development journals achieve their stated goals of creating a more inclusive, equitable, diverse, and global field of child development.;,citation_author=Catherine E Draper;,citation_author=Lisa M Barnett;,citation_author=Caylee J Cook;,citation_author=Jorge A Cuartas;,citation_author=Steven J Howard;,citation_author=Dana C McCoy;,citation_author=Rebecca Merkley;,citation_author=Andres Molano;,citation_author=Carolina Maldonado-Carreño;,citation_author=Jelena Obradovic;,citation_author=Gaia Scerif;,citation_author=Nadia C Valentini;,citation_author=Fotini Venetsanou;,citation_author=Aisha K Yousafzai;,citation_publication_date=2022-10;,citation_cover_date=2022-10;,citation_year=2022;,citation_fulltext_html_url=https://doi.org/10.1002/icd.2375;,citation_doi=10.1002/icd.2375;,citation_issn=1522-7227;,citation_volume=n/a;,citation_journal_title=Infant and Child Development;,citation_publisher=John Wiley &amp;amp;amp; Sons, Ltd;">
@@ -202,7 +202,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./simulate-data.html">Appendices</a></li><li class="breadcrumb-item"><a href="./simulate-data.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Simulating MICS Data</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sample-R-script.html">Appendices</a></li><li class="breadcrumb-item"><a href="./simulate-data.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Simulating MICS Data</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -275,8 +275,14 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./sample-R-script.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">A Sample R Script</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./simulate-data.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Simulating MICS Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Simulating MICS Data</span></span></a>
   </div>
 </li>
       </ul>
@@ -291,17 +297,17 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#call-relevant-libraries" id="toc-call-relevant-libraries" class="nav-link active" data-scroll-target="#call-relevant-libraries"><span class="header-section-number">A.1</span> Call Relevant Libraries</a></li>
-  <li><a href="#setup-some-basic-parameters-of-the-data" id="toc-setup-some-basic-parameters-of-the-data" class="nav-link" data-scroll-target="#setup-some-basic-parameters-of-the-data"><span class="header-section-number">A.2</span> Setup Some Basic Parameters of the Data</a></li>
-  <li><a href="#simulate-data-based-on-mics" id="toc-simulate-data-based-on-mics" class="nav-link" data-scroll-target="#simulate-data-based-on-mics"><span class="header-section-number">A.3</span> Simulate Data Based on MICS</a>
+  <li><a href="#call-relevant-libraries" id="toc-call-relevant-libraries" class="nav-link active" data-scroll-target="#call-relevant-libraries"><span class="header-section-number">B.1</span> Call Relevant Libraries</a></li>
+  <li><a href="#setup-some-basic-parameters-of-the-data" id="toc-setup-some-basic-parameters-of-the-data" class="nav-link" data-scroll-target="#setup-some-basic-parameters-of-the-data"><span class="header-section-number">B.2</span> Setup Some Basic Parameters of the Data</a></li>
+  <li><a href="#simulate-data-based-on-mics" id="toc-simulate-data-based-on-mics" class="nav-link" data-scroll-target="#simulate-data-based-on-mics"><span class="header-section-number">B.3</span> Simulate Data Based on MICS</a>
   <ul class="collapse">
-  <li><a href="#level-2" id="toc-level-2" class="nav-link" data-scroll-target="#level-2"><span class="header-section-number">A.3.1</span> Level 2</a></li>
-  <li><a href="#level-1" id="toc-level-1" class="nav-link" data-scroll-target="#level-1"><span class="header-section-number">A.3.2</span> Level 1</a></li>
-  <li><a href="#variable-labels" id="toc-variable-labels" class="nav-link" data-scroll-target="#variable-labels"><span class="header-section-number">A.3.3</span> Variable Labels</a></li>
+  <li><a href="#level-2" id="toc-level-2" class="nav-link" data-scroll-target="#level-2"><span class="header-section-number">B.3.1</span> Level 2</a></li>
+  <li><a href="#level-1" id="toc-level-1" class="nav-link" data-scroll-target="#level-1"><span class="header-section-number">B.3.2</span> Level 1</a></li>
+  <li><a href="#variable-labels" id="toc-variable-labels" class="nav-link" data-scroll-target="#variable-labels"><span class="header-section-number">B.3.3</span> Variable Labels</a></li>
   </ul></li>
-  <li><a href="#explore-the-simulated-data-with-a-graph" id="toc-explore-the-simulated-data-with-a-graph" class="nav-link" data-scroll-target="#explore-the-simulated-data-with-a-graph"><span class="header-section-number">A.4</span> Explore The Simulated Data With A Graph</a></li>
-  <li><a href="#explore-the-simulated-data-with-a-logistic-regression" id="toc-explore-the-simulated-data-with-a-logistic-regression" class="nav-link" data-scroll-target="#explore-the-simulated-data-with-a-logistic-regression"><span class="header-section-number">A.5</span> Explore The Simulated Data With A Logistic Regression</a></li>
-  <li><a href="#write-data-to-various-formats" id="toc-write-data-to-various-formats" class="nav-link" data-scroll-target="#write-data-to-various-formats"><span class="header-section-number">A.6</span> Write data to various formats</a></li>
+  <li><a href="#explore-the-simulated-data-with-a-graph" id="toc-explore-the-simulated-data-with-a-graph" class="nav-link" data-scroll-target="#explore-the-simulated-data-with-a-graph"><span class="header-section-number">B.4</span> Explore The Simulated Data With A Graph</a></li>
+  <li><a href="#explore-the-simulated-data-with-a-logistic-regression" id="toc-explore-the-simulated-data-with-a-logistic-regression" class="nav-link" data-scroll-target="#explore-the-simulated-data-with-a-logistic-regression"><span class="header-section-number">B.5</span> Explore The Simulated Data With A Logistic Regression</a></li>
+  <li><a href="#write-data-to-various-formats" id="toc-write-data-to-various-formats" class="nav-link" data-scroll-target="#write-data-to-various-formats"><span class="header-section-number">B.6</span> Write data to various formats</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/agrogan1/globalfamilies/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -310,7 +316,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Appendix A — Simulating MICS Data</h1>
+<h1 class="title">Appendix B — Simulating MICS Data</h1>
 </div>
 
 
@@ -328,8 +334,8 @@ div.csl-indent {
 <p>This appendix details the process of creating the simulated MICS data that is employed in the examples on this website.</p>
 <p>MICS data are freely available, but usage of MICS requires completing a user agreement, and registering for a user account, on the MICS website, and thus MICS data should not be shared openly on a public website.</p>
 <p>This Appendix is highly technical. It is not necessary to understand this Appendix to benefit from the rest of this website. However, the details of creating this simulated data may be of interest to some users.</p>
-<section id="call-relevant-libraries" class="level2" data-number="A.1">
-<h2 data-number="A.1" class="anchored" data-anchor-id="call-relevant-libraries"><span class="header-section-number">A.1</span> Call Relevant Libraries</h2>
+<section id="call-relevant-libraries" class="level2" data-number="B.1">
+<h2 data-number="B.1" class="anchored" data-anchor-id="call-relevant-libraries"><span class="header-section-number">B.1</span> Call Relevant Libraries</h2>
 <p>We need to call a number of relevant R libraries to simulate the data.</p>
 <div class="cell">
 <details>
@@ -354,8 +360,8 @@ div.csl-indent {
 </details>
 </div>
 </section>
-<section id="setup-some-basic-parameters-of-the-data" class="level2" data-number="A.2">
-<h2 data-number="A.2" class="anchored" data-anchor-id="setup-some-basic-parameters-of-the-data"><span class="header-section-number">A.2</span> Setup Some Basic Parameters of the Data</h2>
+<section id="setup-some-basic-parameters-of-the-data" class="level2" data-number="B.2">
+<h2 data-number="B.2" class="anchored" data-anchor-id="setup-some-basic-parameters-of-the-data"><span class="header-section-number">B.2</span> Setup Some Basic Parameters of the Data</h2>
 <p>Because simulation is a random process, we set a <em>random seed</em> so that the simulation produces the same data set each time it is run.</p>
 <p>We are going to simulate data with 30 countries, and 100 individuals per country.</p>
 <div class="cell">
@@ -369,11 +375,11 @@ div.csl-indent {
 </details>
 </div>
 </section>
-<section id="simulate-data-based-on-mics" class="level2" data-number="A.3">
-<h2 data-number="A.3" class="anchored" data-anchor-id="simulate-data-based-on-mics"><span class="header-section-number">A.3</span> Simulate Data Based on MICS</h2>
+<section id="simulate-data-based-on-mics" class="level2" data-number="B.3">
+<h2 data-number="B.3" class="anchored" data-anchor-id="simulate-data-based-on-mics"><span class="header-section-number">B.3</span> Simulate Data Based on MICS</h2>
 <p>This is multilevel data where individuals are nested, or clustered, inside countries. Excellent technical and pedagogical discussions of multilevel models can be found in <span class="citation" data-cites="Raudenbush2002">Raudenbush &amp; Bryk (<a href="references.html#ref-Raudenbush2002" role="doc-biblioref">2002</a>)</span>, <span class="citation" data-cites="Singer2003">Singer &amp; Willett (<a href="references.html#ref-Singer2003" role="doc-biblioref">2003</a>)</span>, <span class="citation" data-cites="RabeHesketh2022">Rabe-Hesketh &amp; Skrondal (<a href="references.html#ref-RabeHesketh2022" role="doc-biblioref">2022</a>)</span>, <span class="citation" data-cites="Luke2004">Luke (<a href="references.html#ref-Luke2004" role="doc-biblioref">2004</a>)</span>, and <span class="citation" data-cites="Kreft1998">Kreft &amp; de Leeuw (<a href="references.html#ref-Kreft1998" role="doc-biblioref">1998</a>)</span>.</p>
-<section id="level-2" class="level3" data-number="A.3.1">
-<h3 data-number="A.3.1" class="anchored" data-anchor-id="level-2"><span class="header-section-number">A.3.1</span> Level 2</h3>
+<section id="level-2" class="level3" data-number="B.3.1">
+<h3 data-number="B.3.1" class="anchored" data-anchor-id="level-2"><span class="header-section-number">B.3.1</span> Level 2</h3>
 <p>Simulating the second level of the data is relatively easy. We simply need to provide the number of countries, and then generate random effects for each country. Random effects are discussed in the above references, but essentially represent country level differences in the data.</p>
 <p>We also create <code>GII</code>, a <em>Gender Inequality Index</em> <span class="citation" data-cites="UNDPGII">(<a href="references.html#ref-UNDPGII" role="doc-biblioref">United Nations Development Program, 2023</a>)</span> variable, and <code>HDI</code>, a measure of the <em>Human Development Index</em> <span class="citation" data-cites="UNDPHDI">(<a href="references.html#ref-UNDPHDI" role="doc-biblioref">United Nations Development Program, 2022</a>)</span>, since these are country level, or Level 2 variables.</p>
 <div class="cell">
@@ -397,8 +403,8 @@ div.csl-indent {
 </details>
 </div>
 </section>
-<section id="level-1" class="level3" data-number="A.3.2">
-<h3 data-number="A.3.2" class="anchored" data-anchor-id="level-1"><span class="header-section-number">A.3.2</span> Level 1</h3>
+<section id="level-1" class="level3" data-number="B.3.2">
+<h3 data-number="B.3.2" class="anchored" data-anchor-id="level-1"><span class="header-section-number">B.3.2</span> Level 1</h3>
 <p>Simulating the Level 1 data is more complex.</p>
 <p>We <code>uncount</code> the data by 100 to create 100 observations for each country. We then create an <code>id</code> number.</p>
 <p>We create randomly simulated parental discipline variables with proportions similar to those in MICS.</p>
@@ -428,8 +434,8 @@ div.csl-indent {
 </details>
 </div>
 </section>
-<section id="variable-labels" class="level3" data-number="A.3.3">
-<h3 data-number="A.3.3" class="anchored" data-anchor-id="variable-labels"><span class="header-section-number">A.3.3</span> Variable Labels</h3>
+<section id="variable-labels" class="level3" data-number="B.3.3">
+<h3 data-number="B.3.3" class="anchored" data-anchor-id="variable-labels"><span class="header-section-number">B.3.3</span> Variable Labels</h3>
 <p>We add variable labels to the data which will help us to understand the data as we analyze it.</p>
 <div class="cell">
 <details>
@@ -461,7 +467,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div id="tbl-varlabels" class="anchored">
 <table class="table table-sm table-striped small">
-<caption>Table&nbsp;A.1: Variable Labels</caption>
+<caption>Table&nbsp;B.1: Variable Labels</caption>
 <colgroup>
 <col style="width: 8%">
 <col style="width: 18%">
@@ -538,8 +544,8 @@ div.csl-indent {
 </div>
 </section>
 </section>
-<section id="explore-the-simulated-data-with-a-graph" class="level2" data-number="A.4">
-<h2 data-number="A.4" class="anchored" data-anchor-id="explore-the-simulated-data-with-a-graph"><span class="header-section-number">A.4</span> Explore The Simulated Data With A Graph</h2>
+<section id="explore-the-simulated-data-with-a-graph" class="level2" data-number="B.4">
+<h2 data-number="B.4" class="anchored" data-anchor-id="explore-the-simulated-data-with-a-graph"><span class="header-section-number">B.4</span> Explore The Simulated Data With A Graph</h2>
 <p>Exploring the simulated data with a graph helps us to ensure that we have simulated plausible data.</p>
 <div class="cell">
 <details>
@@ -561,14 +567,14 @@ div.csl-indent {
 <div id="fig-p1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="simulate-data_files/figure-html/fig-p1-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;A.1: Graph of Simulated Data</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;B.1: Graph of Simulated Data</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="explore-the-simulated-data-with-a-logistic-regression" class="level2" data-number="A.5">
-<h2 data-number="A.5" class="anchored" data-anchor-id="explore-the-simulated-data-with-a-logistic-regression"><span class="header-section-number">A.5</span> Explore The Simulated Data With A Logistic Regression</h2>
+<section id="explore-the-simulated-data-with-a-logistic-regression" class="level2" data-number="B.5">
+<h2 data-number="B.5" class="anchored" data-anchor-id="explore-the-simulated-data-with-a-logistic-regression"><span class="header-section-number">B.5</span> Explore The Simulated Data With A Logistic Regression</h2>
 <p>Similarly, exploring the data with a logistic regression confirms that we have created plausible data.</p>
 <div class="cell">
 <details>
@@ -585,7 +591,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div id="tbl-fit1" class="anchored">
 
-<table style="border-collapse:collapse; border:none;"><caption>Table&nbsp;A.2:  <p>Multilevel Logistic Regression</p> </caption>
+<table style="border-collapse:collapse; border:none;"><caption>Table&nbsp;B.2:  <p>Multilevel Logistic Regression</p> </caption>
 <tbody><tr>
 <th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; ">&nbsp;</th>
 <th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">aggression</th>
@@ -667,8 +673,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="write-data-to-various-formats" class="level2" data-number="A.6">
-<h2 data-number="A.6" class="anchored" data-anchor-id="write-data-to-various-formats"><span class="header-section-number">A.6</span> Write data to various formats</h2>
+<section id="write-data-to-various-formats" class="level2" data-number="B.6">
+<h2 data-number="B.6" class="anchored" data-anchor-id="write-data-to-various-formats"><span class="header-section-number">B.6</span> Write data to various formats</h2>
 <p>Lastly, we write the data out to various formats: R, Stata, and SPSS.</p>
 <div class="cell">
 <details>
@@ -1061,8 +1067,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./references.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">References</span>
+      <a href="./sample-R-script.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">A Sample R Script</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Global Families Project - 6&nbsp; Quantitative Data Analysis</title>
+<title>Global Families Project - Appendix A — A Sample R Script</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
-<link href="./quick-intro-ggplot2.html" rel="prev">
+<link href="./simulate-data.html" rel="next">
+<link href="./references.html" rel="prev">
 <link href="./logo-globe.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -99,18 +99,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="globalfamilies.css">
-<meta property="og:title" content="Global Families Project - 6&nbsp; Quantitative Data Analysis">
+<meta property="og:title" content="Global Families Project - Appendix A — A Sample R Script">
 <meta property="og:description" content="">
 <meta property="og:site-name" content="Global Families Project">
-<meta name="twitter:title" content="Global Families Project - 6&nbsp; Quantitative Data Analysis">
+<meta name="twitter:title" content="Global Families Project - Appendix A — A Sample R Script">
 <meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
-<meta name="citation_title" content="[[6]{.chapter-number}&nbsp; [Quantitative Data Analysis]{.chapter-title}]{#sec-analysis .quarto-section-identifier}">
-<meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/globalfamilies/quantitative-data-analysis.html">
+<meta name="citation_title" content="[Appendix A — A Sample R Script]{#sec-Rscript .quarto-section-identifier}">
+<meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/globalfamilies/sample-R-script.html">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Publishing child development research from around the world: An unfair playing field resulting in most of the world’s child population under-represented in research;,citation_abstract=Abstract It has become increasingly apparent that publishing research on child development from certain countries is especially challenging. These countries have been referred to collectively as the Majority World, the Global South, non-WEIRD (Western, Educated, Industrial, Rich, and Democratic), or low- and middle-income countries. The aim of this paper is to draw attention to these persistent challenges, and provide constructive recommendations to contribute to better representation of children from these countries in child development research. In this paper, we outline the history of publication bias in developmental science, and issues of generalization of research from these countries and hence where it ?fits? in terms of publishing. The importance of explaining context is highlighted, including for research on measurement child development outcomes, and attention is drawn to the vicious publication-funding cycle that further exacerbates the challenges of publishing this research. Specific recommendations are made to assist child development journals achieve their stated goals of creating a more inclusive, equitable, diverse, and global field of child development.;,citation_author=Catherine E Draper;,citation_author=Lisa M Barnett;,citation_author=Caylee J Cook;,citation_author=Jorge A Cuartas;,citation_author=Steven J Howard;,citation_author=Dana C McCoy;,citation_author=Rebecca Merkley;,citation_author=Andres Molano;,citation_author=Carolina Maldonado-Carreño;,citation_author=Jelena Obradovic;,citation_author=Gaia Scerif;,citation_author=Nadia C Valentini;,citation_author=Fotini Venetsanou;,citation_author=Aisha K Yousafzai;,citation_publication_date=2022-10;,citation_cover_date=2022-10;,citation_year=2022;,citation_fulltext_html_url=https://doi.org/10.1002/icd.2375;,citation_doi=10.1002/icd.2375;,citation_issn=1522-7227;,citation_volume=n/a;,citation_journal_title=Infant and Child Development;,citation_publisher=John Wiley &amp;amp;amp; Sons, Ltd;">
 <meta name="citation_reference" content="citation_title=What is the expected human childhood? Insights from evolutionary anthropology;,citation_author=Willem E. Frankenhuis;,citation_author=Dorsa Amir;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_issue=2;,citation_doi=10.1017/S0954579421001401;,citation_volume=34;,citation_journal_title=Development and Psychopathology;,citation_publisher=Cambridge University Press;">
@@ -180,7 +178,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quantitative-data-analysis.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quantitative Data Analysis</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sample-R-script.html">Appendices</a></li><li class="breadcrumb-item"><a href="./sample-R-script.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">A Sample R Script</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -232,7 +230,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quantitative-data-analysis.html" class="sidebar-item-text sidebar-link active">
+  <a href="./quantitative-data-analysis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quantitative Data Analysis</span></span></a>
   </div>
 </li>
@@ -253,7 +251,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sample-R-script.html" class="sidebar-item-text sidebar-link">
+  <a href="./sample-R-script.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">A Sample R Script</span></span></a>
   </div>
 </li>
@@ -271,27 +269,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">6.1</span> Introduction</a></li>
-  <li><a href="#some-tools-for-analysis" id="toc-some-tools-for-analysis" class="nav-link" data-scroll-target="#some-tools-for-analysis"><span class="header-section-number">6.2</span> Some Tools for Analysis</a></li>
-  <li><a href="#working-with-r" id="toc-working-with-r" class="nav-link" data-scroll-target="#working-with-r"><span class="header-section-number">6.3</span> Working With R</a>
-  <ul class="collapse">
-  <li><a href="#our-data" id="toc-our-data" class="nav-link" data-scroll-target="#our-data"><span class="header-section-number">6.3.1</span> Our Data</a></li>
-  <li><a href="#cleaning-data" id="toc-cleaning-data" class="nav-link" data-scroll-target="#cleaning-data"><span class="header-section-number">6.3.2</span> Cleaning Data</a></li>
-  <li><a href="#simple-analysis" id="toc-simple-analysis" class="nav-link" data-scroll-target="#simple-analysis"><span class="header-section-number">6.3.3</span> Simple Analysis</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/agrogan1/globalfamilies/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-analysis" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quantitative Data Analysis</span></span></h1>
+<h1 class="title"><span id="sec-Rscript" class="quarto-section-identifier">Appendix A — A Sample R Script</span></h1>
 </div>
 
 
@@ -306,218 +291,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="introduction" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">6.1</span> Introduction</h2>
-<p>A great deal of data analysis and visualization involves the same core set of steps.</p>
-<p><span class="math display">\[\text{have a question} \rightarrow \text{get data} \rightarrow \text{process and clean data} \rightarrow \text{analyze data}\]</span></p>
-</section>
-<section id="some-tools-for-analysis" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="some-tools-for-analysis"><span class="header-section-number">6.2</span> Some Tools for Analysis</h2>
-<p>Below we describe some simple data cleaning with R. We begin, however, by comparing several different tools for analysis including: Excel, Google Sheets, R, and Stata.</p>
-<table class="table">
-<colgroup>
-<col style="width: 11%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 18%">
-<col style="width: 17%">
-<col style="width: 18%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Tool</th>
-<th style="text-align: left;">Cost</th>
-<th style="text-align: left;">Ease of Use</th>
-<th style="text-align: left;">Analysis Capabilities</th>
-<th style="text-align: left;">Suitability for Large Data</th>
-<th style="text-align: left;">Keep Track of Complicated Workflows</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Excel</td>
-<td style="text-align: left;">Comes installed on many computers</td>
-<td style="text-align: left;">Easy</td>
-<td style="text-align: left;">Limited</td>
-<td style="text-align: left;">Difficult when N &gt; 100</td>
-<td style="text-align: left;">Difficult to Impossible</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Google Sheets</td>
-<td style="text-align: left;">Free with a Google account</td>
-<td style="text-align: left;">Easy</td>
-<td style="text-align: left;">Limited</td>
-<td style="text-align: left;">Difficult when N &gt; 100</td>
-<td style="text-align: left;">Difficult to Impossible</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">R</td>
-<td style="text-align: left;">Free</td>
-<td style="text-align: left;">Challenging</td>
-<td style="text-align: left;">Extensive</td>
-<td style="text-align: left;">Excellent with large datasets</td>
-<td style="text-align: left;">Yes, with script</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Stata</td>
-<td style="text-align: left;">Some cost</td>
-<td style="text-align: left;">Learning Curve but Intuitive</td>
-<td style="text-align: left;">Extensive</td>
-<td style="text-align: left;">Excellent with large datasets</td>
-<td style="text-align: left;">Yes, with command file</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="working-with-r" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="working-with-r"><span class="header-section-number">6.3</span> Working With R</h2>
-<section id="our-data" class="level3" data-number="6.3.1">
-<h3 data-number="6.3.1" class="anchored" data-anchor-id="our-data"><span class="header-section-number">6.3.1</span> Our Data</h3>
-<p>We take a look at our <em>simulated</em> data.</p>
+<p>This is a sample R script for the steps of analysis found in {<a href="quantitative-data-analysis.html"><span>Chapter&nbsp;6</span></a>}. Usually, an R script is stored in a text file ending in <code>.R</code>, so this R code could be stored an a text file called <code>myscript.R</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"./simulate-data/MICSsimulated.RData"</span>) <span class="co"># data in R format</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>labelled<span class="sc">::</span><span class="fu">look_for</span>(MICSsimulated) <span class="co"># look at data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> pos variable   label                   col_type missing values
- 1   id         id                      int      0             
- 2   country    country                 int      0             
- 3   GII        Gender Inequality Index int      0             
- 4   HDI        Human Development Index int      0             
- 5   cd1        spank                   int      0             
- 6   cd2        beat                    int      0             
- 7   cd3        shout                   int      0             
- 8   cd4        explain                 int      0             
- 9   aggression aggression              int      0             </code></pre>
-</div>
-</div>
-</section>
-<section id="cleaning-data" class="level3" data-number="6.3.2">
-<h3 data-number="6.3.2" class="anchored" data-anchor-id="cleaning-data"><span class="header-section-number">6.3.2</span> Cleaning Data</h3>
-<p>There are some basic data cleaning steps that are common to many projects.</p>
-<ul>
-<li>Only keep the variables of interest. <a href="#sec-onlykeep"><span>Section&nbsp;6.3.2.1</span></a></li>
-<li>Add variable labels (if we can). <a href="#sec-addvarlabels"><span>Section&nbsp;6.3.2.2</span></a></li>
-<li>Add value labels (if we can). <a href="#sec-addvaluelabels"><span>Section&nbsp;6.3.2.3</span></a></li>
-<li>Recode outliers, values that are errors, or values that should be coded as missing <a href="#sec-recodes"><span>Section&nbsp;6.3.2.4</span></a></li>
-</ul>
-<blockquote class="blockquote">
-<p>Much of R’s functionality is accomplished through writing <em>code</em>, that is saved in a <em>script</em>. Notice how–as our tasks get more and more complicated–the saved script provides documentation for the decisions that we have made with the data. A sample R script for the steps found in this chapter can be found in {<a href="sample-R-script.html"><span>Appendix&nbsp;A</span></a>}.</p>
-</blockquote>
-<section id="sec-onlykeep" class="level4" data-number="6.3.2.1">
-<h4 data-number="6.3.2.1" class="anchored" data-anchor-id="sec-onlykeep"><span class="header-section-number">6.3.2.1</span> Only keep the variables of interest.</h4>
-<blockquote class="blockquote">
-<p>We can easily accomplish this with the <code>subset</code> function</p>
-</blockquote>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mynewdata <span class="ot">&lt;-</span> <span class="fu">subset</span>(MICSsimulated,</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">select =</span> <span class="fu">c</span>(id, country, aggression)) <span class="co"># subset of data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mynewdata) <span class="co"># look at top (head) of data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  id country aggression
-1  1       1          1
-2  2       1          1
-3  3       1          1
-4  4       1          1
-5  5       1          0
-6  6       1          1</code></pre>
-</div>
-</div>
-</section>
-<section id="sec-addvarlabels" class="level4" data-number="6.3.2.2">
-<h4 data-number="6.3.2.2" class="anchored" data-anchor-id="sec-addvarlabels"><span class="header-section-number">6.3.2.2</span> Add variable labels (if we can).</h4>
-<blockquote class="blockquote">
-<p>Adding <em>variable labels</em> is still somewhat new in R. The <code>labelled</code> library allows us to add or change variable labels. However, not every library in R recognizes <em>variable labels</em>.</p>
-</blockquote>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(labelled) <span class="co"># variable labels</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>id) <span class="ot">&lt;-</span> <span class="st">"id"</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>country) <span class="ot">&lt;-</span> <span class="st">"country"</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>cd4) <span class="ot">&lt;-</span> <span class="st">"explain"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sec-addvaluelabels" class="level4" data-number="6.3.2.3">
-<h4 data-number="6.3.2.3" class="anchored" data-anchor-id="sec-addvaluelabels"><span class="header-section-number">6.3.2.3</span> Add value labels (if we can).</h4>
-<blockquote class="blockquote">
-<p>In contrast, <em>value labels</em> are straightforward in R, and can be accomplished by creating a <em>factor variable</em>. Below we demonstrate how to do this with the happy variable.</p>
-</blockquote>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>MICSsimulated<span class="sc">$</span>cd4 <span class="ot">&lt;-</span> <span class="fu">factor</span>(MICSsimulated<span class="sc">$</span>cd4,</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                             <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>),</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                             <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Did not explain"</span>,</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">"Explained"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(MICSsimulated) <span class="co"># head (top) of data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  id country GII HDI cd1 cd2 cd3             cd4 aggression
-1  1       1  20  24   0   0   1       Explained          1
-2  2       1  20  24   0   0   1       Explained          1
-3  3       1  20  24   0   0   1       Explained          1
-4  4       1  20  24   0   0   0 Did not explain          1
-5  5       1  20  24   1   0   1       Explained          0
-6  6       1  20  24   0   0   1       Explained          1</code></pre>
-</div>
-</div>
-</section>
-<section id="sec-recodes" class="level4" data-number="6.3.2.4">
-<h4 data-number="6.3.2.4" class="anchored" data-anchor-id="sec-recodes"><span class="header-section-number">6.3.2.4</span> Recode outliers, values that are errors, or values that should be coded as missing.</h4>
-<blockquote class="blockquote">
-<p>We can easily accomplish this using Base R’s syntax for recoding: <code>data$variable[rule] &lt;- newvalue</code>.</p>
-</blockquote>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>MICSsimulated<span class="sc">$</span>aggression[MICSsimulated<span class="sc">$</span>aggression <span class="sc">&gt;</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span> <span class="co"># recode &gt; 1 to NA</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>MICSsimulated<span class="sc">$</span>GII[MICSsimulated<span class="sc">$</span>GII <span class="sc">&gt;</span> <span class="dv">100</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span> <span class="co"># recode &gt; 100 to NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(MICSsimulated) <span class="co"># head (top) of data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  id country GII HDI cd1 cd2 cd3             cd4 aggression
-1  1       1  20  24   0   0   1       Explained          1
-2  2       1  20  24   0   0   1       Explained          1
-3  3       1  20  24   0   0   1       Explained          1
-4  4       1  20  24   0   0   0 Did not explain          1
-5  5       1  20  24   1   0   1       Explained          0
-6  6       1  20  24   0   0   1       Explained          1</code></pre>
-</div>
-</div>
-</section>
-</section>
-<section id="simple-analysis" class="level3" data-number="6.3.3">
-<h3 data-number="6.3.3" class="anchored" data-anchor-id="simple-analysis"><span class="header-section-number">6.3.3</span> Simple Analysis</h3>
-<p>Our first step in analysis is to discover what kind of variables we have. We need to make a distinction between <em>continuous variables</em> that measure things like mental health or neighborhood safety, or age, and <em>categorical variables</em> that measure non-ordered categories like religious identity or gender identity.</p>
-<ul>
-<li>For continuous variables, it is most appropriate to take the <em>average</em> or <em>mean</em>.</li>
-<li>For categorical variables, it is most appropriate to generate a <em>frequency table</em>.</li>
-</ul>
-<blockquote class="blockquote">
-<p>As a mostly command based language, R relies on the idea of <code>do_something(dataset$variable)</code>.</p>
-</blockquote>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(MICSsimulated<span class="sc">$</span>GII) <span class="co"># descriptive statistics for GII</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-   15.0    22.0    24.0    24.2    27.0    31.0 </code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(MICSsimulated<span class="sc">$</span>cd4) <span class="co"># frequency table of cd4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Did not explain       Explained 
-            674            2326 </code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">###############</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># get the data</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="do">###############</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"./simulate-data/MICSsimulated.RData"</span>) <span class="co"># data in R format</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="do">####################</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># data wrangling</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="do">####################</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>labelled<span class="sc">::</span><span class="fu">look_for</span>(MICSsimulated) <span class="co"># look at data</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>mynewdata <span class="ot">&lt;-</span> <span class="fu">subset</span>(MICSsimulated,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                    <span class="at">select =</span> <span class="fu">c</span>(id, country, aggression)) <span class="co"># subset of data</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(labelled) <span class="co"># variable labels</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>id) <span class="ot">&lt;-</span> <span class="st">"id"</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>country) <span class="ot">&lt;-</span> <span class="st">"country"</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>cd4) <span class="ot">&lt;-</span> <span class="st">"explain"</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># make variable into factor</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>MICSsimulated<span class="sc">$</span>cd4 <span class="ot">&lt;-</span> <span class="fu">factor</span>(MICSsimulated<span class="sc">$</span>cd4,</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>                             <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>),</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>                             <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Did not explain"</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">"Explained"</span>))</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co"># recoding</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>MICSsimulated<span class="sc">$</span>aggression[MICSsimulated<span class="sc">$</span>aggression <span class="sc">&gt;</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span> <span class="co"># recode &gt; 1 to NA</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>MICSsimulated<span class="sc">$</span>GII[MICSsimulated<span class="sc">$</span>GII <span class="sc">&gt;</span> <span class="dv">100</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span> <span class="co"># recode &gt; 100 to NA</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="do">##############################</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="co"># descriptive statistics</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="do">##############################</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(MICSsimulated<span class="sc">$</span>GII) <span class="co"># descriptive statistics for GII</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(MICSsimulated<span class="sc">$</span>cd4) <span class="co"># frequency table of cd4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -870,13 +691,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./quick-intro-ggplot2.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">A Quick Introduction To <code>ggplot2</code></span></span>
+      <a href="./references.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">References</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./simulate-data.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Simulating MICS Data</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -884,4 +705,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/agrogan1/globalfamilies/issues/new" class="toc-action">Report an issue</a></p></div></div></div></div></footer></body></html>
