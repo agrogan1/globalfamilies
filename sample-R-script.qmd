@@ -1,6 +1,6 @@
 # A Sample R Script {#sec-Rscript}
 
-This is a sample R script for the steps of analysis found in {@sec-analysis}. Usually, an R script is stored in a text file ending in `.R`, so this R code could be stored an a text file called `myscript.R`.
+This is a sample R script for the steps of analysis found in @sec-analysis. Usually, an R script is stored in a text file ending in `.R`, so this R code could be stored an a text file called `myscript.R`.
 
 ```{r}
 #| eval: false

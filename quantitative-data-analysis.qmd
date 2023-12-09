@@ -61,7 +61,7 @@ There are some basic data cleaning steps that are common to many projects.
 * Add value labels (if we can). @sec-addvaluelabels
 * Recode outliers, values that are errors, or values that should be coded as missing @sec-recodes
 
-> Much of R's functionality is accomplished through writing *code*, that is saved in a *script*. Notice how--as our tasks get more and more complicated--the saved script provides documentation for the decisions that we have made with the data. A sample R script for the steps found in this chapter can be found in {@sec-Rscript}.
+> Much of R's functionality is accomplished through writing *code*, that is saved in a *script*. Notice how--as our tasks get more and more complicated--the saved script provides documentation for the decisions that we have made with the data. A sample R script for the steps found in this chapter can be found in @sec-Rscript.
 
 #### Only keep the variables of interest. {#sec-onlykeep}
 
