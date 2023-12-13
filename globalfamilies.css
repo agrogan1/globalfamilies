@@ -1,5 +1,7 @@
 .navbar-brand{
   font-weight: bold;
+}
+.navbar-dark .navbar-brand { 
   color: white;
 }
 blockquote {
