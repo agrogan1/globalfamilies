@@ -1,5 +1,9 @@
+.navbar-brand{
+  font-weight: bold;
+  color: white;
+}
 blockquote {
   color: black;
-  border-left: 3px solid #FFCB05; 
+  border-left: 3px solid #FFC20E; 
   padding: 0.5em 10px;
 }
