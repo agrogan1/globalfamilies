@@ -192,8 +192,6 @@ Similarly, exploring the data with a logistic regression confirms that we have c
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
-#| label: tbl-fit1
-#| tbl-cap: Multilevel Logistic Regression
 #| warning: false
 #| eval: true
 
@@ -203,9 +201,8 @@ fit1 <- glmer(aggression ~ cd1 + cd2 + cd3 + cd4 + GII +
               data = MICSsimulated,
               control = glmerControl(optimizer ="bobyqa"))
 
-tab_model(fit1, # nice table
-          transform = NULL) # untransformed estimates
-
+summary(fit1) # table for PDF
+  
 ```
 
 ## Write data to various formats
