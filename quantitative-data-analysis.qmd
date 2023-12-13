@@ -47,7 +47,17 @@ We take a look at our *simulated* data.
 
 load("./simulate-data/MICSsimulated.RData") # data in R format
 
-labelled::look_for(MICSsimulated) # look at data
+```
+
+```{r}
+
+labelled::look_for(MICSsimulated) # look at variables and variable labels
+
+```
+
+```{r}
+
+head(MICSsimulated) # look at top (head) of data
 
 ```
 
@@ -137,6 +147,8 @@ head(MICSsimulated) # head (top) of data
 ### Simple Analysis
 
 Our first step in analysis is to discover what kind of variables we have. We need to make a distinction between *continuous variables* that measure things like mental health or neighborhood safety, or age, and *categorical variables* that measure non-ordered categories like religious identity or gender identity.
+
+> Sometimes deciding whether a variable is *continuous* or *categorical* involves some hard thinking, or referring to the documentation for the data. In this data, all of the *forms of discipline*, as well as `aggression` are `1/0` variables, so likely best conceptualized as *categorical* variables. In contrast, `GII` and `HDI` are best conceptualized as *continuous* variables. 
 
 * For continuous variables, it is most appropriate to take the *average* or *mean*.
 * For categorical variables, it is most appropriate to generate a *frequency table*.

@@ -375,9 +375,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="6.3.1" class="anchored" data-anchor-id="our-data"><span class="header-section-number">6.3.1</span> Our Data</h3>
 <p>We take a look at our <em>simulated</em> data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"./simulate-data/MICSsimulated.RData"</span>) <span class="co"># data in R format</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>labelled<span class="sc">::</span><span class="fu">look_for</span>(MICSsimulated) <span class="co"># look at data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"./simulate-data/MICSsimulated.RData"</span>) <span class="co"># data in R format</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>labelled<span class="sc">::</span><span class="fu">look_for</span>(MICSsimulated) <span class="co"># look at variables and variable labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> pos variable   label                   col_type missing values
  1   id         id                      int      0             
@@ -389,6 +390,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  7   cd3        shout                   int      0             
  8   cd4        explain                 int      0             
  9   aggression aggression              int      0             </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(MICSsimulated) <span class="co"># look at top (head) of data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  id country GII HDI cd1 cd2 cd3 cd4 aggression
+1  1       1  20  24   0   0   1   1          1
+2  2       1  20  24   0   0   1   1          1
+3  3       1  20  24   0   0   1   1          1
+4  4       1  20  24   0   0   0   0          1
+5  5       1  20  24   1   0   1   1          0
+6  6       1  20  24   0   0   1   1          1</code></pre>
 </div>
 </div>
 </section>
@@ -410,11 +423,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We can easily accomplish this with the <code>subset</code> function</p>
 </blockquote>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mynewdata <span class="ot">&lt;-</span> <span class="fu">subset</span>(MICSsimulated,</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">select =</span> <span class="fu">c</span>(id, country, aggression)) <span class="co"># subset of data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>mynewdata <span class="ot">&lt;-</span> <span class="fu">subset</span>(MICSsimulated,</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">select =</span> <span class="fu">c</span>(id, country, aggression)) <span class="co"># subset of data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mynewdata) <span class="co"># look at top (head) of data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mynewdata) <span class="co"># look at top (head) of data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  id country aggression
 1  1       1          1
@@ -432,13 +445,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Adding <em>variable labels</em> is still somewhat new in R. The <code>labelled</code> library allows us to add or change variable labels. However, not every library in R recognizes <em>variable labels</em>.</p>
 </blockquote>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(labelled) <span class="co"># variable labels</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>id) <span class="ot">&lt;-</span> <span class="st">"id"</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>country) <span class="ot">&lt;-</span> <span class="st">"country"</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>cd4) <span class="ot">&lt;-</span> <span class="st">"explain"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(labelled) <span class="co"># variable labels</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>id) <span class="ot">&lt;-</span> <span class="st">"id"</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>country) <span class="ot">&lt;-</span> <span class="st">"country"</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>cd4) <span class="ot">&lt;-</span> <span class="st">"explain"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="sec-addvaluelabels" class="level4" data-number="6.3.2.3">
@@ -447,13 +460,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In contrast, <em>value labels</em> are straightforward in R, and can be accomplished by creating a <em>factor variable</em>. Below we demonstrate how to do this with the happy variable.</p>
 </blockquote>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>MICSsimulated<span class="sc">$</span>cd4 <span class="ot">&lt;-</span> <span class="fu">factor</span>(MICSsimulated<span class="sc">$</span>cd4,</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                             <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>),</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                             <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Did not explain"</span>,</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">"Explained"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>MICSsimulated<span class="sc">$</span>cd4 <span class="ot">&lt;-</span> <span class="fu">factor</span>(MICSsimulated<span class="sc">$</span>cd4,</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>                             <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>),</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                             <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Did not explain"</span>,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">"Explained"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(MICSsimulated) <span class="co"># head (top) of data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(MICSsimulated) <span class="co"># head (top) of data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  id country GII HDI cd1 cd2 cd3             cd4 aggression
 1  1       1  20  24   0   0   1       Explained          1
@@ -471,12 +484,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We can easily accomplish this using Base R’s syntax for recoding: <code>data$variable[rule] &lt;- newvalue</code>.</p>
 </blockquote>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>MICSsimulated<span class="sc">$</span>aggression[MICSsimulated<span class="sc">$</span>aggression <span class="sc">&gt;</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span> <span class="co"># recode &gt; 1 to NA</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>MICSsimulated<span class="sc">$</span>GII[MICSsimulated<span class="sc">$</span>GII <span class="sc">&gt;</span> <span class="dv">100</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span> <span class="co"># recode &gt; 100 to NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>MICSsimulated<span class="sc">$</span>aggression[MICSsimulated<span class="sc">$</span>aggression <span class="sc">&gt;</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span> <span class="co"># recode &gt; 1 to NA</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>MICSsimulated<span class="sc">$</span>GII[MICSsimulated<span class="sc">$</span>GII <span class="sc">&gt;</span> <span class="dv">100</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span> <span class="co"># recode &gt; 100 to NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(MICSsimulated) <span class="co"># head (top) of data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(MICSsimulated) <span class="co"># head (top) of data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  id country GII HDI cd1 cd2 cd3             cd4 aggression
 1  1       1  20  24   0   0   1       Explained          1
@@ -492,6 +505,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="simple-analysis" class="level3" data-number="6.3.3">
 <h3 data-number="6.3.3" class="anchored" data-anchor-id="simple-analysis"><span class="header-section-number">6.3.3</span> Simple Analysis</h3>
 <p>Our first step in analysis is to discover what kind of variables we have. We need to make a distinction between <em>continuous variables</em> that measure things like mental health or neighborhood safety, or age, and <em>categorical variables</em> that measure non-ordered categories like religious identity or gender identity.</p>
+<blockquote class="blockquote">
+<p>Sometimes deciding whether a variable is <em>continuous</em> or <em>categorical</em> involves some hard thinking, or referring to the documentation for the data. In this data, all of the <em>forms of discipline</em>, as well as <code>aggression</code> are <code>1/0</code> variables, so likely best conceptualized as <em>categorical</em> variables. In contrast, <code>GII</code> and <code>HDI</code> are best conceptualized as <em>continuous</em> variables.</p>
+</blockquote>
 <ul>
 <li>For continuous variables, it is most appropriate to take the <em>average</em> or <em>mean</em>.</li>
 <li>For categorical variables, it is most appropriate to generate a <em>frequency table</em>.</li>
@@ -500,14 +516,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>As a mostly command based language, R relies on the idea of <code>do_something(dataset$variable)</code>.</p>
 </blockquote>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(MICSsimulated<span class="sc">$</span>GII) <span class="co"># descriptive statistics for GII</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(MICSsimulated<span class="sc">$</span>GII) <span class="co"># descriptive statistics for GII</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
    15.0    22.0    24.0    24.2    27.0    31.0 </code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(MICSsimulated<span class="sc">$</span>cd4) <span class="co"># frequency table of cd4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(MICSsimulated<span class="sc">$</span>cd4) <span class="co"># frequency table of cd4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Did not explain       Explained 
