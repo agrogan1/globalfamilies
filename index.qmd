@@ -90,8 +90,9 @@ if (knitr::is_html_output()) {
     # addTiles() %>%
     addProviderTiles(providers$Esri.WorldImagery) %>%
     addPolygons(data = MICS, 
-                fillOpacity = .75, 
-                color = "#5b92e5", 
+                weight = 1,
+                fillOpacity = .5, 
+                color = "#1CABE2", 
                 label = MICS$NAME,
                 highlightOptions = highlightOptions(color = "red", 
                                                     weight = 2,
