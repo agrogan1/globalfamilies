@@ -2,6 +2,12 @@
 
 This website makes use of simulated data. Data come from 30 hypothetical countries. Data contain measures of a few key aspects of parenting[^parenting] or caregiving that have proven salient in the empirical literature on parenting to date. The outcome is `aggression` against other children.
 
+:::{.callout-tip collapse="false"}
+## Variable Values
+
+Most variables in this data set are *dichotomous*, and are coded `0/1` with `0 = "no"` and `1 = "yes"`. More descriptive `no/yes` *value labels* could be added in most statistical packages. 
+:::
+
 :::{.callout-note collapse="true"}
 ## Download The Data
 
