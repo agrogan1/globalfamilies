@@ -7,7 +7,6 @@ This website makes use of simulated data. Data come from 30 hypothetical countri
 #| fig-cap: "Countries of the World"
 #| warning: false
 #| echo: false
-#| column: body
 #| fig-height: 2
 
 if (knitr::is_html_output()) {
