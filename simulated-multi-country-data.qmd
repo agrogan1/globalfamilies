@@ -2,6 +2,34 @@
 
 This website makes use of simulated data. Data come from 30 hypothetical countries. Data contain measures of a few key aspects of parenting[^parenting] or caregiving that have proven salient in the empirical literature on parenting to date. The outcome is `aggression` against other children.
 
+```{r}
+#| label: fig-globe2
+#| fig-cap: "Countries of the World"
+#| warning: false
+#| echo: false
+#| column: body
+#| fig-height: 2
+
+if (knitr::is_html_output()) {
+
+library(plotly)
+
+plot_geo() %>%
+  layout(title = "", 
+         geo = list(projection = list(type = 'orthographic'),
+                    showland = TRUE,  
+                    landcolor = toRGB("grey"),
+                    showcountries = TRUE,
+                    showocean = FALSE, 
+                    oceancolor = "LightBlue",
+                    lataxis = list(showgrid = TRUE,
+                                   gridcolor = toRGB("black")),
+                    lonaxis = list(showgrid = TRUE,
+                                   gridcolor = toRGB("black"))))
+}
+
+```
+
 :::{.callout-tip collapse="false"}
 ## Variable Values
 
