@@ -299,8 +299,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <p>This website makes use of simulated data. Data come from 30 hypothetical countries. Data contain measures of a few key aspects of parenting<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> or caregiving that have proven salient in the empirical literature on parenting to date. The outcome is <code>aggression</code> against other children.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Variable Values
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Most variables in this data set are <em>dichotomous</em>, and are coded <code>0/1</code> with <code>0 = "no"</code> and <code>1 = "yes"</code>. More descriptive <code>no/yes</code> <em>value labels</em> could be added in most statistical packages.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -309,12 +325,13 @@ Download The Data
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><a href="https://github.com/agrogan1/globalfamilies/raw/main/simulate-data/MICSsimulated.RData">R format</a></li>
 <li><a href="https://github.com/agrogan1/globalfamilies/raw/main/simulate-data/MICSsimulated.dta">Stata Format</a></li>
 <li><a href="https://github.com/agrogan1/globalfamilies/raw/main/simulate-data/MICSsimulated.sav">SPSS</a></li>
+<li><a href="https://github.com/agrogan1/globalfamilies/raw/main/simulate-data/MICSsimulated.csv">CSV</a></li>
 </ul>
 </div>
 </div>
@@ -333,16 +350,16 @@ Download The Data
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>labelled<span class="sc">::</span><span class="fu">look_for</span>(MICSsimulated)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code> pos variable   label                   col_type values
- 1   id         id                      int            
- 2   country    country                 int            
- 3   GII        Gender Inequality Index int            
- 4   HDI        Human Development Index int            
- 5   cd1        spank                   int            
- 6   cd2        beat                    int            
- 7   cd3        shout                   int            
- 8   cd4        explain                 int            
- 9   aggression aggression              int            </code></pre>
+<pre><code> pos variable   label                   col_type missing values
+ 1   id         id                      int      0             
+ 2   country    country                 int      0             
+ 3   GII        Gender Inequality Index int      0             
+ 4   HDI        Human Development Index int      0             
+ 5   cd1        spank                   int      0             
+ 6   cd2        beat                    int      0             
+ 7   cd3        shout                   int      0             
+ 8   cd4        explain                 int      0             
+ 9   aggression aggression              int      0             </code></pre>
 </div>
 </div>
 </section>
