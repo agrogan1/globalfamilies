@@ -113,7 +113,7 @@ We can add color and a theme.[^legend]
 ```{r}
 #| fig-height: 3
 #| label: fig-ggplot-bar-color
-#| fig-cap: "Bar Graph of Aggression"
+#| fig-cap: "Bar Graph of Aggression With Better Options"
 #| message: false
 
 ggplot(MICSsimulated, # the data I am using

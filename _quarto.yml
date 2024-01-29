@@ -44,6 +44,7 @@ format:
       light: cosmo
       dark: vapor
     css: globalfamilies.css
+    lightbox: true
     execute:
       freeze: auto
   pdf:
