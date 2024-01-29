@@ -66,7 +66,7 @@ We can add color and a theme.
 ```{r}
 #| fig-height: 3
 #| label: fig-ggplot-histogram-color
-#| fig-cap: "Histogram of Gender Inequality Index"
+#| fig-cap: "Histogram of Gender Inequality Index With Better Options"
 #| message: false
 
 # anything that starts with a '#' is a comment
