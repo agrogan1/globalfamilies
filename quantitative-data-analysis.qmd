@@ -2,9 +2,17 @@
 
 ## Introduction
 
-A great deal of data analysis and visualization involves the same core set of steps.
+A great deal of data analysis (and visualization) involves the same core set of steps.
 
-$$\text{have a question} \rightarrow \text{get data} \rightarrow \text{process and clean data} \rightarrow \text{analyze data}$$ 
+```{mermaid}
+%%| fig-width: 7
+
+flowchart LR
+  A(have a question) --> B(get data)
+  B --> C(process and clean data) 
+  C --> D(analyze data)
+  
+```
 
 ## Some Tools for Analysis
 
