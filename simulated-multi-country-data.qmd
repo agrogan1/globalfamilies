@@ -38,8 +38,8 @@ Most variables in this data set are *dichotomous*, and are coded `0/1` with `0 =
 :::{.callout-note collapse="true"}
 ## Download The Data
 
-* [R format](https://github.com/agrogan1/globalfamilies/raw/main/simulate-data/MICSsimulated.RData)
-* [Stata Format](https://github.com/agrogan1/globalfamilies/raw/main/simulate-data/MICSsimulated.dta)
+* [R](https://github.com/agrogan1/globalfamilies/raw/main/simulate-data/MICSsimulated.RData)
+* [Stata](https://github.com/agrogan1/globalfamilies/raw/main/simulate-data/MICSsimulated.dta)
 * [SPSS](https://github.com/agrogan1/globalfamilies/raw/main/simulate-data/MICSsimulated.sav)
 * [CSV](https://github.com/agrogan1/globalfamilies/raw/main/simulate-data/MICSsimulated.csv)
 :::
