@@ -6,6 +6,21 @@ A great deal of data analysis (and visualization) involves the same core set of 
 
 ```{mermaid}
 %%| fig-width: 7
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#FFC20E',
+      'primaryTextColor': '#000000',
+      'primaryBorderColor': '#2D2926',
+      'lineColor': '#2D2926',
+      'secondaryColor': '#2D2926',
+      'secondaryTextColor': '#000000',
+      'tertiaryColor': '#F2F2F2',
+      'tertiaryBorderColor': '#2D2926'
+    }
+  }
+}%%
 
 flowchart LR
   A(have a question) --> B(get data)

@@ -45,11 +45,15 @@ format:
       dark: vapor
     css: globalfamilies.css
     lightbox: true
+    mermaid: 
+      theme: default
     execute:
       freeze: auto
   pdf:
     lot: true
     lof: true
+    mermaid: 
+      theme: default
     execute:
       freeze: auto    
       
