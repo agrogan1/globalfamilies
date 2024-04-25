@@ -7,7 +7,7 @@ This website makes use of simulated data. Data come from 30 hypothetical countri
 #| fig-cap: "Countries of the World"
 #| warning: false
 #| echo: false
-#| fig-height: 2
+#| fig-height: 3
 
 if (knitr::is_html_output()) {
 
@@ -17,7 +17,7 @@ plot_geo() %>%
   layout(title = "", 
          geo = list(projection = list(type = 'orthographic'),
                     showland = TRUE,  
-                    landcolor = toRGB("grey"),
+                    landcolor = toRGB("#1CABE2"),
                     showcountries = TRUE,
                     showocean = FALSE, 
                     oceancolor = "LightBlue",
