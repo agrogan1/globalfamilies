@@ -182,7 +182,9 @@ ggplot(MICSsimulated, # the data I am using
 
 ```
 
+::: {.callout-tip collapse="false"}
 An interactive tutorial to create this plot can be found [here](https://agrogan1.github.io/globalfamilies-flipbook/).
+:::
 
 [^moreinformation]: More information can be found here:  https://agrogan1.github.io/R/introduction-to-ggplot2/introduction-to-ggplot2.html
 
