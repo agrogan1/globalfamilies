@@ -54,7 +54,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -143,6 +163,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="citation_reference" content="citation_title=Applied longitudinal data analysis : Modeling change and event occurrence;,citation_abstract=Includes bibliographical references and index.;,citation_author=Judith D Singer;,citation_author=John B Willett;,citation_publication_date=2003;,citation_cover_date=2003;,citation_year=2003;,citation_isbn=0195152964;,citation_book_title=Applied longitudinal data analysis : modeling change and event occurrence;">
 <meta name="citation_reference" content="citation_title=Human Development Index (HDI);,citation_author=United Nations Development Program;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_fulltext_html_url=https://hdr.undp.org/data-center/human-development-index#/indicies/HDI;">
 <meta name="citation_reference" content="citation_title=Gender Inequality Index (GII);,citation_author=United Nations Development Program;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_fulltext_html_url=https://hdr.undp.org/data-center/thematic-composite-indices/gender-inequality-index#/indicies/GII;">
+<meta name="citation_reference" content="citation_title=ggplot2: Elegant graphics for data analysis;,citation_author=Hadley Wickham;,citation_publication_date=2016;,citation_cover_date=2016;,citation_year=2016;,citation_fulltext_html_url=https://ggplot2.tidyverse.org;,citation_isbn=978-3-319-24277-4;">
+<meta name="citation_reference" content="citation_title=R: A language and environment for statistical computing;,citation_author=R Core Team;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_fulltext_html_url=https://www.R-project.org/;">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -319,7 +341,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="why-use-ggplotmoreinformation" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="why-use-ggplotmoreinformation"><span class="header-section-number">5.1</span> Why Use <code>ggplot</code>?<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></h2>
-<p>A great deal of data analysis and visualization involves the same core set of steps: get some data, clean it up a little, run some descriptive statistics, run some bivariate statistics, create a graph or a visualization. <strong>ggplot2</strong> can be an important part of a replicable, automated, documented workflow for complex projects.</p>
+<p>A great deal of data analysis and visualization involves the same core set of steps: get some data, clean it up a little, run some descriptive statistics, run some bivariate statistics, create a graph or a visualization. <strong>ggplot2</strong> <span class="citation" data-cites="Wickham2016">(<a href="references.html#ref-Wickham2016" role="doc-biblioref">Wickham, 2016</a>)</span> can be an important part of a replicable, automated, documented workflow for complex projects.</p>
 <div class="cell" data-fig-width="7" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -535,6 +557,11 @@ Tip
 <span class="glightbox-desc lightbox-desc-2">Figure&nbsp;5.2: Histogram of Gender Inequality Index With Better Options</span>
 <span class="glightbox-desc lightbox-desc-3">Figure&nbsp;5.3: Bar Graph of Aggression</span>
 <span class="glightbox-desc lightbox-desc-4">Figure&nbsp;5.4: Bar Graph of Aggression With Better Options</span>
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-Wickham2016" class="csl-entry" role="listitem">
+Wickham, H. (2016). <em>ggplot2: Elegant graphics for data analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>
+</div>
 </div>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
@@ -1092,7 +1119,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/globalfamilies/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","loop":false,"selector":".lightbox"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/globalfamilies/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":false,"descPosition":"bottom","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

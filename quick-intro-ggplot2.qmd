@@ -2,7 +2,7 @@
 
 ## Why Use `ggplot`?[^moreinformation] 
 
-A great deal of data analysis and visualization involves the same core set of steps:  get some data, clean it up a little, run some descriptive statistics, run some bivariate statistics, create a graph or a visualization. **ggplot2** can be an important part of a replicable, automated, documented workflow for complex projects.
+A great deal of data analysis and visualization involves the same core set of steps:  get some data, clean it up a little, run some descriptive statistics, run some bivariate statistics, create a graph or a visualization. **ggplot2** [@Wickham2016] can be an important part of a replicable, automated, documented workflow for complex projects.
 
 ```{mermaid}
 %%| fig-width: 7

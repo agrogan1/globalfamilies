@@ -2,7 +2,7 @@
 
 ## Why Use R?
 
-R has a reputation for being difficult to learn, and a lot of that reputation is deserved. However, it is possible to teach R in an accessible way, and **a little bit of R can take you a long way**.  
+R [@RProgram] has a reputation for being difficult to learn, and a lot of that reputation is deserved. However, it is possible to teach R in an accessible way, and **a little bit of R can take you a long way**.  
 
 [R](https://www.r-project.org/) is open source, and therefore free, statistical software that is particularly good at obtaining, analyzing and visualizing data.
 

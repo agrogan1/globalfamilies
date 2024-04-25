@@ -54,7 +54,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -143,6 +163,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="citation_reference" content="citation_title=Applied longitudinal data analysis : Modeling change and event occurrence;,citation_abstract=Includes bibliographical references and index.;,citation_author=Judith D Singer;,citation_author=John B Willett;,citation_publication_date=2003;,citation_cover_date=2003;,citation_year=2003;,citation_isbn=0195152964;,citation_book_title=Applied longitudinal data analysis : modeling change and event occurrence;">
 <meta name="citation_reference" content="citation_title=Human Development Index (HDI);,citation_author=United Nations Development Program;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_fulltext_html_url=https://hdr.undp.org/data-center/human-development-index#/indicies/HDI;">
 <meta name="citation_reference" content="citation_title=Gender Inequality Index (GII);,citation_author=United Nations Development Program;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_fulltext_html_url=https://hdr.undp.org/data-center/thematic-composite-indices/gender-inequality-index#/indicies/GII;">
+<meta name="citation_reference" content="citation_title=ggplot2: Elegant graphics for data analysis;,citation_author=Hadley Wickham;,citation_publication_date=2016;,citation_cover_date=2016;,citation_year=2016;,citation_fulltext_html_url=https://ggplot2.tidyverse.org;,citation_isbn=978-3-319-24277-4;">
+<meta name="citation_reference" content="citation_title=R: A language and environment for statistical computing;,citation_author=R Core Team;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_fulltext_html_url=https://www.R-project.org/;">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -325,7 +347,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="why-use-r" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="why-use-r"><span class="header-section-number">4.1</span> Why Use R?</h2>
-<p>R has a reputation for being difficult to learn, and a lot of that reputation is deserved. However, it is possible to teach R in an accessible way, and <strong>a little bit of R can take you a long way</strong>.</p>
+<p>R <span class="citation" data-cites="RProgram">(<a href="references.html#ref-RProgram" role="doc-biblioref">R Core Team, 2023</a>)</span> has a reputation for being difficult to learn, and a lot of that reputation is deserved. However, it is possible to teach R in an accessible way, and <strong>a little bit of R can take you a long way</strong>.</p>
 <p><a href="https://www.r-project.org/">R</a> is open source, and therefore free, statistical software that is particularly good at obtaining, analyzing and visualizing data.</p>
 <p>R Commands are stored in a <em>script</em> or <em>code</em> file that usually ends in .R, e.g.&nbsp;<code>myscript.R</code>. The command file is distinct from your actual data, stored in an .RData file, e.g.&nbsp;<code>mydata.RData</code>.</p>
 <p>A great deal of data analysis and visualization involves the same core set of steps.</p>
@@ -444,7 +466,7 @@ flowchart LR
 <div id="fig-hist" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="quick-intro-R_files/figure-html/fig-hist-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1"><img src="quick-intro-R_files/figure-html/fig-hist-1.png" class="img-fluid figure-img" width="672"></a>
+<a href="quick-intro-R_files/figure-html/fig-hist-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="quick-intro-R_files/figure-html/fig-hist-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.1: Histogram of Gender Inequality Index
@@ -478,7 +500,7 @@ Tip
 <div id="fig-barplot" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-barplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="quick-intro-R_files/figure-html/fig-barplot-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2"><img src="quick-intro-R_files/figure-html/fig-barplot-1.png" class="img-fluid figure-img" width="672"></a>
+<a href="quick-intro-R_files/figure-html/fig-barplot-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2"><img src="quick-intro-R_files/figure-html/fig-barplot-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-barplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.2: Barplot of Aggression
@@ -527,6 +549,11 @@ no aggression    aggression
 <div class="hidden" aria-hidden="true">
 <span class="glightbox-desc lightbox-desc-1">Figure&nbsp;4.1: Histogram of Gender Inequality Index</span>
 <span class="glightbox-desc lightbox-desc-2">Figure&nbsp;4.2: Barplot of Aggression</span>
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-RProgram" class="csl-entry" role="listitem">
+R Core Team. (2023). <em>R: A language and environment for statistical computing</em>. R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>
+</div>
 </div>
 </section>
 
@@ -1075,7 +1102,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/globalfamilies/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"closeEffect":"zoom","openEffect":"zoom"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/globalfamilies/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
