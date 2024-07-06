@@ -41,7 +41,7 @@ prefer-html: true
 format:
   html:
     theme: 
-      light: cosmo
+      light: yeti
       dark: vapor
     css: globalfamilies.css
     lightbox: true
