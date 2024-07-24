@@ -27,9 +27,7 @@ book:
   appendices:
     - sample-R-script.qmd
     - simulate-data.qmd
-  navbar:
-    background: "#1CABE2"
-     
+   
 bibliography: globalfamilies.bib
 
 csl: apa.csl
