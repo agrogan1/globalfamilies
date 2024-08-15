@@ -23,6 +23,7 @@ book:
     - quick-intro-R.qmd
     - quick-intro-ggplot2.qmd
     - quantitative-data-analysis.qmd
+    - papers.qmd
     - references.qmd
   appendices:
     - sample-R-script.qmd
