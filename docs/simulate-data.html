@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Research Team – Global Families Project</title>
+<title>Appendix B — Simulating MICS Data – Global Families Project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,8 +84,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./simulated-multi-country-data.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./sample-R-script.html" rel="prev">
 <link href="./logo-globe.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -44,6 +97,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,14 +130,14 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="globalfamilies.css">
-<meta property="og:title" content="2&nbsp; Research Team – Global Families Project">
+<meta property="og:title" content="Appendix B — Simulating MICS Data – Global Families Project">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Global Families Project">
-<meta name="twitter:title" content="2&nbsp; Research Team – Global Families Project">
+<meta name="twitter:title" content="Appendix B — Simulating MICS Data – Global Families Project">
 <meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
-<meta name="citation_title" content="[2]{.chapter-number}&nbsp; [Research Team]{.chapter-title}">
-<meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/globalfamilies/team.html">
+<meta name="citation_title" content="Appendix B — Simulating MICS Data">
+<meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/globalfamilies/simulate-data.html">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=How chronic violence affects human development, social relations, and the practice of citizenship: A systemic framework for action;,citation_author=Tani Marilena Adams;,citation_publication_date=2017;,citation_cover_date=2017;,citation_year=2017;,citation_publisher=Woodrow Wilson International Center for Scholars;">
 <meta name="citation_reference" content="citation_title=Over-reliance on English hinders cognitive science;,citation_abstract=English is the dominant language in the study of human cognition and behavior: the individuals studied by cognitive scientists, as well as most of the scientists themselves, are frequently English speakers. However, English differs from other languages in ways that have consequences for the whole of the cognitive sciences, reaching far beyond the study of language itself. Here, we review an emerging body of evidence that highlights how the particular characteristics of English and the linguistic habits of English speakers bias the field by both warping research programs (e.g., overemphasizing features and mechanisms present in English over others) and overgeneralizing observations from English speakers? behaviors, brains, and cognition to our entire species. We propose mitigating strategies that could help avoid some of these pitfalls.;,citation_author=Dami’an E Blasi;,citation_author=Joseph Henrich;,citation_author=Evangelia Adamou;,citation_author=David Kemmerer;,citation_author=Asifa Majid;,citation_publication_date=2022-10;,citation_cover_date=2022-10;,citation_year=2022;,citation_fulltext_html_url=https://doi.org/10.1016/j.tics.2022.09.015;,citation_doi=10.1016/j.tics.2022.09.015;,citation_issn=1364-6613;,citation_journal_title=Trends in Cognitive Sciences;,citation_publisher=Elsevier;">
@@ -115,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./team.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Research Team</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sample-R-script.html">Appendices</a></li><li class="breadcrumb-item"><a href="./simulate-data.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Simulating MICS Data</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -176,7 +232,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./team.html" class="sidebar-item-text sidebar-link active">
+  <a href="./team.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Research Team</span></span></a>
   </div>
 </li>
@@ -233,7 +289,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./simulate-data.html" class="sidebar-item-text sidebar-link">
+  <a href="./simulate-data.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Simulating MICS Data</span></span></a>
   </div>
 </li>
@@ -244,15 +300,31 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#call-relevant-libraries" id="toc-call-relevant-libraries" class="nav-link active" data-scroll-target="#call-relevant-libraries"><span class="header-section-number">B.1</span> Call Relevant Libraries</a></li>
+  <li><a href="#setup-some-basic-parameters-of-the-data" id="toc-setup-some-basic-parameters-of-the-data" class="nav-link" data-scroll-target="#setup-some-basic-parameters-of-the-data"><span class="header-section-number">B.2</span> Setup Some Basic Parameters of the Data</a></li>
+  <li><a href="#simulate-data-based-on-mics" id="toc-simulate-data-based-on-mics" class="nav-link" data-scroll-target="#simulate-data-based-on-mics"><span class="header-section-number">B.3</span> Simulate Data Based on MICS</a>
+  <ul class="collapse">
+  <li><a href="#level-2" id="toc-level-2" class="nav-link" data-scroll-target="#level-2"><span class="header-section-number">B.3.1</span> Level 2</a></li>
+  <li><a href="#level-1" id="toc-level-1" class="nav-link" data-scroll-target="#level-1"><span class="header-section-number">B.3.2</span> Level 1</a></li>
+  <li><a href="#variable-labels" id="toc-variable-labels" class="nav-link" data-scroll-target="#variable-labels"><span class="header-section-number">B.3.3</span> Variable Labels</a></li>
+  </ul></li>
+  <li><a href="#explore-the-simulated-data-with-a-graph" id="toc-explore-the-simulated-data-with-a-graph" class="nav-link" data-scroll-target="#explore-the-simulated-data-with-a-graph"><span class="header-section-number">B.4</span> Explore The Simulated Data With A Graph</a></li>
+  <li><a href="#explore-the-simulated-data-with-a-logistic-regression" id="toc-explore-the-simulated-data-with-a-logistic-regression" class="nav-link" data-scroll-target="#explore-the-simulated-data-with-a-logistic-regression"><span class="header-section-number">B.5</span> Explore The Simulated Data With A Logistic Regression</a></li>
+  <li><a href="#write-data-to-various-formats" id="toc-write-data-to-various-formats" class="nav-link" data-scroll-target="#write-data-to-various-formats"><span class="header-section-number">B.6</span> Write data to various formats</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/globalfamilies/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sample-R-script.html">Appendices</a></li><li class="breadcrumb-item"><a href="./simulate-data.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Simulating MICS Data</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Research Team</span></h1>
+<h1 class="title">Appendix B — Simulating MICS Data</h1>
 </div>
 
 
@@ -269,34 +341,358 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Julie Ma, Principal Investigator</strong></p>
-<p>Associate Professor of Social Work and Director, Department of Social Work, College of Health Sciences, The University of Michigan-Flint</p>
-<p>Professor Ma’s research interests center around the effects of parental physical violence and cultural norms that endorse such violence on the well-being of children, both at local and global levels. Her ongoing research projects primarily focus on examining the link between parental physical abuse and the social-emotional development of young children. She specifically focuses on exploring these associations within the context of gender inequality and violent norms and crimes in low- and middle-income countries.</p>
-<p><strong>Andy Grogan-Kaylor, Co-Investigator</strong></p>
-<p>Sandra K. Danziger Collegiate Professor, Professor of Social Work, University of Michigan School of Social Work</p>
-<p>Professor Grogan-Kaylor’s research focuses on basic and intervention research on children and families with the aim of reducing violence against children and improving family and child wellbeing. Grogan-Kaylor’s current research projects examine parenting behaviors such as physical punishment and parental expressions of emotional warmth and support, and their effects on children’s aggression, antisocial behavior, anxiety, and depression.</p>
-<p><strong>Shawna Lee, Co-Investigator</strong></p>
-<p>Professor of Social Work, University of Michigan School of Social Work</p>
-<p>Professor Lee is a professor at the University of Michigan School of Social Work. She is the director of the Parenting in Context Research Lab and the director of the Program Evaluation Group at the School. Lee has published on topics related to child maltreatment, fathers’ parenting, father-child relationships, parenting stress and family functioning, and parental discipline. Her recent research focuses on parenting and stress during the COVID-19 pandemic.</p>
-<p><strong>Dana Charles McCoy, Consultant</strong></p>
-<p>Marie and Max Kargman Associate Professor in Human Development and Urban Education Advancement, the Harvard Graduate School of Education</p>
-<p>Professor McCoy’s work focuses on understanding the ways that poverty and violence in children’s home, school, and neighborhood environments affect the development of their cognitive and socioemotional skills in early childhood. She is also interested in the development, refinement, and evaluation of early intervention programs designed to promote positive development and resilience in young children, particularly in terms of their self-regulation and executive function.</p>
-<p><strong>Elizabeth Heger Boyle, Consultant</strong></p>
-<p>Professor of Sociology &amp; Law, University of Minnesota</p>
-<p>Professor Boyle studies women’s and children’s right to health, with a focus on the negative impacts of violence. She is committed to making comparative health microdata more accessible to researchers around the world; to that end, she is Principal Investigator of IPUMS Global Health, a set of online tools with free harmonized health and well-being data from the DHS Program, UNICEF, and Performance Monitoring for Action. Professor Boyle’s recent research focuses on orphans’ experience with violent discipline in sub-Saharan Africa and the relationship between women and children’s health and armed conflict.</p>
-<p><strong>Kaitlin P. Ward, Consultant</strong></p>
-<p>Research Affiliate, University of Michigan; People Analytics Researcher, Google</p>
-<p>Kaitlin’s research focuses on unveiling the ecological predictors of child development among impoverished populations in the US and families living in low- and middle-income countries abroad. She focuses on how broader contextual factors such as neighborhood/community, country, socioeconomic status, race/ethnicity, and gender inequality impact the functioning of the family unit, and in turn, how family processes impact child outcomes. She also serves as the primary methodologist on international program evaluations and randomized controlled trials where she tests the efficacy of culturally informed interventions on child and family health outcomes.</p>
-<p><strong>Olivia Chang, Research Assistant</strong></p>
-<p>Olivia D. Chang is a PhD student in the Joint Social Work and Developmental Psychology doctoral program at the University of Michigan. She earned her Master of Social Work in Interpersonal Practice from the University of Michigan School of Social Work. Her research interests include positive parenting, child maltreatment, adverse childhood experiences, community-based interventions, and resiliency. Drawing on psychological and social work frameworks, her work takes an interdisciplinary approach to transforming child welfare.</p>
-<p><strong>Ellarie Prince, Research Assistant</strong></p>
-<p>Ellarie Prince is an undergraduate student at the University of Michigan-Flint majoring in psychology and pursuing a certificate in early childhood trauma and education. She is a research assistant through the university’s Undergraduate Research Opportunity Program (UROP). Her research interests include the associations of childhood maltreatment and development; specifically physical abuse and its relation to language, learning, and socio-emotional development. She hopes to expand her knowledge in research and use these skills when furthering her education in psychology.</p>
-<p><strong>Shannon Krueger, Research Assistant</strong></p>
-<p>Shannon Krueger is a student in the Master of Social Work program at the University of Michigan-Flint. Her research interests include parent-child relationships, family preservation programs, and the emotional development of children with substance abusing parents.</p>
-<p><strong>Hailey Owens, Research Assistant</strong></p>
-<p>Hailey Owens is a student pursuing her MSW through UM-Flint. She earned her Bachelor’s degree in Behavioral Science from Western Michigan University. Her research interests include child development and the effects of systemic inequality, especially intimate partner violence, on women and members of the LGBTQ community. As an undergraduate research assistant, she contributed to a study focused on the effects of acceptance-based therapy on intrusive thoughts.</p>
+<p>This appendix details the process of creating the simulated MICS data that is employed in the examples on this website.</p>
+<p>MICS data are freely available, but usage of MICS requires completing a user agreement, and registering for a user account, on the MICS website, and thus MICS data should not be shared openly on a public website.</p>
+<p>This Appendix is highly technical. It is not necessary to understand this Appendix to benefit from the rest of this website. However, the details of creating this simulated data may be of interest to some users.</p>
+<section id="call-relevant-libraries" class="level2" data-number="B.1">
+<h2 data-number="B.1" class="anchored" data-anchor-id="call-relevant-libraries"><span class="header-section-number">B.1</span> Call Relevant Libraries</h2>
+<p>We need to call a number of relevant R libraries to simulate the data.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble) <span class="co"># new dataframes</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co"># nifty graphs</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(labelled) <span class="co"># labels</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven) <span class="co"># write Stata</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr) <span class="co"># tidy data</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co"># wrangle data</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4) <span class="co"># multilevel models</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sjPlot) <span class="co"># nice tables for MLM</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pander) <span class="co"># nice tables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="setup-some-basic-parameters-of-the-data" class="level2" data-number="B.2">
+<h2 data-number="B.2" class="anchored" data-anchor-id="setup-some-basic-parameters-of-the-data"><span class="header-section-number">B.2</span> Setup Some Basic Parameters of the Data</h2>
+<p>Because simulation is a random process, we set a <em>random seed</em> so that the simulation produces the same data set each time it is run.</p>
+<p>We are going to simulate data with 30 countries, and 100 individuals per country.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>) <span class="co"># random seed</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>N_countries <span class="ot">&lt;-</span> <span class="dv">30</span> <span class="co"># number of countries</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="co"># sample size / country</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="simulate-data-based-on-mics" class="level2" data-number="B.3">
+<h2 data-number="B.3" class="anchored" data-anchor-id="simulate-data-based-on-mics"><span class="header-section-number">B.3</span> Simulate Data Based on MICS</h2>
+<p>This is multilevel data where individuals are nested, or clustered, inside countries. Excellent technical and pedagogical discussions of multilevel models can be found in <span class="citation" data-cites="Raudenbush2002">Raudenbush &amp; Bryk (<a href="references.html#ref-Raudenbush2002" role="doc-biblioref">2002</a>)</span>, <span class="citation" data-cites="Singer2003">Singer &amp; Willett (<a href="references.html#ref-Singer2003" role="doc-biblioref">2003</a>)</span>, <span class="citation" data-cites="RabeHesketh2022">Rabe-Hesketh &amp; Skrondal (<a href="references.html#ref-RabeHesketh2022" role="doc-biblioref">2022</a>)</span>, <span class="citation" data-cites="Luke2004">Luke (<a href="references.html#ref-Luke2004" role="doc-biblioref">2004</a>)</span>, and <span class="citation" data-cites="Kreft1998">Kreft &amp; de Leeuw (<a href="references.html#ref-Kreft1998" role="doc-biblioref">1998</a>)</span>.</p>
+<section id="level-2" class="level3" data-number="B.3.1">
+<h3 data-number="B.3.1" class="anchored" data-anchor-id="level-2"><span class="header-section-number">B.3.1</span> Level 2</h3>
+<p>Simulating the second level of the data is relatively easy. We simply need to provide the number of countries, and then generate random effects for each country. Random effects are discussed in the above references, but essentially represent country level differences in the data.</p>
+<p>We also create <code>GII</code>, a <em>Gender Inequality Index</em> <span class="citation" data-cites="UNDPGII">(<a href="references.html#ref-UNDPGII" role="doc-biblioref">United Nations Development Program, 2023</a>)</span> variable, and <code>HDI</code>, a measure of the <em>Human Development Index</em> <span class="citation" data-cites="UNDPHDI">(<a href="references.html#ref-UNDPHDI" role="doc-biblioref">United Nations Development Program, 2022</a>)</span>, since these are country level, or Level 2 variables.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>country <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span>N_countries) <span class="co"># sequence 1 to 30</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>GII <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(N_countries, <span class="dv">100</span>, .<span class="dv">25</span>) <span class="co"># gender inequality index</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>HDI <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(N_countries, <span class="dv">100</span>, .<span class="dv">25</span>) <span class="co"># Human Development Index</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>u0 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(N_countries, <span class="dv">0</span>, .<span class="dv">25</span>) <span class="co"># random intercept</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>u1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(N_countries, <span class="dv">0</span>, .<span class="dv">05</span>) <span class="co"># random slope</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>randomeffects <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(country, </span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>                            GII, </span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>                            HDI, </span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>                            u0, </span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>                            u1) <span class="co"># dataframe of random effects</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="level-1" class="level3" data-number="B.3.2">
+<h3 data-number="B.3.2" class="anchored" data-anchor-id="level-1"><span class="header-section-number">B.3.2</span> Level 1</h3>
+<p>Simulating the Level 1 data is more complex.</p>
+<p>We <code>uncount</code> the data by 100 to create 100 observations for each country. We then create an <code>id</code> number.</p>
+<p>We create randomly simulated parental discipline variables with proportions similar to those in MICS.</p>
+<p>Lastly, we need to create the dependent variable. Because this is a dichotomous outcome, the process is somewhat complex. We need to craete a linear combination <code>z</code>, using regression weights derived from MICS. We then calculate predicted probabilities, and lastly generate a dichotomous <code>aggression</code> outcome from those probabilities.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>MICSsimulated <span class="ot">&lt;-</span> randomeffects <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">uncount</span>(N) <span class="sc">%&gt;%</span> <span class="co"># N individuals / country</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">row_number</span>()) <span class="sc">%&gt;%</span> <span class="co"># unique id</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cd1 =</span> <span class="fu">rbinom</span>(N <span class="sc">*</span> N_countries, <span class="dv">1</span>, .<span class="dv">38</span>), <span class="co"># spank</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">cd2 =</span> <span class="fu">rbinom</span>(N <span class="sc">*</span> N_countries, <span class="dv">1</span>, .<span class="dv">05</span>), <span class="co"># beat</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">cd3 =</span> <span class="fu">rbinom</span>(N <span class="sc">*</span> N_countries, <span class="dv">1</span>, .<span class="dv">64</span>), <span class="co"># shout</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">cd4 =</span> <span class="fu">rbinom</span>(N <span class="sc">*</span> N_countries, <span class="dv">1</span>, .<span class="dv">78</span>)) <span class="sc">%&gt;%</span> <span class="co"># explain</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">z =</span> <span class="dv">0</span> <span class="sc">+</span> <span class="co"># linear combination based on MICS</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>           .<span class="dv">01</span> <span class="sc">*</span> GII <span class="sc">+</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>           .<span class="dv">23</span> <span class="sc">*</span> cd1 <span class="sc">+</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>           .<span class="dv">52</span> <span class="sc">*</span> cd2 <span class="sc">+</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>           .<span class="dv">42</span> <span class="sc">*</span> cd3 <span class="sc">+</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>           <span class="sc">-</span>.<span class="dv">21</span> <span class="sc">*</span> cd4 <span class="sc">+</span> </span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>           u0) <span class="sc">%&gt;%</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">p =</span> <span class="fu">exp</span>(z) <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(z))) <span class="sc">%&gt;%</span> <span class="co"># probability</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">aggression =</span> <span class="fu">rbinom</span>(N <span class="sc">*</span> N_countries, <span class="dv">1</span>, p)) <span class="sc">%&gt;%</span> <span class="co"># binomial y</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(id, country, GII, HDI,</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>         cd1, cd2, cd3, cd4, </span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>         aggression)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="variable-labels" class="level3" data-number="B.3.3">
+<h3 data-number="B.3.3" class="anchored" data-anchor-id="variable-labels"><span class="header-section-number">B.3.3</span> Variable Labels</h3>
+<p>We add variable labels to the data which will help us to understand the data as we analyze it.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>id) <span class="ot">&lt;-</span> <span class="st">"id"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>country) <span class="ot">&lt;-</span> <span class="st">"country"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>GII) <span class="ot">&lt;-</span> <span class="st">"Gender Inequality Index"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>HDI) <span class="ot">&lt;-</span> <span class="st">"Human Development Index"</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>cd1) <span class="ot">&lt;-</span> <span class="st">"spank"</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>cd2) <span class="ot">&lt;-</span> <span class="st">"beat"</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>cd3) <span class="ot">&lt;-</span> <span class="st">"shout"</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>cd4) <span class="ot">&lt;-</span> <span class="st">"explain"</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>aggression) <span class="ot">&lt;-</span> <span class="st">"aggression"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pander</span>(labelled<span class="sc">::</span><span class="fu">look_for</span>(MICSsimulated)[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]) <span class="co"># list out variable labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-varlabels" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-varlabels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;B.1: Variable Labels
+</figcaption>
+<div aria-describedby="tbl-varlabels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 18%">
+<col style="width: 36%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">pos</th>
+<th style="text-align: center;">variable</th>
+<th style="text-align: center;">label</th>
+<th style="text-align: center;">col_type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">id</td>
+<td style="text-align: center;">id</td>
+<td style="text-align: center;">int</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">country</td>
+<td style="text-align: center;">country</td>
+<td style="text-align: center;">int</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">GII</td>
+<td style="text-align: center;">Gender Inequality Index</td>
+<td style="text-align: center;">int</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">HDI</td>
+<td style="text-align: center;">Human Development Index</td>
+<td style="text-align: center;">int</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">cd1</td>
+<td style="text-align: center;">spank</td>
+<td style="text-align: center;">int</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">cd2</td>
+<td style="text-align: center;">beat</td>
+<td style="text-align: center;">int</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">cd3</td>
+<td style="text-align: center;">shout</td>
+<td style="text-align: center;">int</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">cd4</td>
+<td style="text-align: center;">explain</td>
+<td style="text-align: center;">int</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">aggression</td>
+<td style="text-align: center;">aggression</td>
+<td style="text-align: center;">int</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+</section>
+<section id="explore-the-simulated-data-with-a-graph" class="level2" data-number="B.4">
+<h2 data-number="B.4" class="anchored" data-anchor-id="explore-the-simulated-data-with-a-graph"><span class="header-section-number">B.4</span> Explore The Simulated Data With A Graph</h2>
+<p>Exploring the simulated data with a graph helps us to ensure that we have simulated plausible data.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(MICSsimulated,</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> cd1, <span class="co"># x is spanking</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> aggression, <span class="co"># y is aggression</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="fu">factor</span>(country))) <span class="sc">+</span> <span class="co"># color is country</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"glm"</span>, <span class="co"># glm smoother</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family =</span> <span class="st">"binomial"</span>),</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">alpha =</span> .<span class="dv">1</span>) <span class="sc">+</span> <span class="co"># transparency for CI's</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Aggression as a Function of Spanking"</span>,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"spank"</span>,</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"aggression"</span>) <span class="sc">+</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>(<span class="at">name =</span> <span class="st">"Country"</span>) <span class="sc">+</span> <span class="co"># nice colors</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-p1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-p1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="simulate-data_files/figure-html/fig-p1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;B.1: Graph of Simulated Data"><img src="simulate-data_files/figure-html/fig-p1-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-p1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;B.1: Graph of Simulated Data
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="explore-the-simulated-data-with-a-logistic-regression" class="level2" data-number="B.5">
+<h2 data-number="B.5" class="anchored" data-anchor-id="explore-the-simulated-data-with-a-logistic-regression"><span class="header-section-number">B.5</span> Explore The Simulated Data With A Logistic Regression</h2>
+<p>Similarly, exploring the data with a logistic regression confirms that we have created plausible data.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">glmer</span>(aggression <span class="sc">~</span> cd1 <span class="sc">+</span> cd2 <span class="sc">+</span> cd3 <span class="sc">+</span> cd4 <span class="sc">+</span> GII <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                (<span class="dv">1</span> <span class="sc">|</span> country), </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">family =</span> <span class="st">"binomial"</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> MICSsimulated,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">control =</span> <span class="fu">glmerControl</span>(<span class="at">optimizer =</span><span class="st">"bobyqa"</span>))</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit1) <span class="co"># table for PDF</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Generalized linear mixed model fit by maximum likelihood (Laplace
+  Approximation) [glmerMod]
+ Family: binomial  ( logit )
+Formula: aggression ~ cd1 + cd2 + cd3 + cd4 + GII + (1 | country)
+   Data: MICSsimulated
+Control: glmerControl(optimizer = "bobyqa")
+
+     AIC      BIC   logLik deviance df.resid 
+  4043.0   4085.1  -2014.5   4029.0     2993 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.3105 -1.0575  0.6729  0.8799  1.3032 
+
+Random effects:
+ Groups  Name        Variance Std.Dev.
+ country (Intercept) 0.04616  0.2148  
+Number of obs: 3000, groups:  country, 30
+
+Fixed effects:
+            Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept) -0.40705    0.35298  -1.153  0.24883    
+cd1          0.21337    0.07766   2.748  0.00600 ** 
+cd2          0.58546    0.17948   3.262  0.00111 ** 
+cd3          0.45124    0.07778   5.801 6.57e-09 ***
+cd4         -0.36836    0.09156  -4.023 5.74e-05 ***
+GII          0.02269    0.01388   1.635  0.10201    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+    (Intr) cd1    cd2    cd3    cd4   
+cd1 -0.070                            
+cd2 -0.022 -0.010                     
+cd3 -0.157  0.002  0.020              
+cd4 -0.204 -0.009 -0.004 -0.020       
+GII -0.954 -0.011 -0.003  0.023  0.004</code></pre>
+</div>
+</div>
+</section>
+<section id="write-data-to-various-formats" class="level2" data-number="B.6">
+<h2 data-number="B.6" class="anchored" data-anchor-id="write-data-to-various-formats"><span class="header-section-number">B.6</span> Write data to various formats</h2>
+<p>Lastly, we write the data out to various formats: R, Stata, and SPSS.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(MICSsimulated, </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">file =</span> <span class="st">"./simulate-data/MICSsimulated.RData"</span>) <span class="co"># R</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write_dta</span>(MICSsimulated, </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>          <span class="st">"./simulate-data/MICSsimulated.dta"</span>) <span class="co"># Stata</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">write_sav</span>(MICSsimulated, </span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>          <span class="st">"./simulate-data/MICSsimulated.sav"</span>) <span class="co"># SPSS</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(MICSsimulated,</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>          <span class="st">"./simulate-data/MICSsimulated.csv"</span>) <span class="co"># CSV</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-Kreft1998" class="csl-entry" role="listitem">
+Kreft, I., &amp; de Leeuw, J. (1998). <em>Introducing multilevel modeling</em>. SAGE Publications. <a href="https://doi.org/10.4135/9781849209366">https://doi.org/10.4135/9781849209366</a>
+</div>
+<div id="ref-Luke2004" class="csl-entry" role="listitem">
+Luke, D. (2004). <em>Multilevel modeling</em>. SAGE Publications, Inc. <a href="https://doi.org/10.4135/9781412985147">https://doi.org/10.4135/9781412985147</a>
+</div>
+<div id="ref-RabeHesketh2022" class="csl-entry" role="listitem">
+Rabe-Hesketh, S., &amp; Skrondal, A. (2022). Multilevel and longitudinal modeling using <span>S</span>tata. In <em>Stata Press</em> (4th ed.). Stata Press.
+</div>
+<div id="ref-Raudenbush2002" class="csl-entry" role="listitem">
+Raudenbush, S. W., &amp; Bryk, A. S. (2002). <em>Hierarchical linear models: Applications and data analysis methods</em> (pp. xxiv, 485 p.). Sage Publications.
+</div>
+<div id="ref-Singer2003" class="csl-entry" role="listitem">
+Singer, J. D., &amp; Willett, J. B. (2003). Applied longitudinal data analysis : Modeling change and event occurrence. In <em>Applied longitudinal data analysis : modeling change and event occurrence</em>. Oxford University Press.
+</div>
+<div id="ref-UNDPHDI" class="csl-entry" role="listitem">
+United Nations Development Program. (2022). <em><span>Human Development Index (HDI)</span></em>. <a href="https://hdr.undp.org/data-center/human-development-index#/indicies/HDI">https://hdr.undp.org/data-center/human-development-index#/indicies/HDI</a>
+</div>
+<div id="ref-UNDPGII" class="csl-entry" role="listitem">
+United Nations Development Program. (2023). <em><span>Gender Inequality Index (GII)</span></em>. <a href="https://hdr.undp.org/data-center/thematic-composite-indices/gender-inequality-index#/indicies/GII">https://hdr.undp.org/data-center/thematic-composite-indices/gender-inequality-index#/indicies/GII</a>
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -865,19 +1261,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Project Summary">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Project Summary</span></span>
+      <a href="./sample-R-script.html" class="pagination-link" aria-label="A Sample R Script">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">A Sample R Script</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./simulated-multi-country-data.html" class="pagination-link" aria-label="Simulated Multi-Country Data">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simulated Multi-Country Data</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/globalfamilies/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"openEffect":"zoom","descPosition":"bottom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/globalfamilies/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+</body></html>

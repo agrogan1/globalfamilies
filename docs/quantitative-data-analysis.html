@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Research Team – Global Families Project</title>
+<title>6&nbsp; Quantitative Data Analysis – Global Families Project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./simulated-multi-country-data.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./papers.html" rel="next">
+<link href="./quick-intro-ggplot2.html" rel="prev">
 <link href="./logo-globe.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -71,17 +105,21 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<meta name="mermaid-theme" content="default">
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="globalfamilies.css">
-<meta property="og:title" content="2&nbsp; Research Team – Global Families Project">
+<meta property="og:title" content="6&nbsp; Quantitative Data Analysis – Global Families Project">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Global Families Project">
-<meta name="twitter:title" content="2&nbsp; Research Team – Global Families Project">
+<meta name="twitter:title" content="6&nbsp; Quantitative Data Analysis – Global Families Project">
 <meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
-<meta name="citation_title" content="[2]{.chapter-number}&nbsp; [Research Team]{.chapter-title}">
-<meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/globalfamilies/team.html">
+<meta name="citation_title" content="[[6]{.chapter-number}&nbsp; [Quantitative Data Analysis]{.chapter-title}]{#sec-analysis .quarto-section-identifier}">
+<meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/globalfamilies/quantitative-data-analysis.html">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=How chronic violence affects human development, social relations, and the practice of citizenship: A systemic framework for action;,citation_author=Tani Marilena Adams;,citation_publication_date=2017;,citation_cover_date=2017;,citation_year=2017;,citation_publisher=Woodrow Wilson International Center for Scholars;">
 <meta name="citation_reference" content="citation_title=Over-reliance on English hinders cognitive science;,citation_abstract=English is the dominant language in the study of human cognition and behavior: the individuals studied by cognitive scientists, as well as most of the scientists themselves, are frequently English speakers. However, English differs from other languages in ways that have consequences for the whole of the cognitive sciences, reaching far beyond the study of language itself. Here, we review an emerging body of evidence that highlights how the particular characteristics of English and the linguistic habits of English speakers bias the field by both warping research programs (e.g., overemphasizing features and mechanisms present in English over others) and overgeneralizing observations from English speakers? behaviors, brains, and cognition to our entire species. We propose mitigating strategies that could help avoid some of these pitfalls.;,citation_author=Dami’an E Blasi;,citation_author=Joseph Henrich;,citation_author=Evangelia Adamou;,citation_author=David Kemmerer;,citation_author=Asifa Majid;,citation_publication_date=2022-10;,citation_cover_date=2022-10;,citation_year=2022;,citation_fulltext_html_url=https://doi.org/10.1016/j.tics.2022.09.015;,citation_doi=10.1016/j.tics.2022.09.015;,citation_issn=1364-6613;,citation_journal_title=Trends in Cognitive Sciences;,citation_publisher=Elsevier;">
@@ -115,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./team.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Research Team</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quantitative-data-analysis.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quantitative Data Analysis</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -176,7 +214,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./team.html" class="sidebar-item-text sidebar-link active">
+  <a href="./team.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Research Team</span></span></a>
   </div>
 </li>
@@ -200,7 +238,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quantitative-data-analysis.html" class="sidebar-item-text sidebar-link">
+  <a href="./quantitative-data-analysis.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quantitative Data Analysis</span></span></a>
   </div>
 </li>
@@ -244,15 +282,28 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">6.1</span> Introduction</a></li>
+  <li><a href="#some-tools-for-analysis" id="toc-some-tools-for-analysis" class="nav-link" data-scroll-target="#some-tools-for-analysis"><span class="header-section-number">6.2</span> Some Tools for Analysis</a></li>
+  <li><a href="#working-with-r" id="toc-working-with-r" class="nav-link" data-scroll-target="#working-with-r"><span class="header-section-number">6.3</span> Working With R</a>
+  <ul class="collapse">
+  <li><a href="#our-data" id="toc-our-data" class="nav-link" data-scroll-target="#our-data"><span class="header-section-number">6.3.1</span> Our Data</a></li>
+  <li><a href="#cleaning-data" id="toc-cleaning-data" class="nav-link" data-scroll-target="#cleaning-data"><span class="header-section-number">6.3.2</span> Cleaning Data</a></li>
+  <li><a href="#simple-analysis" id="toc-simple-analysis" class="nav-link" data-scroll-target="#simple-analysis"><span class="header-section-number">6.3.3</span> Simple Analysis</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/globalfamilies/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Research Team</span></h1>
+<h1 class="title"><span id="sec-analysis" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Quantitative Data Analysis</span></span></h1>
 </div>
 
 
@@ -269,34 +320,268 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Julie Ma, Principal Investigator</strong></p>
-<p>Associate Professor of Social Work and Director, Department of Social Work, College of Health Sciences, The University of Michigan-Flint</p>
-<p>Professor Ma’s research interests center around the effects of parental physical violence and cultural norms that endorse such violence on the well-being of children, both at local and global levels. Her ongoing research projects primarily focus on examining the link between parental physical abuse and the social-emotional development of young children. She specifically focuses on exploring these associations within the context of gender inequality and violent norms and crimes in low- and middle-income countries.</p>
-<p><strong>Andy Grogan-Kaylor, Co-Investigator</strong></p>
-<p>Sandra K. Danziger Collegiate Professor, Professor of Social Work, University of Michigan School of Social Work</p>
-<p>Professor Grogan-Kaylor’s research focuses on basic and intervention research on children and families with the aim of reducing violence against children and improving family and child wellbeing. Grogan-Kaylor’s current research projects examine parenting behaviors such as physical punishment and parental expressions of emotional warmth and support, and their effects on children’s aggression, antisocial behavior, anxiety, and depression.</p>
-<p><strong>Shawna Lee, Co-Investigator</strong></p>
-<p>Professor of Social Work, University of Michigan School of Social Work</p>
-<p>Professor Lee is a professor at the University of Michigan School of Social Work. She is the director of the Parenting in Context Research Lab and the director of the Program Evaluation Group at the School. Lee has published on topics related to child maltreatment, fathers’ parenting, father-child relationships, parenting stress and family functioning, and parental discipline. Her recent research focuses on parenting and stress during the COVID-19 pandemic.</p>
-<p><strong>Dana Charles McCoy, Consultant</strong></p>
-<p>Marie and Max Kargman Associate Professor in Human Development and Urban Education Advancement, the Harvard Graduate School of Education</p>
-<p>Professor McCoy’s work focuses on understanding the ways that poverty and violence in children’s home, school, and neighborhood environments affect the development of their cognitive and socioemotional skills in early childhood. She is also interested in the development, refinement, and evaluation of early intervention programs designed to promote positive development and resilience in young children, particularly in terms of their self-regulation and executive function.</p>
-<p><strong>Elizabeth Heger Boyle, Consultant</strong></p>
-<p>Professor of Sociology &amp; Law, University of Minnesota</p>
-<p>Professor Boyle studies women’s and children’s right to health, with a focus on the negative impacts of violence. She is committed to making comparative health microdata more accessible to researchers around the world; to that end, she is Principal Investigator of IPUMS Global Health, a set of online tools with free harmonized health and well-being data from the DHS Program, UNICEF, and Performance Monitoring for Action. Professor Boyle’s recent research focuses on orphans’ experience with violent discipline in sub-Saharan Africa and the relationship between women and children’s health and armed conflict.</p>
-<p><strong>Kaitlin P. Ward, Consultant</strong></p>
-<p>Research Affiliate, University of Michigan; People Analytics Researcher, Google</p>
-<p>Kaitlin’s research focuses on unveiling the ecological predictors of child development among impoverished populations in the US and families living in low- and middle-income countries abroad. She focuses on how broader contextual factors such as neighborhood/community, country, socioeconomic status, race/ethnicity, and gender inequality impact the functioning of the family unit, and in turn, how family processes impact child outcomes. She also serves as the primary methodologist on international program evaluations and randomized controlled trials where she tests the efficacy of culturally informed interventions on child and family health outcomes.</p>
-<p><strong>Olivia Chang, Research Assistant</strong></p>
-<p>Olivia D. Chang is a PhD student in the Joint Social Work and Developmental Psychology doctoral program at the University of Michigan. She earned her Master of Social Work in Interpersonal Practice from the University of Michigan School of Social Work. Her research interests include positive parenting, child maltreatment, adverse childhood experiences, community-based interventions, and resiliency. Drawing on psychological and social work frameworks, her work takes an interdisciplinary approach to transforming child welfare.</p>
-<p><strong>Ellarie Prince, Research Assistant</strong></p>
-<p>Ellarie Prince is an undergraduate student at the University of Michigan-Flint majoring in psychology and pursuing a certificate in early childhood trauma and education. She is a research assistant through the university’s Undergraduate Research Opportunity Program (UROP). Her research interests include the associations of childhood maltreatment and development; specifically physical abuse and its relation to language, learning, and socio-emotional development. She hopes to expand her knowledge in research and use these skills when furthering her education in psychology.</p>
-<p><strong>Shannon Krueger, Research Assistant</strong></p>
-<p>Shannon Krueger is a student in the Master of Social Work program at the University of Michigan-Flint. Her research interests include parent-child relationships, family preservation programs, and the emotional development of children with substance abusing parents.</p>
-<p><strong>Hailey Owens, Research Assistant</strong></p>
-<p>Hailey Owens is a student pursuing her MSW through UM-Flint. She earned her Bachelor’s degree in Behavioral Science from Western Michigan University. Her research interests include child development and the effects of systemic inequality, especially intimate partner violence, on women and members of the LGBTQ community. As an undergraduate research assistant, she contributed to a study focused on the effects of acceptance-based therapy on intrusive thoughts.</p>
+<section id="introduction" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">6.1</span> Introduction</h2>
+<p>A great deal of data analysis (and visualization) involves the same core set of steps.</p>
+<div class="cell" data-fig-width="7" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#FFC20E',
+      'primaryTextColor': '#000000',
+      'primaryBorderColor': '#2D2926',
+      'lineColor': '#2D2926',
+      'secondaryColor': '#2D2926',
+      'secondaryTextColor': '#000000',
+      'tertiaryColor': '#F2F2F2',
+      'tertiaryBorderColor': '#2D2926'
+    }
+  }
+}%%
+
+flowchart LR
+  A(have a question) --&gt; B(get data)
+  B --&gt; C(process and clean data) 
+  C --&gt; D(visualize data)
+  D --&gt; E(analyze data)
+  E --&gt; F(make conclusions)
+  F --&gt; G(share ideas)
+  
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="some-tools-for-analysis" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="some-tools-for-analysis"><span class="header-section-number">6.2</span> Some Tools for Analysis</h2>
+<p>Below we describe some simple data cleaning with R. We begin, however, by comparing several different tools for analysis including: Excel, Google Sheets, R, and Stata.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 18%">
+<col style="width: 17%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Tool</th>
+<th style="text-align: left;">Cost</th>
+<th style="text-align: left;">Ease of Use</th>
+<th style="text-align: left;">Analysis Capabilities</th>
+<th style="text-align: left;">Suitability for Large Data</th>
+<th style="text-align: left;">Keep Track of Complicated Workflows</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Excel</td>
+<td style="text-align: left;">Comes installed on many computers</td>
+<td style="text-align: left;">Easy</td>
+<td style="text-align: left;">Limited</td>
+<td style="text-align: left;">Difficult when N &gt; 100</td>
+<td style="text-align: left;">Difficult to Impossible</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Google Sheets</td>
+<td style="text-align: left;">Free with a Google account</td>
+<td style="text-align: left;">Easy</td>
+<td style="text-align: left;">Limited</td>
+<td style="text-align: left;">Difficult when N &gt; 100</td>
+<td style="text-align: left;">Difficult to Impossible</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">R</td>
+<td style="text-align: left;">Free</td>
+<td style="text-align: left;">Challenging</td>
+<td style="text-align: left;">Extensive</td>
+<td style="text-align: left;">Excellent with large datasets</td>
+<td style="text-align: left;">Yes, with script</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Stata</td>
+<td style="text-align: left;">Some cost</td>
+<td style="text-align: left;">Learning Curve but Intuitive</td>
+<td style="text-align: left;">Extensive</td>
+<td style="text-align: left;">Excellent with large datasets</td>
+<td style="text-align: left;">Yes, with command file</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="working-with-r" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="working-with-r"><span class="header-section-number">6.3</span> Working With R</h2>
+<section id="our-data" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="our-data"><span class="header-section-number">6.3.1</span> Our Data</h3>
+<p>We take a look at our <em>simulated</em> data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"./simulate-data/MICSsimulated.RData"</span>) <span class="co"># data in R format</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>labelled<span class="sc">::</span><span class="fu">look_for</span>(MICSsimulated) <span class="co"># look at variables and variable labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> pos variable   label                   col_type missing values
+ 1   id         id                      int      0             
+ 2   country    country                 int      0             
+ 3   GII        Gender Inequality Index int      0             
+ 4   HDI        Human Development Index int      0             
+ 5   cd1        spank                   int      0             
+ 6   cd2        beat                    int      0             
+ 7   cd3        shout                   int      0             
+ 8   cd4        explain                 int      0             
+ 9   aggression aggression              int      0             </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(MICSsimulated) <span class="co"># look at top (head) of data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  id country GII HDI cd1 cd2 cd3 cd4 aggression
+1  1       1  20  24   0   0   1   1          1
+2  2       1  20  24   0   0   1   1          1
+3  3       1  20  24   0   0   1   1          1
+4  4       1  20  24   0   0   0   0          1
+5  5       1  20  24   1   0   1   1          0
+6  6       1  20  24   0   0   1   1          1</code></pre>
+</div>
+</div>
+</section>
+<section id="cleaning-data" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="cleaning-data"><span class="header-section-number">6.3.2</span> Cleaning Data</h3>
+<p>There are some basic data cleaning steps that are common to many projects.</p>
+<ul>
+<li>Only keep the variables of interest. <a href="#sec-onlykeep" class="quarto-xref"><span>Section 6.3.2.1</span></a></li>
+<li>Add variable labels (if we can). <a href="#sec-addvarlabels" class="quarto-xref"><span>Section 6.3.2.2</span></a></li>
+<li>Add value labels (if we can). <a href="#sec-addvaluelabels" class="quarto-xref"><span>Section 6.3.2.3</span></a></li>
+<li>Recode outliers, values that are errors, or values that should be coded as missing <a href="#sec-recodes" class="quarto-xref"><span>Section 6.3.2.4</span></a></li>
+</ul>
+<blockquote class="blockquote">
+<p>Much of R’s functionality is accomplished through writing <em>code</em>, that is saved in a <em>script</em>. Notice how–as our tasks get more and more complicated–the saved script provides documentation for the decisions that we have made with the data. A sample R script for the steps found in this chapter can be found in <a href="sample-R-script.html" class="quarto-xref"><span>Appendix A</span></a>.</p>
+</blockquote>
+<section id="sec-onlykeep" class="level4" data-number="6.3.2.1">
+<h4 data-number="6.3.2.1" class="anchored" data-anchor-id="sec-onlykeep"><span class="header-section-number">6.3.2.1</span> Only keep the variables of interest.</h4>
+<blockquote class="blockquote">
+<p>We can easily accomplish this with the <code>subset</code> function</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>mynewdata <span class="ot">&lt;-</span> <span class="fu">subset</span>(MICSsimulated,</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">select =</span> <span class="fu">c</span>(id, country, aggression)) <span class="co"># subset of data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mynewdata) <span class="co"># look at top (head) of data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  id country aggression
+1  1       1          1
+2  2       1          1
+3  3       1          1
+4  4       1          1
+5  5       1          0
+6  6       1          1</code></pre>
+</div>
+</div>
+</section>
+<section id="sec-addvarlabels" class="level4" data-number="6.3.2.2">
+<h4 data-number="6.3.2.2" class="anchored" data-anchor-id="sec-addvarlabels"><span class="header-section-number">6.3.2.2</span> Add variable labels (if we can).</h4>
+<blockquote class="blockquote">
+<p>Adding <em>variable labels</em> is still somewhat new in R. The <code>labelled</code> library allows us to add or change variable labels. However, not every library in R recognizes <em>variable labels</em>.</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(labelled) <span class="co"># variable labels</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>id) <span class="ot">&lt;-</span> <span class="st">"id"</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>country) <span class="ot">&lt;-</span> <span class="st">"country"</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>cd4) <span class="ot">&lt;-</span> <span class="st">"explain"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="sec-addvaluelabels" class="level4" data-number="6.3.2.3">
+<h4 data-number="6.3.2.3" class="anchored" data-anchor-id="sec-addvaluelabels"><span class="header-section-number">6.3.2.3</span> Add value labels (if we can).</h4>
+<blockquote class="blockquote">
+<p>In contrast, <em>value labels</em> are straightforward in R, and can be accomplished by creating a <em>factor variable</em>. Below we demonstrate how to do this with the happy variable.</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>MICSsimulated<span class="sc">$</span>cd4 <span class="ot">&lt;-</span> <span class="fu">factor</span>(MICSsimulated<span class="sc">$</span>cd4,</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>                             <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>),</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                             <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Did not explain"</span>,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">"Explained"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(MICSsimulated) <span class="co"># head (top) of data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  id country GII HDI cd1 cd2 cd3             cd4 aggression
+1  1       1  20  24   0   0   1       Explained          1
+2  2       1  20  24   0   0   1       Explained          1
+3  3       1  20  24   0   0   1       Explained          1
+4  4       1  20  24   0   0   0 Did not explain          1
+5  5       1  20  24   1   0   1       Explained          0
+6  6       1  20  24   0   0   1       Explained          1</code></pre>
+</div>
+</div>
+</section>
+<section id="sec-recodes" class="level4" data-number="6.3.2.4">
+<h4 data-number="6.3.2.4" class="anchored" data-anchor-id="sec-recodes"><span class="header-section-number">6.3.2.4</span> Recode outliers, values that are errors, or values that should be coded as missing.</h4>
+<blockquote class="blockquote">
+<p>We can easily accomplish this using Base R’s syntax for recoding: <code>data$variable[rule] &lt;- newvalue</code>.</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>MICSsimulated<span class="sc">$</span>aggression[MICSsimulated<span class="sc">$</span>aggression <span class="sc">&gt;</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span> <span class="co"># recode &gt; 1 to NA</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>MICSsimulated<span class="sc">$</span>GII[MICSsimulated<span class="sc">$</span>GII <span class="sc">&gt;</span> <span class="dv">100</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span> <span class="co"># recode &gt; 100 to NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(MICSsimulated) <span class="co"># head (top) of data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  id country GII HDI cd1 cd2 cd3             cd4 aggression
+1  1       1  20  24   0   0   1       Explained          1
+2  2       1  20  24   0   0   1       Explained          1
+3  3       1  20  24   0   0   1       Explained          1
+4  4       1  20  24   0   0   0 Did not explain          1
+5  5       1  20  24   1   0   1       Explained          0
+6  6       1  20  24   0   0   1       Explained          1</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="simple-analysis" class="level3" data-number="6.3.3">
+<h3 data-number="6.3.3" class="anchored" data-anchor-id="simple-analysis"><span class="header-section-number">6.3.3</span> Simple Analysis</h3>
+<p>Our first step in analysis is to discover what kind of variables we have. We need to make a distinction between <em>continuous variables</em> that measure things like mental health or neighborhood safety, or age, and <em>categorical variables</em> that measure non-ordered categories like religious identity or gender identity.</p>
+<blockquote class="blockquote">
+<p>Sometimes deciding whether a variable is <em>continuous</em> or <em>categorical</em> involves some hard thinking, or referring to the documentation for the data. In this data, all of the <em>forms of discipline</em>, as well as <code>aggression</code> are <code>1/0</code> variables, so likely best conceptualized as <em>categorical</em> variables. In contrast, <code>GII</code> and <code>HDI</code> are best conceptualized as <em>continuous</em> variables.</p>
+</blockquote>
+<ul>
+<li>For continuous variables, it is most appropriate to take the <em>average</em> or <em>mean</em>.</li>
+<li>For categorical variables, it is most appropriate to generate a <em>frequency table</em>.</li>
+</ul>
+<blockquote class="blockquote">
+<p>As a mostly command based language, R relies on the idea of <code>do_something(dataset$variable)</code>.</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(MICSsimulated<span class="sc">$</span>GII) <span class="co"># descriptive statistics for GII</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   15.0    22.0    24.0    24.2    27.0    31.0 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(MICSsimulated<span class="sc">$</span>cd4) <span class="co"># frequency table of cd4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Did not explain       Explained 
+            674            2326 </code></pre>
+</div>
+</div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -865,13 +1150,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Project Summary">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Project Summary</span></span>
+      <a href="./quick-intro-ggplot2.html" class="pagination-link" aria-label="A Quick Introduction To `ggplot2`">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">A Quick Introduction To <code>ggplot2</code></span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./simulated-multi-country-data.html" class="pagination-link" aria-label="Simulated Multi-Country Data">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simulated Multi-Country Data</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./papers.html" class="pagination-link" aria-label="Papers from the *Global Families* Project">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Papers from the <em>Global Families</em> Project</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -880,4 +1165,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/globalfamilies/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/globalfamilies/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
