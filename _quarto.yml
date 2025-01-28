@@ -15,7 +15,7 @@ book:
   search: true
   repo-url: https://github.com/agrogan1/globalfamilies
   repo-actions: [issue]
-  sharing: [twitter, facebook, linkedin]
+  sharing: [facebook, linkedin]
   chapters:
     - index.qmd
     - team.qmd
