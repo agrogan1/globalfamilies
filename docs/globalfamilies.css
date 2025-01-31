@@ -10,3 +10,6 @@ blockquote {
   border-left: 3px solid #FFC20E; 
   padding: 0.5em 10px;
 }
+figcaption {
+  color: #1CABE2;
+}
