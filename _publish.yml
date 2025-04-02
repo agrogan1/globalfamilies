@@ -1,4 +1,4 @@
 - source: project
   quarto-pub:
     - id: d336beac-95d7-47ce-8d34-33f4976d021a
-      url: 'https://globalfamilies.quarto.pub/global-families-project'
+      url: https://globalfamilies.quarto.pub/global-families-project
