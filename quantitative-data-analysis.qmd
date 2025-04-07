@@ -5,6 +5,7 @@
 A great deal of data analysis (and visualization) involves the same core set of steps.
 
 ```{mermaid}
+%%| fig-cap: "A Common Workflow"
 %%| fig-width: 7
 %%{
   init: {
