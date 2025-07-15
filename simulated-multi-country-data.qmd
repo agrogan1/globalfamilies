@@ -12,19 +12,39 @@ This website makes use of simulated data. Data come from 30 hypothetical countri
 if (knitr::is_html_output()) {
 
 library(plotly)
+  
+library(dplyr)
 
-plot_geo() %>%
-  layout(title = "", 
-         geo = list(projection = list(type = 'orthographic'),
-                    showland = TRUE,  
-                    landcolor = toRGB("#1CABE2"),
+# plot_geo() %>%
+#   layout(title = "", 
+#          geo = list(projection = list(type = 'orthographic'),
+#                     showland = TRUE,  
+#                     landcolor = toRGB("#1CABE2"),
+#                     showcountries = TRUE,
+#                     showocean = FALSE, 
+#                     oceancolor = "LightBlue",
+#                     lataxis = list(showgrid = TRUE,
+#                                    gridcolor = toRGB("black")),
+#                     lonaxis = list(showgrid = TRUE,
+#                                    gridcolor = toRGB("black"))))
+
+df <- read.csv("2014_world_gdp_with_codes.csv")
+ 
+plot_geo(df) %>% 
+  add_trace(locations = df$CODE,
+            text = df$COUNTRY,
+            hoverinfo='text',
+            z = 1,
+            color = 1,
+            colorscale = "Blues") %>%
+  layout(geo = list(showland = FALSE,
                     showcountries = TRUE,
-                    showocean = FALSE, 
-                    oceancolor = "LightBlue",
-                    lataxis = list(showgrid = TRUE,
-                                   gridcolor = toRGB("black")),
-                    lonaxis = list(showgrid = TRUE,
-                                   gridcolor = toRGB("black"))))
+                    projection = list(type = 'orthographic',
+                                      rotation = list(lon = -30,
+                                                      lat = 10,
+                                                      roll = 0)))) %>% 
+  hide_colorbar()
+ 
 }
 
 ```
