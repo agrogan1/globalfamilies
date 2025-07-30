@@ -41,7 +41,7 @@ plot_geo(df) %>%
                     showcountries = TRUE,
                     projection = list(type = 'orthographic',
                                       rotation = list(lon = -30,
-                                                      lat = 10,
+                                                      lat = 0,
                                                       roll = 0)))) %>% 
   hide_colorbar()
  
