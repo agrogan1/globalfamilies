@@ -35,8 +35,7 @@ plot_geo(df) %>%
             text = df$COUNTRY,
             hoverinfo='text',
             z = 1,
-            color = 1,
-            colorscale = "Blues") %>%
+            colors = "#1CABE2") %>%
   layout(geo = list(showland = FALSE,
                     showcountries = TRUE,
                     projection = list(type = 'orthographic',
