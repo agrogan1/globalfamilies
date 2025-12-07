@@ -33,3 +33,4 @@ po/*~
 rsconnect/
 /.quarto/
 nul
+.DS_Store
