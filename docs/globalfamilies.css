@@ -13,18 +13,9 @@ blockquote {
 figcaption {
   color: #E2231A;
 }
-a {
-  color: #374EA2;
-}
 img.quarto-cover-image {
   box-shadow: 9px 9px 7px lightgrey;
 }
 .sidebar-title a:hover {
-  color: #E2231A;
-}
-div.sidebar-item-container .active {
-  color: #374EA2;
-}
-div.sidebar-item-container a:hover {
   color: #E2231A;
 }

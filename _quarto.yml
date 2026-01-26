@@ -39,9 +39,7 @@ prefer-html: true
 
 format:
   html:
-    theme: 
-      light: cosmo
-      dark: vapor
+    theme: yeti
     css: globalfamilies.css
     lightbox: true
     mermaid: 
