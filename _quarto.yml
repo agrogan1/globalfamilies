@@ -31,6 +31,9 @@ book:
    
 bibliography: globalfamilies.bib
 
+nocite: |
+  @Ma2022A, @Ma2022B, @Ward2024, @Ma2025
+
 csl: apa.csl
 
 google-scholar: true
