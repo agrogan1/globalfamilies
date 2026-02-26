@@ -1,8 +1,10 @@
 # Papers from the *Global Families* Project
 
-Ward, K. P., Grogan-Kaylor, A. C., Ma, J., Pace, G. T., Lee, S. J., & Davis-Kean, P. E. (2024). Interactions of gender inequality and parental discipline predicting child aggression in low- and middle-income countries. *Child Development* [https://doi.org/10.1111/cdev.14152](https://doi.org/10.1111/cdev.14152). [[ArcGIS StoryMap](https://arcg.is/0m4qDb)]
-
 Ma, J., Grogan-Kaylor, A., Ward, K., Boyle, E. H., Chang, O. D., & Pace, G. T. (2025). Spillover of Macro-level Violence to Parental Physical Abuse of Children in Low- and Middle-Income Countries. *Child Abuse and Neglect* [https://doi.org/10.1016/j.chiabu.2025.107468](https://doi.org/10.1016/j.chiabu.2025.107468). [[*scrollytelling* web page](https://globalfamilies.quarto.pub/spillover-of-violence/)]
 
+Ward, K. P., Grogan-Kaylor, A. C., Ma, J., Pace, G. T., Lee, S. J., & Davis-Kean, P. E. (2024). Interactions of gender inequality and parental discipline predicting child aggression in low- and middle-income countries. *Child Development* [https://doi.org/10.1111/cdev.14152](https://doi.org/10.1111/cdev.14152). [[ArcGIS StoryMap](https://arcg.is/0m4qDb)]
 
+Ma, J., Grogan-Kaylor, A., Lee, S. J., Ward, K. P., & Pace, G. T. (2022). Gender inequality in low- and middle-income countries: Associations with parental physical abuse and moderation by child gender. *International Journal of Environmental Research and Public Health* 19, 11928 [https://doi.org/10.3390/ijerph191911928](https://doi.org/10.3390/ijerph191911928). [[ArcGIS Storymap](https://arcg.is/1WzHHP)]
+
+Ma, J., Grogan-Kaylor, A., Pace, G. T., Ward, K. P., & Lee, S. J. (2022). The association between spanking and physical abuse of young children in 56 low- and middle-income countries. *Child Abuse and Neglect*, 129, 105662 [https://doi.org/10.1016/j.chiabu.2022.105662](https://doi.org/10.1016/j.chiabu.2022.105662). [[ArcGIS Storymap](https://arcg.is/fq49)]
 
