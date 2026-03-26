@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Appendix B — Simulating MICS Data – Global Families Project</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -93,10 +96,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-b6a8276bf55561bdbc268162d41bd1f7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-fa6d6337eaf972abca968bbe54adc955.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dda8771d043933e00db2387e2c02d373.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -353,7 +356,7 @@ div.csl-indent {
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble) <span class="co"># new dataframes</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble) <span class="co"># new dataframes</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co"># nifty graphs</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -369,7 +372,7 @@ div.csl-indent {
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sjPlot) <span class="co"># nice tables for MLM</span></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pander) <span class="co"># nice tables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pander) <span class="co"># nice tables</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -380,17 +383,17 @@ div.csl-indent {
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>) <span class="co"># random seed</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>) <span class="co"># random seed</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>N_countries <span class="ot">&lt;-</span> <span class="dv">30</span> <span class="co"># number of countries</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="co"># sample size / country</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="co"># sample size / country</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
 <section id="simulate-data-based-on-mics" class="level2" data-number="B.3">
 <h2 data-number="B.3" class="anchored" data-anchor-id="simulate-data-based-on-mics"><span class="header-section-number">B.3</span> Simulate Data Based on MICS</h2>
-<p>This is multilevel data where individuals are nested, or clustered, inside countries. Excellent technical and pedagogical discussions of multilevel models can be found in <span class="citation" data-cites="Raudenbush2002">Raudenbush &amp; Bryk (<a href="references.html#ref-Raudenbush2002" role="doc-biblioref">2002</a>)</span>, <span class="citation" data-cites="Singer2003">Singer &amp; Willett (<a href="references.html#ref-Singer2003" role="doc-biblioref">2003</a>)</span>, <span class="citation" data-cites="RabeHesketh2022">Rabe-Hesketh &amp; Skrondal (<a href="references.html#ref-RabeHesketh2022" role="doc-biblioref">2022</a>)</span>, <span class="citation" data-cites="Luke2004">Luke (<a href="references.html#ref-Luke2004" role="doc-biblioref">2004</a>)</span>, and <span class="citation" data-cites="Kreft1998">Kreft &amp; de Leeuw (<a href="references.html#ref-Kreft1998" role="doc-biblioref">1998</a>)</span>.</p>
+<p>This is multilevel data where individuals are nested, or clustered, inside countries. Excellent technical and pedagogical discussions of multilevel models can be found in <span class="citation" data-cites="Raudenbush2002">Raudenbush &amp; Bryk (<a href="references.html#ref-Raudenbush2002" role="doc-biblioref">2002</a>)</span>, <span class="citation" data-cites="Singer2003">Singer &amp; Willett (<a href="references.html#ref-Singer2003" role="doc-biblioref">2003</a>)</span>, <span class="citation" data-cites="RabeHesketh2022">Rabe-Hesketh &amp; Skrondal (<a href="references.html#ref-RabeHesketh2022" role="doc-biblioref">2022</a>)</span>, <span class="citation" data-cites="Luke2004">Luke (<a href="references.html#ref-Luke2004" role="doc-biblioref">2004</a>)</span>, and <span class="citation" data-cites="Kreft1998"><span class="nocase">Kreft &amp; de Leeuw</span> (<a href="references.html#ref-Kreft1998" role="doc-biblioref">1998</a>)</span>.</p>
 <section id="level-2" class="level3" data-number="B.3.1">
 <h3 data-number="B.3.1" class="anchored" data-anchor-id="level-2"><span class="header-section-number">B.3.1</span> Level 2</h3>
 <p>Simulating the second level of the data is relatively easy. We simply need to provide the number of countries, and then generate random effects for each country. Random effects are discussed in the above references, but essentially represent country level differences in the data.</p>
@@ -398,7 +401,7 @@ div.csl-indent {
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>country <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span>N_countries) <span class="co"># sequence 1 to 30</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>country <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span>N_countries) <span class="co"># sequence 1 to 30</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>GII <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(N_countries, <span class="dv">100</span>, .<span class="dv">25</span>) <span class="co"># gender inequality index</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -412,7 +415,7 @@ div.csl-indent {
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>                            GII, </span>
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>                            HDI, </span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>                            u0, </span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>                            u1) <span class="co"># dataframe of random effects</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>                            u1) <span class="co"># dataframe of random effects</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -425,7 +428,7 @@ div.csl-indent {
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>MICSsimulated <span class="ot">&lt;-</span> randomeffects <span class="sc">%&gt;%</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>MICSsimulated <span class="ot">&lt;-</span> randomeffects <span class="sc">%&gt;%</span> </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">uncount</span>(N) <span class="sc">%&gt;%</span> <span class="co"># N individuals / country</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">row_number</span>()) <span class="sc">%&gt;%</span> <span class="co"># unique id</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cd1 =</span> <span class="fu">rbinom</span>(N <span class="sc">*</span> N_countries, <span class="dv">1</span>, .<span class="dv">38</span>), <span class="co"># spank</span></span>
@@ -443,7 +446,7 @@ div.csl-indent {
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">aggression =</span> <span class="fu">rbinom</span>(N <span class="sc">*</span> N_countries, <span class="dv">1</span>, p)) <span class="sc">%&gt;%</span> <span class="co"># binomial y</span></span>
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(id, country, GII, HDI,</span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>         cd1, cd2, cd3, cd4, </span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>         aggression)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>         aggression)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -453,7 +456,7 @@ div.csl-indent {
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>id) <span class="ot">&lt;-</span> <span class="st">"id"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>id) <span class="ot">&lt;-</span> <span class="st">"id"</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>country) <span class="ot">&lt;-</span> <span class="st">"country"</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -469,13 +472,13 @@ div.csl-indent {
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>cd4) <span class="ot">&lt;-</span> <span class="st">"explain"</span></span>
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>aggression) <span class="ot">&lt;-</span> <span class="st">"aggression"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(MICSsimulated<span class="sc">$</span>aggression) <span class="ot">&lt;-</span> <span class="st">"aggression"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pander</span>(labelled<span class="sc">::</span><span class="fu">look_for</span>(MICSsimulated)[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]) <span class="co"># list out variable labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pander</span>(labelled<span class="sc">::</span><span class="fu">look_for</span>(MICSsimulated)[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]) <span class="co"># list out variable labels</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="tbl-varlabels" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -484,7 +487,7 @@ Table&nbsp;B.1: Variable Labels
 </figcaption>
 <div aria-describedby="tbl-varlabels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<table class="cell caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 8%">
 <col style="width: 18%">
@@ -569,7 +572,7 @@ Table&nbsp;B.1: Variable Labels
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(MICSsimulated,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(MICSsimulated,</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> cd1, <span class="co"># x is spanking</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> aggression, <span class="co"># y is aggression</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="fu">factor</span>(country))) <span class="sc">+</span> <span class="co"># color is country</span></span>
@@ -580,7 +583,7 @@ Table&nbsp;B.1: Variable Labels
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"spank"</span>,</span>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"aggression"</span>) <span class="sc">+</span></span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>(<span class="at">name =</span> <span class="st">"Country"</span>) <span class="sc">+</span> <span class="co"># nice colors</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-p1" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -602,13 +605,13 @@ Figure&nbsp;B.1: Graph of Simulated Data
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">glmer</span>(aggression <span class="sc">~</span> cd1 <span class="sc">+</span> cd2 <span class="sc">+</span> cd3 <span class="sc">+</span> cd4 <span class="sc">+</span> GII <span class="sc">+</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">glmer</span>(aggression <span class="sc">~</span> cd1 <span class="sc">+</span> cd2 <span class="sc">+</span> cd3 <span class="sc">+</span> cd4 <span class="sc">+</span> GII <span class="sc">+</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                (<span class="dv">1</span> <span class="sc">|</span> country), </span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">family =</span> <span class="st">"binomial"</span>,</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> MICSsimulated,</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">control =</span> <span class="fu">glmerControl</span>(<span class="at">optimizer =</span><span class="st">"bobyqa"</span>))</span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit1) <span class="co"># table for PDF</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit1) <span class="co"># table for PDF</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Generalized linear mixed model fit by maximum likelihood (Laplace
@@ -657,7 +660,7 @@ GII -0.954 -0.011 -0.003  0.023  0.004</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(MICSsimulated, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(MICSsimulated, </span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">file =</span> <span class="st">"./simulate-data/MICSsimulated.RData"</span>) <span class="co"># R</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write_dta</span>(MICSsimulated, </span>
@@ -667,14 +670,14 @@ GII -0.954 -0.011 -0.003  0.023  0.004</code></pre>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>          <span class="st">"./simulate-data/MICSsimulated.sav"</span>) <span class="co"># SPSS</span></span>
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(MICSsimulated,</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>          <span class="st">"./simulate-data/MICSsimulated.csv"</span>) <span class="co"># CSV</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>          <span class="st">"./simulate-data/MICSsimulated.csv"</span>) <span class="co"># CSV</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
 <div id="ref-Kreft1998" class="csl-entry" role="listitem">
-Kreft, I., &amp; de Leeuw, J. (1998). <em>Introducing multilevel modeling</em>. SAGE Publications. <a href="https://doi.org/10.4135/9781849209366">https://doi.org/10.4135/9781849209366</a>
+<span class="nocase">Kreft, I., &amp; de Leeuw, J.</span> (1998). <em>Introducing multilevel modeling</em>. SAGE Publications. <a href="https://doi.org/10.4135/9781849209366">https://doi.org/10.4135/9781849209366</a>
 </div>
 <div id="ref-Luke2004" class="csl-entry" role="listitem">
 Luke, D. (2004). <em>Multilevel modeling</em>. SAGE Publications, Inc. <a href="https://doi.org/10.4135/9781412985147">https://doi.org/10.4135/9781412985147</a>
@@ -761,13 +764,14 @@ Ward, K. P., Grogan-Kaylor, A. C., Ma, J., Pace, G. T., Lee, S. J., &amp; Davis-
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
